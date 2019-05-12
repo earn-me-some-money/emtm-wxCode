@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/EnterPage/enter",
+    "pages/PersonalPage/PersonalPage",
+    "pages/OrdersPage/OrdersPage",
+    "pages/RecommendedPage/RecommendedPage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#050505",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/首页(2).png",
+        "iconPath": "images/首页.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/订单(2).png",
+        "iconPath": "images/订单.png",
+        "pagePath": "pages/OrdersPage/OrdersPage",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "images/我的(2).png",
+        "iconPath": "images/我的.png",
+        "pagePath": "pages/PersonalPage/PersonalPage",
+        "text": "我的"
+      }
+    ]
+  }
+}
