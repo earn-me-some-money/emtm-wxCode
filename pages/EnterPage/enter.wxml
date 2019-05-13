@@ -1,3 +1,43 @@
 <view class="container">  
-  <text>这是我的test页面哦哦！！！</text>  
+  <view class='header'>
+    <icon class='searchIcon' src='../../images/默认头像.png' type='search'></icon>
+    <input class='searchText' disabled placeholder='请输入关键字' ></input>
+    <button class='searchButton'>搜 索</button>
+  </view>
+
+
+  <swiper class="turn-pictures" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{picList}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode="scaleToFill" data-previewurl='{{picList}}' data-currenturl='{{item}}'/>
+        </swiper-item>   
+      </block>  
+  </swiper>
+
+  <view class='classification'>
+    <button class='bt1'>
+      <image class='btnImg1' src='../../images/问卷调查.png'></image>
+      <view>问卷调查</view>
+    </button>
+
+    <button class='bt2'>
+      <image class='btnImg2' src='../../images/快递员.png'></image>
+      <view>取快递</view>
+    </button>
+
+    <button class='bt3'>
+      <image class='btnImg3' src='../../images/闲置.png'></image>
+      <view>闲置交易</view>
+    </button>
+
+    <button class='bt4'>
+      <image class='btnImg4' src='../../images/所有.png'></image>
+      <view>所有类型</view>
+    </button>
+  </view>
+
+  <view class='showList'>
+  
+  </view>
+
 </view>  

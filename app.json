@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/EnterPage/enter",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/EnterPage/enter",
     "pages/PersonalPage/PersonalPage",
     "pages/OrdersPage/OrdersPage",
     "pages/RecommendedPage/RecommendedPage"
@@ -23,7 +23,7 @@
       {
         "selectedIconPath": "images/首页(2).png",
         "iconPath": "images/首页.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/EnterPage/enter",
         "text": "首页"
       },
       {

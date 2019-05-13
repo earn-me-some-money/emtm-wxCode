@@ -1,1 +1,184 @@
 /* pages/EnterPage/enter.wxss */
+
+.header {
+  display: block;
+
+  position: fixed;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  top: 5%;
+  height: 100rpx;
+
+  background-color: white;
+}
+
+.turn-pictures {
+
+  position: fixed;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  top: 20%;
+  height: 400rpx;
+
+}
+
+.classification {
+  display: block;
+
+  position: fixed;
+  top: 60%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 50rpx;
+
+  background-color: whitesmoke;
+}
+
+.searchIcon {
+  position: absolute;
+  width: 5%;
+  left: 5%;
+  height: 100rpx;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchText {
+  position: absolute;
+  left: 15%;
+  width: 55%;
+  height: 100rpx;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  background-color: white;
+}
+
+.searchButton {
+  position: absolute;
+  right: 5%;
+  width: 20%;
+  height: 100rpx;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+}
+
+.searchButton::after {
+  border: 0;
+}
+
+.slide-image {
+  height: 400rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  border-radius: 5%;
+}
+
+.bt1 {
+  position: absolute;
+  width: 25%;
+  height: 200rpx;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25rpx;
+}
+
+.bt2 {
+  position: absolute;
+  width: 25%;
+  height: 200rpx;
+  left: 25%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25rpx;
+}
+
+.bt3 {
+  position: absolute;
+  width: 25%;
+  height: 200rpx;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25rpx;
+}
+
+.bt4 {
+  position: absolute;
+  width: 25%;
+  height: 200rpx;
+  left: 75%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25rpx;
+}
+
+.bt1::after{
+  border: 0;
+}
+
+.bt2::after{
+  border: 0;
+}
+
+.bt3::after{
+  border: 0;
+}
+
+.bt4::after{
+  border: 0;
+}
+
+.btnImg1 {
+  width: 50rpx;
+  height: 50rpx;
+  align-content: center;
+}
+
+.btnImg2 {
+  width: 50rpx;
+  height: 50rpx;
+  align-content: center;
+}
+
+.btnImg3 {
+  width: 50rpx;
+  height: 50rpx;
+  align-content: center;
+}
+
+.btnImg4 {
+  width: 50rpx;
+  height: 50rpx;
+  align-content: center;
+}
