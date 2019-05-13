@@ -1,2 +1,76 @@
 <!--pages/PersonalPage/PersonalPage.wxml-->
-<text>pages/PersonalPage/PersonalPage.wxml</text>
+<view class='container'>
+  <view class='userinfo'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="user-image" src="../../images/默认头像.png" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class='relationship'>
+    <button class='bt1'>
+      <image class='btnImg1' src='../../images/人员介绍.png'></image>
+      <view>我的好友</view>
+    </button>
+
+    <button class='bt2'>
+      <image class='btnImg2' src='../../images/群组多人.png'></image>
+      <view>我的群组</view>
+    </button>
+
+    <button class='bt3'>
+      <image class='btnImg3' src='../../images/钱包.png'></image>
+      <view>我的钱包</view>
+    </button>
+
+    <button class='bt4'>
+      <image class='btnImg4' src='../../images/设置.png'></image>
+      <view>设置</view>
+    </button>
+
+  </view>
+
+  <view class='record'>
+    <button class='bt5'>
+      <image class='btnImg5' src='../../images/地址.png'></image>
+      <view>我的地址</view>
+    </button>
+
+    <button class='bt6'>
+      <image class='btnImg6' src='../../images/发布.png'></image>
+      <view>我的发布</view>
+    </button>
+
+    <button class='bt7'>
+      <image class='btnImg7' src='../../images/接收.png'></image>
+      <view>我的接收</view>
+    </button>
+
+    <button class='bt8'>
+      <image class='btnImg8' src='../../images/足迹.png'></image>
+      <view>我的足迹</view>
+    </button>
+
+    <button class='bt9'>
+      <image class='btnImg9' src='../../images/进行中.png'></image>
+      <view>进行中</view>
+    </button>
+
+    <button class='bt10'>
+      <image class='btnImg10' src='../../images/待确认.png'></image>
+      <view>待确认</view>
+    </button>
+
+    <button class='bt11'>
+      <image class='btnImg11' src='../../images/历史记录.png'></image>
+      <view>服务记录</view>
+    </button>
+  
+  </view>
+
+  <view class='buttonList'>
+  
+  </view>
+
+</view>
