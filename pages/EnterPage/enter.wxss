@@ -48,8 +48,8 @@
   display: block;
 
   position: fixed;
-  top: 80%;
-  left: 10%;
+  top: 82%;
+  left: 8%;
   height: 5%;
   width: 20%;
 }
@@ -59,7 +59,7 @@
 
   position: fixed;
   left: 8%;
-  width: 50%;
+  width: 40%;
   top: 85%;
   height: 100rpx;
 
