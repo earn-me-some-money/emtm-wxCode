@@ -1,4 +1,5 @@
 // pages/PersonalPage/PersonalPage.js
+var app = getApp();
 Page({
 
   /**
@@ -6,7 +7,8 @@ Page({
    */
   data: {
     userInfo: {
-      nickName: "用户名称"
+      nickName: "用户名称",
+      avatarUrl: "../../ images / 默认头像.png"
     },
     hasUserInfo: true,
     canIUse: true
@@ -99,5 +101,9 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  clickBt1() {
+    this.setData({ "userInfo.nickName": 'Hello World' })
   }
 })

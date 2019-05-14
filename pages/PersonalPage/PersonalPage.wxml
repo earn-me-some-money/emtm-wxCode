@@ -3,13 +3,13 @@
   <view class='userinfo'>
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
-      <image class="user-image" src="../../images/默认头像.png" mode="cover"></image>
+      <image class="user-image" src='{{userInfo.avatarUrl}}' mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
 
   <view class='relationship'>
-    <button class='bt1'>
+    <button class='bt1' bindtap="clickBt1">
       <image class='btnImg1' src='../../images/人员介绍.png'></image>
       <view>我的好友</view>
     </button>
