@@ -9,14 +9,20 @@
   </view>
 
   <view class='relationship'>
+<<<<<<< Updated upstream
     <button class='bt1' bindtap="clickBt1">
       <image class='btnImg1' src='../../images/人员介绍.png'></image>
       <view>我的好友</view>
+=======
+    <button class='bt1'>
+      <image class='btnImg1' src='../../images/消息.png'></image>
+      <view>我的通知</view>
+>>>>>>> Stashed changes
     </button>
 
     <button class='bt2'>
       <image class='btnImg2' src='../../images/群组多人.png'></image>
-      <view>我的群组</view>
+      <view>我的好友</view>
     </button>
 
     <button class='bt3'>

@@ -1,2 +1,15 @@
 <!--pages/OrdersPage/OrdersPage.wxml-->
-<text>pages/OrdersPage/OrdersPage.wxml</text>
+<view class='container'>
+
+  <view class='header'>
+    <text class='tx1'>订  单</text>
+    <icon class='icon1' type='search'></icon>
+  </view>
+
+  <view class='tabBar'>
+    <button class='bt1'>我的接受</button>
+    <button class='bt2'>我的发布</button>
+    <button class='bt3'>全部订单</button>
+  </view>
+
+</view>

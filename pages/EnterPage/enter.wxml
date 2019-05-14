@@ -1,4 +1,4 @@
-<view class="container">  
+<scroll-view class='container' scroll-y="true" style="height: 2000px">  
   <view class='header'>
     <icon class='searchIcon' src='../../images/默认头像.png' type='search'></icon>
     <input class='searchText' disabled placeholder='请输入关键字' ></input>
@@ -13,6 +13,7 @@
         </swiper-item>   
       </block>  
   </swiper>
+
 
   <view class='classification'>
     <button class='bt1'>
@@ -36,8 +37,21 @@
     </button>
   </view>
 
+
+  <view class='label1'>附近任务</view>
+  <view class='select_box'>
+    <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index]}}</text>
+        <image class='select_img {{selectShow&&"select_img_rotate"}}' src='../../images/闲置.png'  background-size="contain"></image> 
+    </view>
+    <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
+        <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+    </view>
+  </view>
+
+
   <view class='showList'>
   
   </view>
 
-</view>  
+</scroll-view>

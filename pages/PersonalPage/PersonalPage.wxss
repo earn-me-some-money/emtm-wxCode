@@ -10,7 +10,7 @@
   width: 90%;
   height: 15%;
 
-  background-color: whitesmoke;
+  background-color: transparent;
 }
 
 .relationship {

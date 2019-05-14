@@ -1,1 +1,111 @@
 /* pages/OrdersPage/OrdersPage.wxss */
+
+.header {
+  display: block;
+
+  position: fixed;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 100rpx;
+
+  background-color: white;
+}
+
+.tx1 {
+  position: absolute;
+  height: 100rpx;
+  left:40%;
+  align-content: center;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.icon1 {
+  position: absolute;
+  height: 100rpx;
+  right:5%;
+  align-content: center;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.tabBar {
+  display: block;
+
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 100rpx;
+}
+
+.bt1 {
+  position: absolute;
+  height: 100rpx;
+  align-content: center;
+  width: 33.3%;
+  left: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  background-color: transparent;
+}
+
+.bt2 {
+  position: absolute;
+  height: 100rpx;
+  align-content: center;
+  width: 33.3%;
+  left: 33.3%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  background-color: transparent;
+}
+
+.bt3 {
+  position: absolute;
+  height: 100rpx;
+  align-content: center;
+  width: 33.3%;
+  left: 66.7%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  background-color: transparent;
+}
+
+.bt1::after{
+  border: 0;
+}
+
+.bt2::after{
+  border: 0;
+}
+
+.bt3::after{
+  border: 0;
+}
