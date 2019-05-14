@@ -8,7 +8,7 @@ Page({
   data: {
     userInfo: {
       nickName: "用户名称",
-      avatarUrl: "../../ images / 默认头像.png"
+      avatarUrl: "../../images/默认头像.png"
     },
     hasUserInfo: true,
     canIUse: true
