@@ -1,11 +1,19 @@
 {
   "pages": [
-    "pages/EnterPage/enter",
+    "pages/FirstPage/enter",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/PersonalPage/PersonalPage",
-    "pages/OrdersPage/OrdersPage",
-    "pages/RecommendedPage/RecommendedPage"
+    "pages/SecondPage/OrdersPage",
+    "pages/ThridPage/PersonalPage",
+    "pages/ThridPage/UserInfo/Notation/NotationPage",
+    "pages/ThridPage/UserInfo/Relationship/RelationshipPage",
+    "pages/ThridPage/UserInfo/Setting/SettingPage",
+    "pages/ThridPage/UserEvent/Address/AddressPage",
+    "pages/ThridPage/UserEvent/Process/ProcessPage",
+    "pages/ThridPage/UserEvent/Record/RecordPage",
+    "pages/ThridPage/UserEvent/myEvent/EventPage",
+    "pages/ThridPage/UserInfo/Wallet/WalletPage",
+    "pages/ThridPage/UserEvent/ViewHistory/HistoryPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,7 +22,6 @@
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
-  
   "tabBar": {
     "color": "#050505",
     "selectedColor": "#000000",
@@ -23,19 +30,19 @@
       {
         "selectedIconPath": "images/首页(2).png",
         "iconPath": "images/首页.png",
-        "pagePath": "pages/EnterPage/enter",
+        "pagePath": "pages/FirstPage/enter",
         "text": "首页"
       },
       {
         "selectedIconPath": "images/订单(2).png",
         "iconPath": "images/订单.png",
-        "pagePath": "pages/OrdersPage/OrdersPage",
-        "text": "订单"
+        "pagePath": "pages/SecondPage/OrdersPage",
+        "text": "委派"
       },
       {
         "selectedIconPath": "images/我的(2).png",
         "iconPath": "images/我的.png",
-        "pagePath": "pages/PersonalPage/PersonalPage",
+        "pagePath": "pages/ThridPage/PersonalPage",
         "text": "我的"
       }
     ]

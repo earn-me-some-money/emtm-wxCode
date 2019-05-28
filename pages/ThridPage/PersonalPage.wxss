@@ -23,7 +23,7 @@
   width: 90%;
   height: 100rpx;
 
-  background-color: whitesmoke;
+  background-color: transparent;
 }
 
 .record {
@@ -36,7 +36,7 @@
   width: 90%;
   height: 40%;
 
-  background-color: whitesmoke;
+  background-color: transparent;
 }
 
 .user-image {
@@ -78,6 +78,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt2 {
@@ -91,6 +92,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt3 {
@@ -104,6 +106,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt4 {
@@ -117,6 +120,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt5 {
@@ -130,6 +134,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt6 {
@@ -143,6 +148,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt7 {
@@ -156,6 +162,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt8 {
@@ -169,6 +176,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt9 {
@@ -183,6 +191,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt10 {
@@ -197,6 +206,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt11 {
@@ -211,6 +221,7 @@
   align-items: center;
   justify-content: center;
   font-size: 25rpx;
+  background-color: transparent;
 }
 
 .bt1::after{

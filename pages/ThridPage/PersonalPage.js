@@ -103,36 +103,69 @@ Page({
 
   },
 
-  clickBt1: function() {
-    wx.request({
-      url: 'https://easy-mock.com/mock/5cea62cd9688d23824616193/example/register', //仅为示例，并非真实的接口地址
-      data: {
-        "userid": '111', //大学生用户id[string]
-        "check_mode": '1', // 大学生查看任务模式，须与奶牛查看任务区分开
-        "task_name": '1111' //目标任务的名称[string]
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-      }
+  NotificationClick: function() {
+    wx.navigateTo({
+      url: 'UserInfo/Notation/NotationPage',
     })
   },
 
-  clickBt6: function () {
-    wx.request({
-      url: 'https://easy-mock.com/mock/5cea62cd9688d23824616193/example/register', //仅为示例，并非真实的接口地址
-      data: {
-        x: '',
-        y: ''
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)
-      }
+  RelationshipClick: function () {
+    wx.navigateTo({
+      url: 'UserInfo/Relationship/RelationshipPage',
+    })
+  },
+
+  WalletClick: function () {
+    wx.navigateTo({
+      url: 'UserInfo/Wallet/WalletPage',
+    })
+  },
+
+  SettingClick: function () {
+    wx.navigateTo({
+      url: 'UserInfo/Setting/SettingPage',
+    })
+  },
+
+  AddressClick: function () {
+    wx.navigateTo({
+      url: 'UserEvent/Address/AddressPage',
+    })
+  },
+
+  myLaunchClick: function () {
+    wx.navigateTo({
+      url: 'UserEvent/Process/ProcessPage',
+    })
+  },
+
+  myRevClick: function () {
+    wx.navigateTo({
+      url: 'UserEvent/Process/ProcessPage',
+    })
+  },
+
+  myHistoryClick: function () {
+    wx.navigateTo({
+      url: 'UserEvent/ViewHistory/HistoryPage',
+    })
+  },
+
+  InProcessClick: function () {
+    wx.navigateTo({
+      url: 'UserEvent/myEvent/EventPage',
+    })
+  },
+
+  beConfirmClick: function () {
+    wx.navigateTo({
+      url: 'UserEvent/myEvent/EventPage',
+    })
+  },
+
+  RecordClick: function () {
+    wx.navigateTo({
+      url: 'UserEvent/Record/RecordPage',
     })
   }
 })

@@ -1,4 +1,4 @@
-// pages/RecommendedPage/RecommendedPage.js
+// pages/ThridPage/UserEvent/ViewHistory/HistoryPage.js
 Page({
 
   /**

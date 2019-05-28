@@ -9,22 +9,22 @@
   </view>
 
   <view class='relationship'>
-    <button class='bt1' bindtap="clickBt1">
+    <button class='bt1' bindtap="NotificationClick">
       <image class='btnImg1' src='../../images/消息.png'></image>
       <view>我的通知</view>
     </button>
 
-    <button class='bt2'>
+    <button class='bt2' bindtap="RelationshipClick">
       <image class='btnImg2' src='../../images/群组多人.png'></image>
       <view>我的好友</view>
     </button>
 
-    <button class='bt3'>
+    <button class='bt3' bindtap="WalletClick">
       <image class='btnImg3' src='../../images/钱包.png'></image>
       <view>我的钱包</view>
     </button>
 
-    <button class='bt4'>
+    <button class='bt4' bindtap="SettingClick">
       <image class='btnImg4' src='../../images/设置.png'></image>
       <view>设置</view>
     </button>
@@ -32,37 +32,37 @@
   </view>
 
   <view class='record'>
-    <button class='bt5'>
+    <button class='bt5' bindtap="AddressClick">
       <image class='btnImg5' src='../../images/地址.png'></image>
       <view>我的地址</view>
     </button>
 
-    <button class='bt6' bindtap="clickBt6">
+    <button class='bt6' bindtap="myLaunchClick">
       <image class='btnImg6' src='../../images/发布.png'></image>
-      <view>我的发布</view>
+      <view>我的委派</view>
     </button>
 
-    <button class='bt7'>
+    <button class='bt7' bindtap="myRevClick">
       <image class='btnImg7' src='../../images/接收.png'></image>
       <view>我的接收</view>
     </button>
 
-    <button class='bt8'>
+    <button class='bt8' bindtap="myHistoryClick">
       <image class='btnImg8' src='../../images/足迹.png'></image>
       <view>我的足迹</view>
     </button>
 
-    <button class='bt9'>
+    <button class='bt9' bindtap="InProcessClick">
       <image class='btnImg9' src='../../images/进行中.png'></image>
       <view>进行中</view>
     </button>
 
-    <button class='bt10'>
+    <button class='bt10' bindtap="beConfirmClick">
       <image class='btnImg10' src='../../images/待确认.png'></image>
       <view>待确认</view>
     </button>
 
-    <button class='bt11'>
+    <button class='bt11' bindtap="RecordClick">
       <image class='btnImg11' src='../../images/历史记录.png'></image>
       <view>服务记录</view>
     </button>
