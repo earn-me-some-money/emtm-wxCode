@@ -8,7 +8,10 @@ Page({
   data: {
     userInfo: {
       nickName: "用户名称",
-      avatarUrl: "../../images/默认头像.png"
+      avatarUrl: "../../images/默认头像.png",
+      // check_credit: "???",
+      mode: true, 
+      userid: '00'
     },
     hasUserInfo: true,
     canIUse: true
@@ -65,7 +68,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var _this = this
+    wx.request({
+      url: 'https://easy-mock.com/mock/5cea62cd9688d23824616193/example/check_credit', //仅为示例，并非真实的接口地址
+      data: {
+        "userid": 123456 //当前大学生用户id[string]
+      },
+      success: function (res) {
+        if (res.data["code"]) {
+          _this.setData({ "userInfo.check_credit": res.data['credit_score']})
+        }
+        else {
+          _this.setData({ "userInfo.check_credit": res.data['err_message'] })
+        }
+      }
+    })
+    console.log(_this.data.userInfo)
   },
 
   /**
