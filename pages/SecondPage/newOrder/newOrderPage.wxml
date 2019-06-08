@@ -1,0 +1,73 @@
+<!--pages/SecondPage/newOrder/newOrderPage.wxml-->
+
+<view class='container'>
+
+  <view class='baseInfo'>
+
+    <view class='partName'>
+      <text class='username'>发起人名称: </text>
+      <input class='input_name' placeholder='  请输入发起人名称...'></input>
+    </view>
+
+    <view class='partType'>
+      <view class='choice'>委派类型: </view>
+      <radio-group class="type-radio-group" bindchange="typeChange">
+        <radio class="radio1" value="fetch" checked>取寄快递</radio>
+        <radio class="radio2" value="write">问卷调查</radio>
+        <radio class="radio3" value="trade">闲置交易</radio>
+        <radio class="radio4" value="other">其他类型</radio>
+      </radio-group>
+    </view>
+    
+    <view class='partTaskName'>
+      <text class='taskname'>委派简介:</text>
+      <input class='input_task' placeholder='请输入任务简介(30个字以内)'></input>
+    </view>
+
+    <view class='partPay'>
+      <text class='payment'>酬金:</text>
+      <input class='input_pay' placeholder='请输入具体金额'></input>
+    </view>
+    
+    <view class='partTime'>
+      <view class='starttime'>
+        <view class='starttime_text'>开始日期:  </view>
+        <view class='starttime_date'>{{nowyear}}-{{nowmonth}}-{{nowday}}</view>
+      </view>
+
+      <view class='endtime'>
+        <view class='endtime_text'>截止日期: </view>
+        <view class='endtime_date' bindtap='modify_date'>{{year}}-{{month}}-{{day}}</view>
+      </view>
+    </view>
+
+
+    <button class='nextStep'>下一步</button>
+    
+    <view wx:if="{{isShowDates}}" class="showDates">
+      <modal show="true" height='60%;width:100%' bindcancel="cancel_select_data" bindconfirm='confirm_select_data'>
+          <view class="time_text">{{year}}-{{month}}-{{day}}</view>
+          <view class="time_title">
+            <view class="time_title_text">年</view>
+            <view class="time_title_text">月</view>
+            <view class="time_title_text">日</view>
+          </view>
+        
+          <picker-view wx:if="{{years.length>0 && months.length>0 && days.length>0}}"  indicator-style="height: 50px;" class="view_picker" style="width: 100%;" value="{{value}}" bindchange="bindChange" >
+  
+              <picker-view-column class="view_picker_column">
+                <view wx:for="{{years}}" class="view_picker_text" wx:key="{{index}}">{{item}}</view>
+              </picker-view-column>
+              <picker-view-column class="view_picker_column">
+                <view wx:for="{{months}}" class="view_picker_text" wx:key="{{index}}">{{item}}</view>
+              </picker-view-column>
+              <picker-view-column class="view_picker_column">
+                <view wx:for="{{days}}"  class="view_picker_text" wx:key="{{index}}">{{item}}</view>
+              </picker-view-column>
+          </picker-view>
+      </modal>
+    </view>
+
+  </view>
+
+</view>

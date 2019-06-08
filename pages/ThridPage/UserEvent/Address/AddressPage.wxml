@@ -1,2 +1,29 @@
 <!--pages/ThridPage/UserEvent/Address/AddressPage.wxml-->
-<text>pages/ThridPage/UserEvent/Address/AddressPage.wxml</text>
+
+<view class='container'>
+
+  <view class='addr_list'>
+    <block wx:for="{{dataList}}" wx:for-item="dataItem" wx:key='id'>
+
+      <view class='listItem'>
+        <text class='address-name'>{{dataItem.addr}}</text>
+
+        <view class='otherinfo'>   
+          <text class='username'>{{"使用人：" + dataItem.name}}</text>
+          <text class='telephone'>{{"联系电话: " + dataItem.tel}}</text>
+          <button class='edit' bindtap="editAddress">
+            <image class="edit_image" src='../../../../images/设置.png' mode='scaleToFill'></image>
+          </button>
+          
+        </view>
+
+        <view class='divLine'></view>
+
+      </view>
+
+    </block>
+  </view>
+
+  <button class='addNewAddr' bindtap='addNewAddress' >新增地址</button>
+
+</view>

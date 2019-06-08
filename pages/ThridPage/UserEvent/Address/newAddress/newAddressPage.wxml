@@ -1,0 +1,16 @@
+<!--pages/ThridPage/UserEvent/Address/newAddress/newAddressPage.wxml-->
+
+<view class='container'>
+
+  <text class="text_address">填写地址:</text>
+  <input class="input_address" placeholder='请填写用户地址'></input>
+
+  <text class="text_name">联系人:</text>
+  <input class="input_name" placeholder='请填写用户名称'></input>
+
+  <text class="text_phone">手机号:</text>
+  <input class="input_phone" placeholder='请填写用户手机号码'></input>
+
+  <button class='saveAddr' bindtap='saveAddress' >保存地址</button>
+
+</view>

@@ -4,11 +4,11 @@
   display: block;
 
   position: fixed;
-  top: 5%;
+  top: 3%;
   left: 5%;
   right: 5%;
   width: 90%;
-  height: 100rpx;
+  height: 20%;
 
   background-color: transparent;
 }
@@ -17,11 +17,11 @@
   display: block;
 
   position: fixed;
-  top: 25%;
+  top: 30%;
   left: 5%;
   right: 5%;
   width: 90%;
-  height: 100rpx;
+  height: 15%;
 
   background-color: transparent;
 }
@@ -34,7 +34,7 @@
   left: 5%;
   right: 5%;
   width: 90%;
-  height: 40%;
+  height: 30%;
 
   background-color: transparent;
 }
@@ -43,10 +43,10 @@
   position: absolute;
   width: 100rpx;
   height: 100rpx;
-  border-radius: 50%;
+  top: 50rpx;
+  left: 5%;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -55,16 +55,39 @@
 .userinfo-nickname {
   position: absolute;
   height: 100rpx;
-  left: 25%;
+  left: 28%;
+  top: 25rpx;
 
   font-style: normal;
   font-weight: normal;
   color: black;
+  text-align: left;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+}
+
+.userinfo-creditscore {
+  position: absolute;
+  height: 100rpx;
+  left: 28%;
+  top: 125rpx;
+  text-align: left;
+
+  font-style:normal;
+  font-size: 25rpx;
+  font-weight: normal;
+  color: gray;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align-last: justify;
+  justify-content: center;
+
 }
 
 .bt1 {

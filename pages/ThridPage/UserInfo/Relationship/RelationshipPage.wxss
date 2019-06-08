@@ -1,1 +1,177 @@
 /* pages/ThridPage/UserInfo/Relationship/RelationshipPage.wxss */
+
+
+.header {
+  display: block;
+
+  position: fixed;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 100rpx;
+
+  background-color: white;
+}
+
+.tx1 {
+  position: absolute;
+  height: 100rpx;
+  left:40%;
+  align-content: center;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+}
+
+
+
+.tabBar {
+  display: block;
+
+  position: fixed;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 100rpx;
+}
+
+.bt1 {
+  position: absolute;
+  height: 100rpx;
+  align-content: center;
+  width: 50%;
+  left: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  background-color: transparent;
+
+}
+
+.bt2 {
+  position: absolute;
+  height: 100rpx;
+  align-content: center;
+  width: 50%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  background-color: transparent;
+ 
+}
+
+
+.bt1::after{
+  border: 0;
+}
+
+.bt2::after{
+  border: 0;
+}
+
+
+/* 消息列表 */
+
+.rcvInfo {
+  display: block;
+  position: fixed;
+  height: 80%;
+  top: 18%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  align-content: center;
+}
+
+.groups {
+  display: block;
+  position: fixed;
+  height: 80%;
+  top: 18%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  align-content: center;
+}
+
+.infoItem {
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 180rpx;
+  margin-top: 20rpx;
+}
+
+.groupIcon {
+  position: absolute;
+  height: 100rpx;
+  width: 100rpx;
+
+  margin-top: 10rpx;
+}
+
+.title {
+  position: absolute;
+  left: 20%;
+  height: 45rpx;
+  margin-top: 5rpx;
+}
+
+.unread {
+  position: absolute;
+  left: 20%;
+  margin-top: 60rpx;
+  height: 30rpx;
+  font-size: 32rpx;
+  color: gray;
+}
+
+.lastInfo {
+  position: absolute;
+  left: 35%;
+  width:60%;
+  margin-top: 60rpx;
+  font-size: 32rpx;
+  color: gray;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+.lasttime {
+  position: absolute;
+  right: 5%;
+  height: 45rpx;
+  margin-top: 5rpx;
+  font-size: 32rpx;
+  color: gray;
+}
+
+.divLine1 {
+  position: absolute;
+  background: #E0E3DA;
+  width: 100%;
+  height: 1rpx;
+}
+
+.divLine2 {
+  position: absolute;
+  background: #E0E3DA;
+  left: 20%;
+  width: 100%;
+  height: 2rpx;
+  margin-top: 120rpx;
+}

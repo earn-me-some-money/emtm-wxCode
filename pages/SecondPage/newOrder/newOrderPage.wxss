@@ -1,0 +1,156 @@
+/* pages/SecondPage/newOrder/newOrderPage.wxss */
+
+.baseInfo {
+  position: absolute;
+  display: block;
+
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+}
+
+.partName {
+  margin-top: 30rpx;
+  display: flex;
+  font-size: 36rpx;
+}
+
+.partType {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  align-content: center;
+}
+
+.partTaskName {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+}
+
+.partPay {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+}
+
+.partTime {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+}
+
+.username {
+
+}
+
+.input_name {
+
+}
+
+.choice {
+
+}
+
+.type-radio-group {
+  column-count: 2;
+  letter-spacing: 5rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+
+.radio1 {
+  margin-bottom: 20rpx;
+}
+
+.radio2 {
+  margin-bottom: 20rpx;
+}
+
+.radio3 {
+  margin-bottom: 20rpx;
+}
+
+.radio4 {
+  margin-bottom: 20rpx;
+}
+
+.taskName {
+
+}
+
+.input_task {
+  margin-top: 20rpx;
+}
+
+.payment {
+
+}
+
+.input_pay {
+  margin-top: 20rpx;
+}
+
+.starttime {
+  margin-top: 50rpx;
+  display: flex;
+}
+
+.endtime {
+  margin-top: 25rpx;
+  display: flex;
+}
+
+.starttime_text {
+  left: 0%;
+}
+
+.starttime_date {
+  margin-left: 100rpx;
+  color: gray;
+}
+
+.endtime_text {
+  left: 0%;
+}
+
+.endtime_date {
+  margin-left: 100rpx;
+}
+
+.nextStep {
+  align-content: center;
+  margin-top: 80rpx;
+  color: #36C0DA;
+  font-size: 32rpx;
+  letter-spacing: 15rpx;
+}
+
+
+.time_text{
+  text-align: center;
+}
+.showDates{
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 36rpx;
+  z-index: 9999;
+}
+.time_title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.view_picker{
+  height: 300rpx;
+}
+.view_picker_text{
+  color: #000;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+}

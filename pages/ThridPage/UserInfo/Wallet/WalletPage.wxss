@@ -1,1 +1,44 @@
 /* pages/ThridPage/UserInfo/Wallet/WalletPage.wxss */
+
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.pic {
+  width: 250rpx;
+  height:250rpx;
+}
+
+.moneyValue {
+  margin-top: 20rpx;
+}
+
+.rmbIcon {
+  width: 60rpx;
+  height:60rpx;
+
+  font-size: 40rpx;
+}
+
+.moneyValue {
+  font-size: 36rpx;
+}
+
+.month_bill {
+  margin-top: 40rpx;
+}
+
+
+.money_in {
+  margin-top: 100rpx;
+}
+
+.money_out {
+  margin-top: 20rpx;
+}
+
+.record {
+  margin-top: 20rpx;
+}

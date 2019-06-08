@@ -1,2 +1,22 @@
 <!--pages/ThridPage/UserInfo/Wallet/WalletPage.wxml-->
-<text>pages/ThridPage/UserInfo/Wallet/WalletPage.wxml</text>
+
+<view class='container'>
+
+  <image class='pic' src='../../../../images/金额.png'></image>
+  
+  <view class='money'>
+    <text class='rmbIcon'>￥</text>
+    <text class='moneyValue'>500.0元</text>
+  </view>
+
+  <view class='month_bill'>
+    <view class='month_in'>{{"本月收入: " + "500.0元"}}</view>
+    <view class='month_out'>{{"本月支出: " + "500.0元"}}</view>
+  </view>
+
+  <view class='buttonList'>
+    <button class='money_in'>充值</button>
+    <button class='money_out'>提现</button>
+    <button class='record'>交易明细</button>
+  </view>
+</view>

@@ -1,2 +1,45 @@
 <!--pages/ThridPage/UserInfo/Relationship/RelationshipPage.wxml-->
-<text>pages/ThridPage/UserInfo/Relationship/RelationshipPage.wxml</text>
+
+<view class='container'>
+
+  <view class='header'>
+    <text class='tx1'>我 的 群 组</text>
+  </view>
+
+  <view class='tabBar'>
+    <button class='bt1' bindtap='btclick1' style="color:{{bt1Color}};">消息列表</button>
+    <button class='bt2' bindtap='btclick2' style="color:{{bt2Color}};">我的群聊</button>
+  </view>
+
+  <view class='divLine1'></view>
+
+  <view class="rcvInfo" hidden="{{select}}">
+    <block wx:for="{{infoList}}" wx:for-item="single_order" wx:key='id'>
+      <view class="infoItem">
+
+        <image class='groupIcon' src="{{single_order.pic_url}}"></image>
+        <view class='title'>{{single_order.groupname}}</view>
+        <view class='unread'>{{ "[" + single_order.unread + "条]" }}</view>
+        <view class='lastInfo'>{{single_order.lastRcv}}</view>
+        <view class='lasttime'>{{single_order.lastTime}}</view>
+
+        <view class='divLine2'></view>
+  
+      </view>
+    </block>
+  </view>
+
+  <view class="groups" hidden="{{!select}}">
+    <block wx:for="{{groupList}}" wx:for-item="single_order" wx:key='id'>
+      <view class="infoItem">
+
+        <image class='groupIcon' src="{{single_order.pic_url}}"></image>
+        <view class='title'>{{single_order.name + "(" + single_order.size + "人)"}}</view>
+
+        <view class='divLine2'></view>
+  
+      </view>
+    </block>
+  </view>
+
+</view>

@@ -13,12 +13,14 @@
     "pages/ThridPage/UserEvent/Record/RecordPage",
     "pages/ThridPage/UserEvent/myEvent/EventPage",
     "pages/ThridPage/UserInfo/Wallet/WalletPage",
-    "pages/ThridPage/UserEvent/ViewHistory/HistoryPage"
+    "pages/ThridPage/UserEvent/ViewHistory/HistoryPage",
+    "pages/ThridPage/UserEvent/Address/newAddress/newAddressPage",
+    "pages/SecondPage/newOrder/newOrderPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "EarnMyMoney",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

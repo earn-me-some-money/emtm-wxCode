@@ -5,6 +5,7 @@
     <block wx:else>
       <image class="user-image" src='{{userInfo.avatarUrl}}' mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-creditscore">{{userInfo.check_credit}}</text>
       <!-- {{check_credit}} -->
     </block>
   </view>
@@ -17,7 +18,7 @@
 
     <button class='bt2' bindtap="RelationshipClick">
       <image class='btnImg2' src='../../images/群组多人.png'></image>
-      <view>我的好友</view>
+      <view>我的群组</view>
     </button>
 
     <button class='bt3' bindtap="WalletClick">
