@@ -13,7 +13,7 @@
   <view class='relationship'>
     <button class='bt1' bindtap="NotificationClick">
       <image class='btnImg1' src='../../images/消息.png'></image>
-      <view>我的通知</view>
+      <view>系统消息</view>
     </button>
 
     <button class='bt2' bindtap="RelationshipClick">

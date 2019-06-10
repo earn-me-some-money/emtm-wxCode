@@ -24,5 +24,29 @@ Page({
     },
     onLoad: function () {
         console.log('onLoad test');
+    },
+
+    btClick1: function() {
+      wx.navigateTo({
+        url: 'singleType/singleTypePage',
+      })
+    },
+
+    btClick2: function () {
+      wx.navigateTo({
+        url: 'singleType/singleTypePage',
+      })
+    },
+
+    btClick3: function () {
+      wx.navigateTo({
+        url: 'singleType/singleTypePage',
+      })
+    },
+
+    btClick4: function () {
+      wx.navigateTo({
+        url: 'singleType/singleTypePage',
+      })
     }
 })  

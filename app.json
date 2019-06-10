@@ -15,7 +15,8 @@
     "pages/ThridPage/UserInfo/Wallet/WalletPage",
     "pages/ThridPage/UserEvent/ViewHistory/HistoryPage",
     "pages/ThridPage/UserEvent/Address/newAddress/newAddressPage",
-    "pages/SecondPage/newOrder/newOrderPage"
+    "pages/SecondPage/newOrder/newOrderPage",
+    "pages/FirstPage/singleType/singleTypePage"
   ],
   "window": {
     "backgroundTextStyle": "light",

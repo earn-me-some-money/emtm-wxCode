@@ -16,7 +16,7 @@ Page({
      */
     onLoad: function (options) {
       wx.setNavigationBarTitle({
-        title: '我的地址',
+        title: '我 的 地 址',
       })
     },
 

@@ -74,6 +74,10 @@ Page({
    */
   onLoad: function (options) {
     this.getTime();
+
+    wx.setNavigationBarTitle({
+      title: '发 布 委 派',
+    })
   },
 
   getTime: function (e) {

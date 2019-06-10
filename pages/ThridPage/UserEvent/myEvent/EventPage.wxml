@@ -1,2 +1,76 @@
 <!--pages/ThridPage/UserEvent/myEvent/EventPage.wxml-->
-<text>pages/ThridPage/UserEvent/myEvent/EventPage.wxml</text>
+<!--pages/OrdersPage/OrdersPage.wxml-->
+<view class='container'>
+
+  <!--view class='header'>
+    <text class='tx1'>全 部 订  单</text>
+  </view-->
+
+  <view class='tabBar'>
+    <button class='bt1' bindtap='btclick1' style="color:{{bt1Color}};">进 行 中</button>
+    <button class='bt2' bindtap='btclick2' style="color:{{bt2Color}};">待 确 认</button>
+  </view>
+
+  <view class='divLine1'></view>
+
+  <view class="orderList" hidden="{{select}}">
+    <block wx:for="{{in_process}}" wx:for-item="single_order" wx:key='id'>
+      <view class="orderItem">
+
+        <view class='info'>
+          <image class='typeIcon' src="../../../../images/{{single_order.type}}.png"></image>
+          <text class='title'>{{single_order.type + ": " + single_order.title}}</text>
+        </view>
+
+        <view class='requires'>
+          <text class='requireInfo'>{{"要求: " + single_order.requires}}</text>
+        </view>
+        
+        <view class='state'>
+          <text class='stateInfo'>{{"状态: " + single_order.state}}</text>
+          <text class='cost'>{{"报酬: " + single_order.cost}}</text>
+        </view>
+
+        <view class='choice'>
+          <text class='ddlTime'>{{"截止日期: " + single_order.endTime}}</text>
+          <text class='fromId'>{{"来自: " + single_order.provider}}</text>
+        </view>
+
+        <view class='divLine2'></view>
+  
+      </view>
+    </block>
+  </view>
+
+
+  <view class="launchList" hidden="{{!select}}">
+    <block wx:for="{{finished}}" wx:for-item="single_order" wx:key='id'>
+      <view class="orderItem">
+
+        <view class='info'>
+          <image class='typeIcon' src="../../../../images/{{single_order.type}}.png"></image>
+          <text class='title'>{{single_order.type + ": " + single_order.title}}</text>
+        </view>
+
+        <view class='requires'>
+          <text class='requireInfo'>{{"要求: " + single_order.requires}}</text>
+        </view>
+        
+        <view class='state'>
+          <text class='stateInfo'>{{"状态: " + single_order.state}}</text>
+          <text class='cost'>{{"报酬: " + single_order.cost}}</text>
+        </view>
+
+        <view class='choice'>
+          <text class='ddlTime'>{{"截止日期: " + single_order.endTime}}</text>
+          <text class='fromId'>{{"来自: " + single_order.provider}}</text>
+        </view>
+
+        <view class='divLine2'></view>
+  
+      </view>
+    </block>
+  </view>
+
+</view>
+

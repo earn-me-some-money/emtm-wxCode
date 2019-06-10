@@ -76,6 +76,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 .searchText {
@@ -103,6 +104,8 @@
   align-items: center;
   justify-content: center;
   font-size: 30rpx;
+
+  background-color: transparent;
 }
 
 .searchButton::after {

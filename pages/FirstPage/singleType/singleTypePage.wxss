@@ -17,7 +17,7 @@
 .tx1 {
   position: absolute;
   height: 100rpx;
-  left:40%;
+  left:35%;
   align-content: center;
   
   display: flex;
@@ -33,7 +33,7 @@
   display: block;
   position: fixed;
   height: 80%;
-  top: 40rpx;
+  top: 100rpx;
   left: 5%;
   right: 5%;
   width: 90%;

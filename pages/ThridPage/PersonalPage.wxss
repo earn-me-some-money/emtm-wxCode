@@ -10,7 +10,10 @@
   width: 90%;
   height: 20%;
 
-  background-color: transparent;
+  border-radius: 20rpx;
+  /*background-color: #B2C8BE;*/
+  background-color: #AEDD81;
+
 }
 
 .relationship {
@@ -74,7 +77,7 @@
   position: absolute;
   height: 100rpx;
   left: 28%;
-  top: 125rpx;
+  top: 110rpx;
   text-align: left;
 
   font-style:normal;

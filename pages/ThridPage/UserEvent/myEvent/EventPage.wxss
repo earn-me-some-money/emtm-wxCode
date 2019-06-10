@@ -1,1 +1,222 @@
-/* pages/ThridPage/UserEvent/myEvent/EventPage.wxss */
+/* pages/OrdersPage/OrdersPage.wxss */
+
+.header {
+  display: block;
+
+  position: fixed;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 100rpx;
+
+  background-color: white;
+}
+
+.tx1 {
+  position: absolute;
+  height: 100rpx;
+  left:40%;
+  align-content: center;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+}
+
+.icon1 {
+  position: absolute;
+  height: 60rpx;
+  right:0;
+  align-content: center;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  background-color: transparent;
+}
+
+.tabBar {
+  display: block;
+
+  position: fixed;
+  top: 40rpx;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 100rpx;
+}
+
+.bt1 {
+  position: absolute;
+  height: 100rpx;
+  align-content: center;
+  width: 50%;
+  left: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  background-color: transparent;
+
+}
+
+.bt2 {
+  position: absolute;
+  height: 100rpx;
+  align-content: center;
+  width: 50%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  background-color: transparent;
+ 
+}
+
+
+.bt1::after{
+  border: 0;
+}
+
+.bt2::after{
+  border: 0;
+}
+
+/*
+ orderList
+*/
+
+.orderList {
+  display: block;
+  position: fixed;
+  height: 80%;
+  top: 165rpx;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  align-content: center;
+}
+
+.launchList {
+  display: block;
+  position: fixed;
+  height: 80%;
+  top: 165rpx;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  align-content: center;
+}
+
+.orderItem {
+
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 200rpx;
+  margin-top: 60rpx;
+}
+
+.info {
+  height: 40rpx;
+  margin-top: 5rpx;
+}
+
+.state {
+  height: 40rpx;
+  margin-top: 5rpx;
+  color: gray;
+}
+
+.requires {
+  height: 60rpx;
+  margin-top: 5rpx;
+  color: gray;
+}
+
+.choice {
+  height: 60rpx;
+  margin-top: 5rpx;
+}
+
+.typeIcon {
+  position: relative;
+  left: 5%;
+  width: 70rpx;
+  height: 70rpx;
+  top: 20rpx;
+}
+
+.stateInfo {
+  position: absolute;
+  left: 25%;
+  font-size: 30rpx;
+}
+
+.title {
+  position: absolute;
+  height: 40rpx;
+  left: 25%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+
+  font-size: 30rpx;
+}
+
+
+.requireInfo {
+  position: absolute;
+  left: 25%;
+  font-size: 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+
+
+.cost {
+  position: absolute;
+  right: 3%;
+
+  font-size: 30rpx;
+}
+
+.ddlTime {
+  position: absolute;
+  left: 2%;
+
+  font-size: 30rpx;
+}
+
+.fromId {
+  position: absolute;
+  right: 3%;
+
+  font-size: 30rpx;
+}
+
+.divLine1 {
+  position: absolute;
+  background: #E0E3DA;
+  width: 100%;
+  height: 1rpx;
+  top: 160rpx;
+}
+
+.divLine2 {
+  position: absolute;
+  background: #E0E3DA;
+  width: 100%;
+  height: 2rpx;
+}

@@ -1,2 +1,26 @@
-<!--pages/ThridPage/UserInfo/Notation/NotationPage.wxml-->
-<text>pages/ThridPage/UserInfo/Notation/NotationPage.wxml</text>
+
+<view class='container'>
+
+  <!--view class='header'>
+    <text class='tx1'>系 统 消 息</text>
+  </view-->
+
+  <view class="rcvInfo" hidden="{{false}}">
+    <block wx:for="{{infoList}}" wx:for-item="single_order" wx:key='id'>
+      <view class="infoItem">
+
+        <image class='groupIcon' src="{{single_order.pic_url}}"></image>
+        <view class='title'>{{single_order.groupname}}</view>
+        <view class='unread'>{{ "[" + single_order.unread + "条]" }}</view>
+        <view class='lastInfo'>{{single_order.lastRcv}}</view>
+        <view class='lasttime'>{{single_order.lastTime}}</view>
+
+        <view class='divLine2'></view>
+  
+      </view>
+    </block>
+  </view>
+
+
+</view>
+

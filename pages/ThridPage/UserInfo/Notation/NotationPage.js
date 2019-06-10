@@ -4,13 +4,18 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+      infoList: [{ pic_url: "http://img1.imgtn.bdimg.com/it/u=1739733360,1788222103&fm=26&gp=0.jpg", groupname: "宿谢交流群", unread: "4", lastRcv: "没水了室长记得订水", isRead: "true", lastTime: "18:40" },
+      { pic_url: "http://img1.imgtn.bdimg.com/it/u=1739733360,1788222103&fm=26&gp=0.jpg", groupname: "宿谢交流群", unread: "4", lastRcv: "没水了室长记得订水", isRead: "true", lastTime: "昨天" }]
+    },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+      wx.setNavigationBarTitle({
+        title: '系 统 消 息',
+      })
     },
 
     /**

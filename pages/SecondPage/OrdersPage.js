@@ -102,14 +102,6 @@ Page({
       })
     },
 
-    btclick3: function () {
-      this.setData({
-        bt1Color: "gray",
-        bt2Color: "gray",
-        bt3Color: "black"
-      })
-    },
-
     createOrder: function() {
       wx.navigateTo({
         url: 'newOrder/newOrderPage',
