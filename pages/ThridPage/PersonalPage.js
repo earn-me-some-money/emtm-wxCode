@@ -9,9 +9,6 @@ Page({
         userInfo: {
             nickName: "用户名称",
             avatarUrl: "../../images/默认头像.png",
-            check_credit: "信誉积分:100", 
-            mode: true,
-            userid: '00' 
         },
         hasUserInfo: true,
         canIUse: true
@@ -21,7 +18,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function () {
-      console.log(app.globalData.userInfo)
         if (app.globalData.userInfo) {
             this.setData({
                 userInfo: app.globalData.userInfo,
@@ -46,8 +42,29 @@ Page({
                     userInfo: res.userInfo,
                     hasUserInfo: true
                 })
-            }
-        })
+                }
+            })
+        }
+        if (app.globalData.auth) {
+          if (this.data.userInfo.mode) {
+            var _this = this
+            wx.request({
+              url: app.globalData.serpath + 'check_credit',
+              data: {
+                "userid": app.globalData.openid
+              },
+              header: {
+                'content-type': 'application/json' // 默认值
+              },
+              success: function (res) {
+                if (res.data.code) {
+                  _this.setData({
+                    'userInfo.check_credit': "信誉积分：" + res.data.credit_score
+                  })
+                }
+              }
+            })
+          }
         }
     },
     getUserInfo: function (e) {

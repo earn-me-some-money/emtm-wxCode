@@ -23,7 +23,6 @@ Page({
         });
     },
     onLoad: function () {
-        console.log('onLoad test');
     },
 
     btClick1: function() {
