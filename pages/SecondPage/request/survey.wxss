@@ -1,0 +1,129 @@
+/* pages/SecondPage/newOrder/newOrderPage.wxss */
+
+.baseInfo {
+  position: absolute;
+  display: block;
+
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+}
+
+.partId {
+  margin-top: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 36rpx;
+}
+
+.partType {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+  align-content: center;
+}
+
+.partTaskName {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+}
+
+.partChoice {
+  margin-top: 30rpx;
+  font-size: 36rpx;
+}
+
+
+.id {
+
+}
+
+.input_id {
+  left: 40%；
+}
+
+.choice {
+
+}
+
+.type-radio-group {
+  column-count: 3;
+  letter-spacing: 5rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+
+.radio1 {
+  margin-bottom: 20rpx;
+}
+
+.radio2 {
+  margin-bottom: 20rpx;
+}
+
+.radio3 {
+  margin-bottom: 20rpx;
+}
+
+
+.taskName {
+
+}
+
+.input_task {
+  margin-top: 20rpx;
+}
+
+.content {
+
+}
+
+.input_content {
+  margin-top: 20rpx;
+}
+
+.last_question {
+  position: absolute;
+  top:80%;
+  left: 5%;
+  width: 30%;
+  margin-top: 20rpx; 
+  height: 60rpx; 
+  line-height: 60rpx; 
+  background: #fff; 
+  color:#1e82d2;  
+  border-radius: 98rpx;
+  align-content: center;
+  letter-spacing: 5rpx;
+}
+
+.next_question {
+  position: absolute;
+  top:80%;
+  left: 35%;
+  width: 30%;
+  margin-top: 20rpx; 
+  height: 60rpx; 
+  line-height: 60rpx; 
+  background: #fff; 
+  color:#1e82d2;  
+  border-radius: 98rpx;
+  align-content: center;
+  letter-spacing: 5rpx;
+}
+
+.finish {
+  position: absolute;
+  top:80%;
+  left: 65%;
+  width: 30%;
+  margin-top: 20rpx; 
+  height: 60rpx; 
+  line-height: 60rpx; 
+  background: #fff; 
+  color:#1e82d2;  
+  border-radius: 98rpx;
+  align-content: center;
+  letter-spacing: 5rpx;
+}

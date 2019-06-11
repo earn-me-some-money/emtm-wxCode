@@ -13,6 +13,7 @@
 .partName {
   margin-top: 30rpx;
   display: flex;
+  flex-wrap: wrap;
   font-size: 36rpx;
 }
 
@@ -42,7 +43,7 @@
 }
 
 .input_name {
-
+  left: 40%；
 }
 
 .choice {
@@ -119,6 +120,7 @@
 .nextStep {
   align-content: center;
   margin-top: 80rpx;
+  bottom: 5%;
   color: #36C0DA;
   font-size: 32rpx;
   letter-spacing: 15rpx;

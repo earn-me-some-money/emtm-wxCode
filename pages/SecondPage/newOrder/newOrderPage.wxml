@@ -42,7 +42,7 @@
     </view>
 
 
-    <button class='nextStep'>下一步</button>
+    <button class='nextStep' bindtap='nextStep'>下一步</button>
     
     <view wx:if="{{isShowDates}}" class="showDates">
       <modal show="true" height='60%;width:100%' bindcancel="cancel_select_data" bindconfirm='confirm_select_data'>

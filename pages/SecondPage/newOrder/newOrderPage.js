@@ -51,6 +51,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+
+    selectType: 1,
+
     flag: false,
     year: date.getFullYear(),
     month: thisMon,
@@ -184,5 +187,31 @@ Page({
     this.setData({
       isShowDates: true
     })
+  },
+
+  typeChange: function(e) {
+    if (e.detail.value == 'fetch') {
+      this.setData({
+        selectType: 1
+      })
+    }
+    else if (e.detail.value == 'write') {
+      this.setData({
+        selectType: 2
+      })
+    }
+    else if (e.detail.value == 'trade') {
+      this.setData({
+        selectType: 3
+      })
+    }
+  },
+
+  nextStep: function() {
+    
+    wx.navigateTo({
+      url: '../request/requestPage_1?selectType=' + this.data.selectType,
+    })
+    
   }
 })

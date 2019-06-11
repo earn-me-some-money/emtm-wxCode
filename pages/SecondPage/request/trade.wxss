@@ -1,0 +1,63 @@
+/* pages/ThridPage/UserEvent/Address/newAddress/newAddressPage.wxss */
+
+.text_type {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+
+  font-size: 32rpx;
+}
+
+.text_info {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+
+  font-size: 32rpx;
+}
+
+.text_loss {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+
+  font-size: 32rpx;
+}
+
+.input_type {
+  position: absolute;
+  top: 5%;
+  left: 35%;
+
+  font-size: 32rpx;
+}
+
+.input_info {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+
+  font-size: 32rpx;
+}
+
+.input_loss {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+
+  font-size: 32rpx;
+}
+
+.save{
+
+  position: absolute;
+  top:80%;
+  margin-top: 20rpx; 
+  height: 60rpx; 
+  line-height: 60rpx; 
+  background: #fff; 
+  color:#1e82d2;  
+  border-radius: 98rpx;
+  align-content: center;
+  letter-spacing: 5rpx;
+}

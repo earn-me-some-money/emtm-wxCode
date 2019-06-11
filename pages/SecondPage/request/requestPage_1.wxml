@@ -1,0 +1,45 @@
+
+<view class='baseInfo'>
+
+  <view class='partName'>
+    <view class='part_min_grade'>
+      <text class='min_grade'>最低年级要求: </text>
+      <input class='input_min_grade' placeholder='为空表示无年级下限'></input>
+    </view>
+
+    <view class='part_max_grade'>
+      <text class='max_grade'>最高年级要求: </text>
+      <input class='input_max_grade' placeholder='为空表示无年级上限'></input>
+    </view>
+
+    <view class='part_major'>
+      <text class='major'>专业要求: </text>
+      <input class='input_major' placeholder='为空表示无限制'></input>
+    </view>
+
+    <view class='part_experience'>
+      <text class='experience'>经验要求: </text>
+      <input class='input_experience' placeholder='历史完成任务数的最低要求'></input>
+    </view>
+
+    <view class='part_credit'>
+      <text class='credit'>信誉积分要求: </text>
+      <input class='input_credit' placeholder='信誉积分的最低要求'></input>
+    </view>
+
+    <view class='part_finish'>
+      <text class='unfinish'>信誉未完成扣除积分: </text>
+      <input class='input_unfinish' placeholder='扣除积分数'></input>
+    </view>
+
+    <view class='part_maxNum'>
+      <text class='maxNum'>最大参与人数: </text>
+      <input class='input_maxNum' placeholder='请输入最大参与人数'></input>
+    </view>
+
+  </view>
+
+  <button class='nextStep' bindtap='nextStep'>下一步</button>
+
+</view>
+

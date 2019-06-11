@@ -15,8 +15,21 @@
   </view>
 
   <view class='buttonList'>
-    <button class='money_in'>充值</button>
-    <button class='money_out'>提现</button>
+    <button class='money_in' bindtap='refill'>充值</button>
+    <button class='money_out' bindtap='drawback'>提现</button>
     <button class='record'>交易明细</button>
   </view>
+
+  <modal id="modal" hidden="{{hidden_drawback}}" title="提现" confirm-text="确认" cancel-text="取消" bindcancel="cancel_drawback" bindconfirm="confirm_drawback">
+    
+    <input type='金额' placeholder="金额：" auto-focus/>
+    
+  </modal>
+
+  <modal id="modal2" hidden="{{hidden_refill}}" title="充值" confirm-text="确认" cancel-text="取消" bindcancel="cancel_refill" bindconfirm="confirm_refill">
+    
+    <input type='金额' placeholder="金额：" auto-focus/>
+    
+  </modal>
+
 </view>

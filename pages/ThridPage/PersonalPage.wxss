@@ -46,6 +46,7 @@
   position: absolute;
   width: 100rpx;
   height: 100rpx;
+  border-radius: 50rpx;
   top: 50rpx;
   left: 5%;
 

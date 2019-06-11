@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/FirstPage/enter",
+    "pages/Login/loginPage",
     "pages/index/index",
     "pages/logs/logs",
+    "pages/FirstPage/enter",
     "pages/SecondPage/OrdersPage",
     "pages/ThridPage/PersonalPage",
     "pages/ThridPage/UserInfo/Notation/NotationPage",
@@ -16,7 +17,12 @@
     "pages/ThridPage/UserEvent/ViewHistory/HistoryPage",
     "pages/ThridPage/UserEvent/Address/newAddress/newAddressPage",
     "pages/SecondPage/newOrder/newOrderPage",
-    "pages/FirstPage/singleType/singleTypePage"
+    "pages/FirstPage/singleType/singleTypePage",
+    "pages/SecondPage/request/requestPage_1",
+    "pages/SecondPage/request/package",
+    "pages/SecondPage/request/trade",
+    "pages/SecondPage/request/survey",
+    "pages/details/package"
   ],
   "window": {
     "backgroundTextStyle": "light",

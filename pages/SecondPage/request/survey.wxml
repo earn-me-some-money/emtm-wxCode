@@ -1,0 +1,38 @@
+<!--pages/SecondPage/newOrder/newOrderPage.wxml-->
+
+<view class='container'>
+
+  <view class='baseInfo'>
+
+    <view class='partId'>
+      <text class='id'>问题序号: </text>
+      <input class='input_id' placeholder="{{' ' + id}}"></input>
+    </view>
+
+    <view class='partType'>
+      <view class='choice'>问题类型: </view>
+      <radio-group class="type-radio-group" bindchange="typeChange">
+        <radio class="radio1" value="type1" checked>填空题</radio>
+        <radio class="radio2" value="type2">单选题</radio>
+        <radio class="radio3" value="type3">多选题</radio>
+      </radio-group>
+    </view>
+    
+    <view class='partTaskName'>
+      <text class='taskname'>题目内容:</text>
+      <input class='input_task' placeholder='请输入题目内容(30个字以内)'></input>
+    </view>
+
+    <view class='partChoice'>
+      <text class='content'>提供选项:</text>
+      <input class='input_content' placeholder='使用分号隔开不同选项，填空题只需提供一个选项'></input>
+    </view>
+  
+
+  </view>
+
+  <button class='last_question' bindtap='last'>上一道题</button>
+  <button class='next_question' bindtap='next'>下一道题</button>
+  <button class='finish' bindtap='finish'>已完成</button>
+
+</view>

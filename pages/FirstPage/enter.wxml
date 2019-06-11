@@ -1,8 +1,8 @@
-<scroll-view class='container' scroll-y="true" style="height: 2000px">  
+<view class='container'>  
   <view class='header'>
     <icon class='searchIcon' src='../../images/默认头像.png' type='search'></icon>
     <input class='searchText' disabled placeholder='请输入关键字' ></input>
-    <button class='searchButton'>搜 索</button>
+    <button class='searchButton' open-type="getUserInfo" bindgetuserinfo="getUserInfo">搜 索</button>
   </view>
 
 
@@ -54,4 +54,4 @@
   
   </view>
 
-</scroll-view>
+</view>

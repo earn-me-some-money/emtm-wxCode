@@ -1,0 +1,74 @@
+/* pages/SecondPage/newOrder/newOrderPage.wxss */
+
+.baseInfo {
+  position: absolute;
+  display: block;
+
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+}
+
+.part_min_grade {
+  margin-top: 0rpx;
+}
+
+.input_min_grade {
+  margin-top: 10rpx;
+}
+
+.part_max_grade {
+  margin-top: 20rpx;
+}
+
+.input_max_grade {
+  margin-top: 10rpx;
+}
+
+.part_major {
+  margin-top: 20rpx;
+}
+
+.input_major {
+  margin-top: 10rpx;
+}
+
+.part_experience {
+  margin-top: 20rpx;
+}
+
+.input_experience {
+  margin-top: 10rpx;
+}
+
+.part_credit {
+  margin-top: 20rpx;
+}
+
+.input_credit {
+  margin-top: 10rpx;
+}
+.part_unfinish {
+  margin-top: 20rpx;
+}
+
+.input_unfinish {
+  margin-top: 10rpx;
+}
+
+.part_maxNum {
+  margin-top: 20rpx;
+}
+
+.input_maxNum {
+  margin-top: 10rpx;
+}
+
+.nextStep {
+  margin-top: 45rpx;
+  align-content: center;
+  color: #36C0DA;
+  font-size: 32rpx;
+  letter-spacing: 15rpx;
+}

@@ -1,0 +1,20 @@
+<!--pages/ThridPage/UserEvent/Address/newAddress/newAddressPage.wxml-->
+
+<view class='container'>
+
+  <text class="text_address">取快递地址:</text>
+  <input class="input_address" placeholder='请填写地址'></input>
+
+  <text class="text_tel">发布者电话号码:</text>
+  <input class="input_tel" placeholder='请填写电话号码'></input>
+
+  <text class="text_num">快递号:</text>
+  <input class="input_num" placeholder='请输入快递单号'></input>
+
+  <text class="text_other">其余信息:</text>
+  <input class="input_other" placeholder='此项可以为空'></input>
+
+  <button class='save' bindtap='save' >发布任务</button>
+
+</view>
+
