@@ -47,5 +47,23 @@ Page({
       wx.navigateTo({
         url: 'singleType/singleTypePage',
       })
+    },
+
+    getUserInfo: function () {
+      var that = this
+      wx.getSetting({
+        success(res) {
+          if (!res.authSetting['scope.userInfo']) {
+            wx.authorize({
+              scope: 'scope.userInfo',
+              success() {
+              }
+            })
+          }
+          else {
+            that.UserLogin();
+          }
+        }
+      })
     }
 })  

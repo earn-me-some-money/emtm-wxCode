@@ -1,0 +1,96 @@
+/* pages/SecondPage/newOrder/newOrderPage.wxss */
+
+.baseInfo {
+  position: absolute;
+  display: block;
+
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+}
+
+.part_min_grade {
+  margin-top: 0rpx;
+  display: flex;
+}
+
+.input_min_grade {
+  margin-left: 20rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+
+.part_max_grade {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.input_max_grade {
+  margin-left: 20rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+
+.part_major {
+  margin-top: 30rpx;
+}
+
+.input_major {
+  margin-top: 10rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+
+.part_experience {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.input_experience {
+  margin-left: 20rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+
+.part_credit {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.input_credit {
+  margin-left: 20rpx;
+  width: 30%;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+.part_unfinish {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.input_unfinish {
+  margin-left: 20rpx;
+  width: 30%;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+
+.part_maxNum {
+  margin-top: 30rpx;
+}
+
+.input_maxNum {
+  margin-top: 10rpx;
+  width: 30%;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+
+.nextStep {
+  margin-top: 100rpx;
+  align-content: center;
+  color: #36C0DA;
+  font-size: 32rpx;
+  letter-spacing: 15rpx;
+}

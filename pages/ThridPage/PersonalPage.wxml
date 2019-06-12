@@ -1,12 +1,15 @@
 <!--pages/PersonalPage/PersonalPage.wxml-->
 <view class='container'>
+
   <view class='userinfo'>
     <block>
       <image class="user-image" src='{{userInfo.avatarUrl}}' mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text class="userinfo-creditscore">{{userInfo.check_credit}}</text>
+      
       <!-- {{check_credit}} -->
     </block>
+
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <text class="userinfo-creditscore">{{userInfo.check_credit}}</text>
   </view>
 
   <view class='relationship'>
@@ -27,7 +30,7 @@
 
     <button class='bt4' bindtap="SettingClick">
       <image class='btnImg4' src='../../images/设置.png'></image>
-      <view>设置</view>
+      <view>认证</view>
     </button>
 
   </view>
@@ -67,10 +70,6 @@
       <image class='btnImg11' src='../../images/历史记录.png'></image>
       <view>服务记录</view>
     </button>
-  
-  </view>
-
-  <view class='buttonList'>
   
   </view>
 

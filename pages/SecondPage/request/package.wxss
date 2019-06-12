@@ -1,0 +1,64 @@
+.baseInfo {
+  position: absolute;
+  display: block;
+
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+}
+
+.part_address {
+  display: flex;
+}
+
+.part_tel {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.part_num {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.part_other {
+  margin-top: 30rpx;
+  display: flex;
+}
+
+
+.input_address {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+
+.input_tel {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+
+.input_num {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+
+.input_other {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+
+.save{
+
+  position: absolute;
+  bottom: 5%;
+  margin-top: 20rpx; 
+  height: 60rpx; 
+  line-height: 60rpx; 
+  background: #fff; 
+  color:#1e82d2;  
+  border-radius: 98rpx;
+  align-content: center;
+  letter-spacing: 5rpx;
+  font-size: 32rpx;
+}

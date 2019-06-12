@@ -1,0 +1,45 @@
+
+<view class='baseInfo'>
+
+  <view class='partName'>
+    <view class='part_min_grade'>
+      <text class='min_grade'>最低年级要求: </text>
+      <input class='input_min_grade' placeholder='例如，大一'></input>
+    </view>
+
+    <view class='part_max_grade'>
+      <text class='max_grade'>最高年级要求: </text>
+      <input class='input_max_grade' placeholder='例如，大四'></input>
+    </view>
+
+    <view class='part_major'>
+      <text class='major'>专业要求: </text>
+      <input class='input_major'></input>
+    </view>
+
+    <view class='part_experience'>
+      <text class='experience'>经验要求: </text>
+      <input class='input_experience' placeholder='最少完成任务数'></input>
+    </view>
+
+    <view class='part_credit'>
+      <text class='credit'>信誉积分下限: </text>
+      <input class='input_credit'></input>
+    </view>
+
+    <view class='part_unfinish'>
+      <text class='unfinish'>任务失败扣分: </text>
+      <input class='input_unfinish'></input>
+    </view>
+
+    <view class='part_maxNum'>
+      <text class='maxNum'>最大参与人数: </text>
+      <input class='input_maxNum'></input>
+    </view>
+
+  </view>
+
+  <button class='nextStep' bindtap='nextStep'>下一步</button>
+
+</view>
+

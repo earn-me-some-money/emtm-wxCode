@@ -4,7 +4,10 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+      hidden_drawback: true,
+      hidden_refill: true
+    },
 
     /**
      * 生命周期函数--监听页面加载
@@ -62,5 +65,49 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    drawback:function() {
+      this.setData({
+        hidden_drawback: false
+      })
+    },
+
+    refill:function() {
+      this.setData({
+        hidden_refill: false
+      })
+    },
+
+    confirm_drawback: function() {
+      this.setData({
+        hidden_drawback: true
+      })
+
+      wx.showToast({
+        title: '提现成功！',
+      })
+    },
+
+    cancel_drawback: function() {
+      this.setData({
+        hidden_drawback: true
+      })
+    },
+
+    confirm_refill: function () {
+      this.setData({
+        hidden_refill: true
+      })
+
+      wx.showToast({
+        title: '充值成功！',
+      })
+    },
+
+    cancel_refill: function () {
+      this.setData({
+        hidden_refill: true
+      })
     }
 })

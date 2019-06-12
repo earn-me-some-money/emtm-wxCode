@@ -6,7 +6,7 @@
 
     <view class='partName'>
       <text class='username'>发起人名称: </text>
-      <input class='input_name' placeholder='  请输入发起人名称...'></input>
+      <input class='input_name' placeholder='请输入发起人名称...'></input>
     </view>
 
     <view class='partType'>
@@ -42,7 +42,7 @@
     </view>
 
 
-    <button class='nextStep'>下一步</button>
+    <button class='nextStep' bindtap='nextStep'>下一步</button>
     
     <view wx:if="{{isShowDates}}" class="showDates">
       <modal show="true" height='60%;width:100%' bindcancel="cancel_select_data" bindconfirm='confirm_select_data'>
