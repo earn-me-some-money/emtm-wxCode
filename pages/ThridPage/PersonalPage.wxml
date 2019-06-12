@@ -1,8 +1,7 @@
 <!--pages/PersonalPage/PersonalPage.wxml-->
 <view class='container'>
   <view class='userinfo'>
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
+    <block>
       <image class="user-image" src='{{userInfo.avatarUrl}}' mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <text class="userinfo-creditscore">{{userInfo.check_credit}}</text>

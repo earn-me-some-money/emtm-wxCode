@@ -9,22 +9,29 @@ App({
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        // 获取用户openid
-        var _this = this
-        wx.request({
-          url: this.globalData.serpath + 'get_wechatid',
-          data: {
-            "code": res.code
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success: function (res) {
-            // console.log(res.data.openid)
-            _this.globalData.openid = res.data.openid
-          }
-        })
+        if (res.code) {
+          console.log(res.code)
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          // 获取用户openid
+          var _this = this
+          wx.request({
+            url: this.globalData.serpath + 'get_wechatid',
+            data: {
+              "appid": "wx9d86195b9f2c0137",
+              "secret": "6260719c0a702f13c1698ca47beb60bc",
+              "code": res.code
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+              // console.log(res.data.openid)
+              _this.globalData.openid = res.data.openid
+            }
+          })
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
       }
     })
     // 获取用户信息

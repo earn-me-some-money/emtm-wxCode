@@ -10,7 +10,7 @@ Page({
             nickName: "用户名称",
             avatarUrl: "../../images/默认头像.png",
         },
-        hasUserInfo: true,
+        hasUserInfo: false,
         canIUse: true
     },
 
@@ -66,14 +66,6 @@ Page({
             })
           }
         }
-    },
-    getUserInfo: function (e) {
-        console.log(e)
-        app.globalData.userInfo = e.detail.userInfo
-        this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
-        })
     },
 
     /**
