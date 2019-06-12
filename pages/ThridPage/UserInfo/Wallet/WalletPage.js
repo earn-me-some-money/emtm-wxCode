@@ -99,6 +99,7 @@ Page({
             if (res.data.code) {
               _this.setData({
                 hidden_drawback: true,
+                drawbacknum: null
               })
               wx.showToast({
                 title: '提现成功！'
@@ -124,7 +125,8 @@ Page({
 
     cancel_drawback: function() {
       this.setData({
-        hidden_drawback: true
+        hidden_drawback: true,
+        drawbacknum: null
       })
     },
 
@@ -149,6 +151,7 @@ Page({
             if (res.data.code) {
               _this.setData({
                 hidden_refill: true,
+                refillnum: null
               })
               wx.showToast({
                 title: '充值成功！'
@@ -174,7 +177,8 @@ Page({
 
     cancel_refill: function () {
       this.setData({
-        hidden_refill: true
+        hidden_refill: true,
+        refillnum: null
       })
     },
 
