@@ -20,7 +20,7 @@ Page({
 
   // 登录
   login: function () {
-    if (this.data.phone.length == 0 || this.data.password.length == 0) {
+    if (false) {
       wx.showToast({
         title: '用户名和密码不能为空',
         icon: 'loading',

@@ -12,61 +12,83 @@
 
 .part_min_grade {
   margin-top: 0rpx;
+  display: flex;
 }
 
 .input_min_grade {
-  margin-top: 10rpx;
+  margin-left: 20rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
 }
 
 .part_max_grade {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
+  display: flex;
 }
 
 .input_max_grade {
-  margin-top: 10rpx;
+  margin-left: 20rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
 }
 
 .part_major {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
 }
 
 .input_major {
   margin-top: 10rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
 }
 
 .part_experience {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
+  display: flex;
 }
 
 .input_experience {
-  margin-top: 10rpx;
+  margin-left: 20rpx;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
 }
 
 .part_credit {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
+  display: flex;
 }
 
 .input_credit {
-  margin-top: 10rpx;
+  margin-left: 20rpx;
+  width: 30%;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
 }
 .part_unfinish {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
+  display: flex;
 }
 
 .input_unfinish {
-  margin-top: 10rpx;
+  margin-left: 20rpx;
+  width: 30%;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
 }
 
 .part_maxNum {
-  margin-top: 20rpx;
+  margin-top: 30rpx;
 }
 
 .input_maxNum {
   margin-top: 10rpx;
+  width: 30%;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
 }
 
 .nextStep {
-  margin-top: 45rpx;
+  margin-top: 100rpx;
   align-content: center;
   color: #36C0DA;
   font-size: 32rpx;

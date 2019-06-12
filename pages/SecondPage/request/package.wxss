@@ -1,67 +1,50 @@
-
-.text_address {
+.baseInfo {
   position: absolute;
+  display: block;
+
   top: 5%;
   left: 5%;
-  height: 40rpx;
-
-  font-size: 32rpx;
+  right: 5%;
+  width: 90%;
 }
 
-.text_tel {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-
-  font-size: 32rpx;
+.part_address {
+  display: flex;
 }
 
-.text_num {
-  position: absolute;
-  top: 30%;
-  left: 5%;
-
-  font-size: 32rpx;
+.part_tel {
+  margin-top: 30rpx;
+  display: flex;
 }
 
-.text_other {
-  position: absolute;
-  top: 40%;
-  left: 5%;
-
-  font-size: 32rpx;
+.part_num {
+  margin-top: 30rpx;
+  display: flex;
 }
+
+.part_other {
+  margin-top: 30rpx;
+  display: flex;
+}
+
 
 .input_address {
-  position: absolute;
-  top: 5%;
-  left: 35%;
-  height: 40rpx;
-
+  margin-left: 20rpx;
   font-size: 32rpx;
 }
 
 .input_tel {
-  position: absolute;
-  top: 20%;
-  left: 45%;
-
+  margin-left: 20rpx;
   font-size: 32rpx;
 }
 
 .input_num {
-  position: absolute;
-  top: 30%;
-  left: 35%;
-
+  margin-left: 20rpx;
   font-size: 32rpx;
 }
 
 .input_other {
-  position: absolute;
-  top: 40%;
-  left: 35%;
-
+  margin-left: 20rpx;
   font-size: 32rpx;
 }
 
@@ -77,4 +60,5 @@
   border-radius: 98rpx;
   align-content: center;
   letter-spacing: 5rpx;
+  font-size: 32rpx;
 }

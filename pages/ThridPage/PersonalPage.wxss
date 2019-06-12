@@ -1,5 +1,9 @@
 /* pages/PersonalPage/PersonalPage.wxss */
 
+.container {
+  width: 100%;
+}
+
 .userinfo {
   display: block;
 
@@ -13,7 +17,6 @@
   border-radius: 20rpx;
   /*background-color: #B2C8BE;*/
   background-color: #AEDD81;
-
 }
 
 .relationship {
