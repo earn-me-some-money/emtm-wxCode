@@ -4,10 +4,7 @@
   <view class='userinfo'>
     <block>
       <image class="user-image" src='{{userInfo.avatarUrl}}' mode="cover"></image>
-      
-      <!-- {{check_credit}} -->
     </block>
-
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     <text class="userinfo-creditscore">{{userInfo.check_credit}}</text>
   </view>

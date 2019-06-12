@@ -47,7 +47,7 @@ Page({
             })
         }
         if (app.globalData.auth) {
-          if (this.data.userInfo.mode) {
+          if (app.globalData.mode) {
             var _this = this
             wx.request({
               url: app.globalData.serpath + 'check_credit',

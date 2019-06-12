@@ -4,9 +4,8 @@
     <image class="login-img"></image>
   </view-->
 
-  <view class="login-from">
- 
-    <!--账号-->
+  <!--view class="login-from">
+
     <view class="inputView">
       <image class="nameImage" src="../../images/姓名.png"></image>
       <label class="loginLab">账号</label>
@@ -14,7 +13,6 @@
     </view>
     <view class="line"></view>
  
-    <!--密码-->
     <view class="inputView">
       <image class="keyImage" src="../../images/密码.png"></image>
       <label class="loginLab">密码</label>
@@ -30,8 +28,8 @@
     <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button>
 
   
-  </view>
-
+  </view-->
+  
 
 
 </view>

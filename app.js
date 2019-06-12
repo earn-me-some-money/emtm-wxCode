@@ -6,6 +6,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    
+  },
+  getinfo: function() {
     // 登录
     wx.login({
       success: res => {
@@ -17,9 +20,9 @@ App({
           wx.request({
             url: this.globalData.serpath + 'get_wechatid',
             data: {
-              "appid": "wx9d86195b9f2c0137",
-              "secret": "6260719c0a702f13c1698ca47beb60bc",
-              "code": res.code
+              appid: this.globalData.appid,
+              secret: this.globalData.secretid,
+              code: res.code
             },
             header: {
               'content-type': 'application/json' // 默认值
@@ -30,7 +33,7 @@ App({
             }
           })
         } else {
-          console.log('登录失败！' + res.errMsg)
+          console.log('获取openid失败！' + res.errMsg)
         }
       }
     })
@@ -45,7 +48,7 @@ App({
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
               // 判断用户身份
-              this.globalData.userInfo["mode"] = true
+              this.globalData.mode = true
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -60,10 +63,14 @@ App({
       }
     })
   },
+  
   globalData: {
     serpath: "https://easy-mock.com/mock/5cea62cd9688d23824616193/example/",
-    auth: false,
+    appid: "wx9d86195b9f2c0137",
+    secretid: "6260719c0a702f13c1698ca47beb60bc",
     openid: null,
+    auth: null,
+    mode: null,
     userInfo: null
   }
 })

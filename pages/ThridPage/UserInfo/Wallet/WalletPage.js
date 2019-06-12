@@ -1,4 +1,5 @@
 // pages/ThridPage/UserInfo/Wallet/WalletPage.js
+var app = getApp();
 Page({
 
     /**
@@ -6,7 +7,9 @@ Page({
      */
     data: {
       hidden_drawback: true,
-      hidden_refill: true
+      hidden_refill: true,
+      drawbacknum: null,
+      refillnum: null
     },
 
     /**
@@ -80,13 +83,43 @@ Page({
     },
 
     confirm_drawback: function() {
-      this.setData({
-        hidden_drawback: true
-      })
-
-      wx.showToast({
-        title: '提现成功！',
-      })
+      if (this.data.drawbacknum){
+        wx.showLoading({ title: "提现中…" })
+        var _this = this
+        wx.request({
+          url: app.globalData.serpath + 'withdraw',
+          data: {
+            "userid": app.globalData.openid,
+            "withdraw_amount": Number(this.data.drawbacknum)
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success: function (res) {
+            if (res.data.code) {
+              _this.setData({
+                hidden_drawback: true,
+              })
+              wx.showToast({
+                title: '提现成功！'
+              })
+            }
+            else {
+              wx.showToast({
+                title: res.data.err_message,
+                icon: "none"
+              })
+            }
+          }
+        })
+        
+      }
+      else {
+        wx.showToast({
+          title: '请输入数字！',
+          icon: "none"
+        })
+      }
     },
 
     cancel_drawback: function() {
@@ -95,19 +128,57 @@ Page({
       })
     },
 
-    confirm_refill: function () {
-      this.setData({
-        hidden_refill: true
-      })
+    drawbackInput: function (e) {
+      this.data.drawbacknum = e.detail.value
+    },
 
-      wx.showToast({
-        title: '充值成功！',
-      })
+    confirm_refill: function () {
+      if (this.data.refillnum) {
+        wx.showLoading({ title: "充值中…" })
+        var _this = this
+        wx.request({
+          url: app.globalData.serpath + 'recharge',
+          data: {
+            "userid": app.globalData.openid,
+            "recharge_amount": Number(this.data.refillnum)
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success: function (res) {
+            if (res.data.code) {
+              _this.setData({
+                hidden_refill: true,
+              })
+              wx.showToast({
+                title: '充值成功！'
+              })
+            }
+            else {
+              wx.showToast({
+                title: res.data.err_message,
+                icon: "none"
+              })
+            }
+          }
+        })
+
+      }
+      else {
+        wx.showToast({
+          title: '请输入数字！',
+          icon: "none"
+        })
+      }
     },
 
     cancel_refill: function () {
       this.setData({
         hidden_refill: true
       })
-    }
+    },
+
+    refillInput: function (e) {
+      this.data.refillnum = e.detail.value
+    },
 })

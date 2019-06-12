@@ -22,13 +22,13 @@
 
   <modal id="modal" hidden="{{hidden_drawback}}" title="提现" confirm-text="确认" cancel-text="取消" bindcancel="cancel_drawback" bindconfirm="confirm_drawback">
     
-    <input type='金额' placeholder="金额：" auto-focus/>
+    <input type='number' placeholder="金额：" bindinput="drawbackInput" auto-focus/>
     
   </modal>
 
   <modal id="modal2" hidden="{{hidden_refill}}" title="充值" confirm-text="确认" cancel-text="取消" bindcancel="cancel_refill" bindconfirm="confirm_refill">
     
-    <input type='金额' placeholder="金额：" auto-focus/>
+    <input type='number' placeholder="金额：" bindinput="refillInput" auto-focus/>
     
   </modal>
 
