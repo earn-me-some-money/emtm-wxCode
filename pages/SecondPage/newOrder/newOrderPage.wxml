@@ -6,7 +6,7 @@
 
     <view class='partName'>
       <text class='username'>发起人名称: </text>
-      <input class='input_name' placeholder='请输入发起人名称...'></input>
+      <input class='input_name' placeholder='请输入发起人名称...' bindinput='usernameInput'></input>
     </view>
 
     <view class='partType'>
@@ -21,12 +21,12 @@
     
     <view class='partTaskName'>
       <text class='taskname'>委派简介:</text>
-      <input class='input_task' placeholder='请输入任务简介(30个字以内)'></input>
+      <input class='input_task' placeholder='请输入任务简介(30个字以内)' bindinput='tasknameInput'></input>
     </view>
 
     <view class='partPay'>
       <text class='payment'>酬金:</text>
-      <input class='input_pay' placeholder='请输入具体金额'></input>
+      <input class='input_pay' type='number' placeholder='请输入具体金额' bindinput='paymentInput'></input>
     </view>
     
     <view class='partTime'>

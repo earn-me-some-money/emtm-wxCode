@@ -53,6 +53,9 @@ Page({
   data: {
 
     selectType: 1,
+    username: null,
+    taskname: null,
+    payment: null,
 
     flag: false,
     year: date.getFullYear(),
@@ -207,8 +210,52 @@ Page({
     }
   },
 
+  usernameInput:function(e) {
+    this.setData({
+      username: e.detail.value
+    })
+  },
+
+  paymentInput: function (e) {
+    this.setData({
+      payment: e.detail.value
+    })
+  },
+
+  tasknameInput: function (e) {
+    this.setData({
+      taskname: e.detail.value
+    })
+  },
+
   nextStep: function() {
-    
+    if (!this.data.username) {
+      wx.showToast({
+        title: '请输入发起人名称！',
+        icon: "none"
+      })
+      return
+    }
+    if (!this.data.taskname) {
+      wx.showToast({
+        title: '请输入委派简介！',
+        icon: "none"
+      })
+      return
+    }
+    if (!this.data.payment) {
+      wx.showToast({
+        title: '请输入酬金！',
+        icon: "none"
+      })
+      return
+    }
+    var para = {
+      username: this.data.username,
+      selectType: this.data.selectType,
+      taskname: this.data.taskname,
+      payment: this.data.payment
+    }
     wx.navigateTo({
       url: '../request/requestPage_1?selectType=' + this.data.selectType,
     })
