@@ -1,4 +1,6 @@
 // pages/OrdersPage/OrdersPage.js
+var app = getApp();
+
 Page({
 
     /**
@@ -11,13 +13,9 @@ Page({
       select: true,
 
       rev_task: [
-        { title: "到邮局领取顺丰快递", type: "取件寄件类", cost: "26.80元", state: "已接受", provider: "中山大学", requires: "尽快送到邮局请务必做到谢谢", endTime: "2019/7/1" },
-        { title: "填写心理学测试问卷", type: "问卷调查类", cost: "20.0元", state: "执行中", provider: "中山大学心理学系", requires: "请确保信息的真实可靠性", endTime: "2019/6/15" },
-        { title: "出售9成新羽毛球拍", type: "闲置交易类", cost: "80.0元", state: "待确认", provider: "此岸云巅", requires: "不支持快递，请找时间面交", endTime: "2019/6/19" }
       ],
 
       launch_task: [
-        { title: "到邮局领取顺丰快递", type: "取件寄件类", cost: "26.80元", state: "已接受", provider: "中山大学", requires: "尽快送到邮局请务必做到谢谢", endTime: "2019/7/1" }
       ]
 
     },
@@ -29,6 +27,91 @@ Page({
      this.setData({
        select: false
      })
+      this.load_rec()
+      this.load_lau()
+    },
+
+    // 加载我的接受
+    load_rec: function() {
+      var _this = this
+      wx.request({
+        url: app.globalData.serpath + 'check_task_self_receive',
+        data: {
+          "userid": app.globalData.openid
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          if (res.data.code) {
+            _this.fullfill(res)
+            _this.setData({
+              rev_task: res.data.tasks
+            })
+          }
+          else {
+            wx.showToast({
+              title: res.data.err_message,
+              icon: "none"
+            })
+          }
+        }
+      })
+    },
+
+    // 加载我的发布
+    load_lau: function() {
+      var _this = this
+      wx.request({
+        url: app.globalData.serpath + 'check_task_self_release',
+        data: {
+          "userid": app.globalData.openid
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          if (res.data.code) {
+            _this.fullfill(res)
+            _this.setData({
+              launch_task: res.data.tasks
+            })
+          }
+          else {
+            wx.showToast({
+              title: res.data.err_message,
+              icon: "none"
+            })
+          }
+        }
+      })
+    },
+
+    fullfill: function(res) {
+      for (var i = 0; i < res.data.tasks.length; i++) {
+        var x = res.data.tasks[i]
+        switch (x.task_mode) {
+          case 0:
+            x["type"] = "问卷调查类"
+            break;
+          case 1:
+            x["type"] = "闲置交易类"
+            break;
+          case 2:
+            x["type"] = "取件寄件类"
+            break;
+          default:
+            break
+        }
+        if (x.task_state) {
+          x["state"] = "进行中"
+        }
+        else {
+          x["state"] = "已截止"
+        }
+        x.task_time_limit = x.task_time_limit.slice(0, 10) + " " +
+          x.task_time_limit.slice(11, 13) + ":" + x.task_time_limit.slice(14, 16)
+      }
     },
 
     /**
