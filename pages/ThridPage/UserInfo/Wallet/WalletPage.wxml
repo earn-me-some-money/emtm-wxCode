@@ -6,7 +6,7 @@
   
   <view class='money'>
     <text class='rmbIcon'>￥</text>
-    <text class='moneyValue'>500.0元</text>
+    <text class='moneyValue'>{{balance}}元</text>
   </view>
 
   <view class='month_bill'>

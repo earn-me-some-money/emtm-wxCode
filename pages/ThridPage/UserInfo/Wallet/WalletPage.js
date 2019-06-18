@@ -6,6 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+      balance: 0,
       hidden_drawback: true,
       hidden_refill: true,
       drawbacknum: null,
@@ -18,6 +19,29 @@ Page({
     onLoad: function (options) {
       wx.setNavigationBarTitle({
         title: '我 的 钱 包',
+      })
+      var _this = this
+      wx.request({
+        url: app.globalData.serpath + 'get_balance',
+        data: {
+          "userid": app.globalData.openid
+        },
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success: function (res) {
+          if (res.data.code) {
+            _this.setData({
+              balance: res.data.balance
+            })
+          }
+          else {
+            wx.showToast({
+              title: res.data.err_message,
+              icon: "none"
+            })
+          }
+        }
       })
     },
 

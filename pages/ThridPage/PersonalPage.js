@@ -11,6 +11,7 @@ Page({
             avatarUrl: "../../images/默认头像.png",
         },
         hasUserInfo: false,
+        mode: "登录失败",
         canIUse: true
     },
 
@@ -46,26 +47,37 @@ Page({
                 }
             })
         }
-        if (app.globalData.auth) {
-          if (app.globalData.mode) {
-            var _this = this
-            wx.request({
-              url: app.globalData.serpath + 'check_credit',
-              data: {
-                "userid": app.globalData.openid
-              },
-              header: {
-                'content-type': 'application/json' // 默认值
-              },
-              success: function (res) {
-                if (res.data.code) {
-                  _this.setData({
-                    'userInfo.check_credit': "信誉积分：" + res.data.credit_score
-                  })
-                }
+        if (app.globalData.mode == 0) {
+          this.setData({
+            mode: "奶牛"
+          })
+        }
+        else if (app.globalData.mode == 1) {
+          this.setData({
+            mode: "学生"
+          })
+          var _this = this
+          wx.request({
+            url: app.globalData.serpath + 'check_credit',
+            data: {
+              "userid": app.globalData.openid
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+              if (res.data.code) {
+                _this.setData({
+                  'userInfo.check_credit': "信誉积分：" + res.data.credit_score
+                })
               }
-            })
-          }
+            }
+          })
+        }
+        else {
+          this.setData({
+            mode: "未认证"
+          })
         }
     },
 

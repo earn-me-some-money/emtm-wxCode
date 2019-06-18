@@ -9,20 +9,20 @@ App({
     
   },
   getinfo: function() {
+    var _this = this
     // 登录
     wx.login({
       success: res => {
         if (res.code) {
-          console.log(res.code)
+          // console.log(res.code)
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           // 获取用户openid
-          var _this = this
           wx.request({
             url: this.globalData.serpath + 'get_wechatid',
             data: {
-              appid: this.globalData.appid,
-              secret: this.globalData.secretid,
-              code: res.code
+              "appid": this.globalData.appid,
+              "secret": this.globalData.secretid,
+              "code": res.code
             },
             header: {
               'content-type': 'application/json' // 默认值
@@ -48,7 +48,6 @@ App({
               // 可以将 res 发送给后台解码出 unionId
               this.globalData.userInfo = res.userInfo
               // 判断用户身份
-              this.globalData.mode = true
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (this.userInfoReadyCallback) {
@@ -62,6 +61,28 @@ App({
         }
       }
     })
+    // 登录应用
+    wx.request({
+      url: this.globalData.serpath + 'login',
+      data: {
+        "userid": this.globalData.openid,
+        "wechat_ok": this.globalData.auth
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data.code) {
+          _this.globalData.mode = res.data.user_type
+        }
+        else {
+          wx.showToast({
+            title: res.data.err_message,
+            icon: "none"
+          })
+        }
+      }
+    })
   },
   
   globalData: {
@@ -69,8 +90,8 @@ App({
     appid: "wx9d86195b9f2c0137",
     secretid: "6260719c0a702f13c1698ca47beb60bc",
     openid: null,
-    auth: null,
-    mode: null,
+    auth: false,
+    mode: 2,
     userInfo: null
   }
 })

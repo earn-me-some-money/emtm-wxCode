@@ -6,7 +6,7 @@ Page({
   },
 
   onLoad: function () {
-    wx.showLoading({ title: "加载中…" })
+    wx.showLoading({ title: "身份校验中…" })
     app.getinfo()
     wx.hideLoading()
     wx.switchTab({
