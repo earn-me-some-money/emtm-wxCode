@@ -27,19 +27,19 @@ Page({
 
     btClick1: function() {
       wx.navigateTo({
-        url: 'singleType/singleTypePage',
+        url: 'singleType/singleTypePage?type=0',
       })
     },
 
     btClick2: function () {
       wx.navigateTo({
-        url: 'singleType/singleTypePage',
+        url: 'singleType/singleTypePage?type=1',
       })
     },
 
     btClick3: function () {
       wx.navigateTo({
-        url: 'singleType/singleTypePage',
+        url: 'singleType/singleTypePage?type=2',
       })
     },
 

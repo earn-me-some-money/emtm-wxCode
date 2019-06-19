@@ -1,4 +1,6 @@
 // pages/FirstPage/singleType/singleTypePage.js
+var app = getApp();
+
 Page({
 
   /**
@@ -6,9 +8,6 @@ Page({
    */
   data: {
     itemList: [
-      { title: "到邮局领取顺丰快递", type: "问卷调查类", cost: "26.80元", provider: "中山大学", requires: "尽快送到邮局请务必做到谢谢", providerTime: "2019/7/1" },
-      { title: "填写心理学测试问卷", type: "问卷调查类", cost: "20.0元", provider: "中山大学心理学系", requires: "请确保信息的真实可靠性", providerTime: "2019/6/15" },
-      { title: "出售9成新羽毛球拍", type: "问卷调查类", cost: "80.0元", provider: "此岸云巅", requires: "不支持快递，请找时间面交", providerTime: "2019/6/19" }
     ]
   },
 
@@ -16,8 +15,54 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function (query) {
+    console.log(query.type)
+    var _this = this
+    wx.request({
+      url: app.globalData.serpath + 'get_tasks',
+      data: {
+        "task_type": Number(query.type)
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data.code) {
+          for (var i = 0; i < res.data.tasks.length; i++) {
+            var x = res.data.tasks[i]
+            switch (x.task_mode) {
+              case 0:
+                x["type"] = "问卷调查类"
+                break;
+              case 1:
+                x["type"] = "闲置交易类"
+                break;
+              case 2:
+                x["type"] = "取件寄件类"
+                break;
+              default:
+                break
+            }
+            if (x.task_state) {
+              x["state"] = "进行中"
+            }
+            else {
+              x["state"] = "已截至"
+            }
+            x.ddl = x.task_time_limit.slice(5, 10)
+          }
+          _this.setData({
+            itemList: res.data.tasks
+          })
+        }
+        else {
+          wx.showToast({
+            title: res.data.err_message,
+            icon: "none"
+          })
+        }
+      }
+    })
   },
 
   /**

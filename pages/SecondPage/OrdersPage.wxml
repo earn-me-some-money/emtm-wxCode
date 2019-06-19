@@ -32,7 +32,7 @@
         </view>
 
         <view class='choice'>
-          <text class='ddlTime'>{{"截止日期: " + single_order.task_time_limit}}</text>
+          <text class='ddlTime'>{{"截止时间: " + single_order.providerTime}}</text>
           <text class='fromId'>{{"来自: " + single_order.poster_name}}</text>
         </view>
 
@@ -62,7 +62,7 @@
         </view>
 
         <view class='choice'>
-          <text class='ddlTime'>{{"截止日期: " + single_order.task_time_limit}}</text>
+          <text class='ddlTime'>{{"截止日期: " + single_order.providerTime}}</text>
           <text class='fromId'>{{"来自: " + single_order.poster_name}}</text>
         </view>
 

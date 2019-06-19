@@ -103,13 +103,13 @@ Page({
           default:
             break
         }
-        if (x.task_state) {
-          x["state"] = "进行中"
+        if (x.user_finish_state) {
+          x["state"] = "已完成"
         }
         else {
-          x["state"] = "已截止"
+          x["state"] = "未完成"
         }
-        x.task_time_limit = x.task_time_limit.slice(0, 10) + " " +
+        x.providerTime = x.task_time_limit.slice(0, 10) + " " +
           x.task_time_limit.slice(11, 13) + ":" + x.task_time_limit.slice(14, 16)
       }
     },

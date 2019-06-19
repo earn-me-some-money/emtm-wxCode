@@ -10,11 +10,11 @@
       <view class="infoItem">
 
         <image class='groupIcon' src="../../../images/{{single_order.type}}.png"></image>
-        <view class='title'>{{single_order.title}}</view>
+        <view class='title'>{{single_order.task_name}}</view>
         <view class='type'>{{ "[" + single_order.type + "]" }}</view>
-        <view class='provider'>{{"发布者: " + single_order.provider}}</view>
-        <view class='cost'>{{single_order.cost}}</view>
-        <view class='lasttime'>{{single_order.providerTime}}</view>
+        <view class='provider'>{{"发布者: " + single_order.poster_name}}</view>
+        <view class='cost'>{{single_order.task_pay}}元</view>
+        <view class='lasttime'>{{"截止: " + single_order.ddl}}</view>
 
         <view class='divLine2'></view>
   

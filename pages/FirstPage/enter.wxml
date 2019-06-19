@@ -22,13 +22,13 @@
     </button>
 
     <button class='bt2' bindtap='btClick2'>
-      <image class='btnImg2' src='../../images/取件寄件类.png'></image>
-      <view>取快递</view>
+      <image class='btnImg2' src='../../images/闲置交易类.png'></image>
+      <view>闲置交易</view>
     </button>
 
     <button class='bt3' bindtap='btClick3'>
-      <image class='btnImg3' src='../../images/闲置交易类.png'></image>
-      <view>闲置交易</view>
+      <image class='btnImg3' src='../../images/取件寄件类.png'></image>
+      <view>帮忙取件</view>
     </button>
 
     <button class='bt4' bindtap='btClick4'>
