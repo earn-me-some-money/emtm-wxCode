@@ -2,7 +2,7 @@
 <view class='container'>
 
   <view class='header'>
-    <text class='tx1'>问 卷 调 查 类</text>
+    <text class='tx1'>{{type}}</text>
   </view>
 
   <view class="rcvInfo" hidden="{{false}}">

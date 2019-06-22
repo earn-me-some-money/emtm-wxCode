@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    type: null,
     itemList: [
     ]
   },
@@ -16,7 +17,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (query) {
-    console.log(query.type)
+    switch (Number(query.type)) {
+      case 0:
+        this.setData({
+          type: "问 卷 调 查"
+        })
+        break;
+      case 1:
+        this.setData({
+          type: "闲 置 交 易"
+        })
+        break;
+      case 2:
+        this.setData({
+          type: "帮 忙 取 件"
+        })
+        break;
+    }
     var _this = this
     wx.request({
       url: app.globalData.serpath + 'get_tasks',

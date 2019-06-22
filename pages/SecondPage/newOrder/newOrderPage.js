@@ -52,7 +52,7 @@ Page({
    */
   data: {
 
-    selectType: 1,
+    selectType: 0,
     username: null,
     taskname: null,
     payment: null,
@@ -193,19 +193,19 @@ Page({
   },
 
   typeChange: function(e) {
-    if (e.detail.value == 'fetch') {
+    if (e.detail.value == 'write') {
       this.setData({
-        selectType: 1
-      })
-    }
-    else if (e.detail.value == 'write') {
-      this.setData({
-        selectType: 2
+        selectType: 0
       })
     }
     else if (e.detail.value == 'trade') {
       this.setData({
-        selectType: 3
+        selectType: 1
+      })
+    }
+    else if (e.detail.value == 'fetch') {
+      this.setData({
+        selectType: 2
       })
     }
   },
@@ -229,6 +229,8 @@ Page({
   },
 
   nextStep: function() {
+    // code阶段注释以下代码
+    /*
     if (!this.data.username) {
       wx.showToast({
         title: '请输入发起人名称！',
@@ -250,6 +252,7 @@ Page({
       })
       return
     }
+     */
     var para = {
       username: this.data.username,
       selectType: this.data.selectType,
@@ -257,7 +260,7 @@ Page({
       payment: this.data.payment
     }
     wx.navigateTo({
-      url: '../request/requestPage_1?selectType=' + this.data.selectType,
+      url: '../request/requestPage_1?para=' + JSON.stringify(para),
     })
     
   }

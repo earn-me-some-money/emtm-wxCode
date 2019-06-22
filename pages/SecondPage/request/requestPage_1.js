@@ -5,20 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    selectType: 1
+    para: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (query) {
     wx.setNavigationBarTitle({
       title: '接 收 人 要 求',
     })
-    
-    console.log(options.selectType)
     this.setData({
-      selectType: options.selectType
+      para: JSON.parse(query.para)
     })
 
   },
@@ -73,20 +71,20 @@ Page({
   },
 
   nextStep: function () {
-    console.log(this.data.selectType);
+    console.log(this.data.para.selectType);
 
-    switch (this.data.selectType) {
-      case '1':
-        wx.navigateTo({
-          url: 'package',
-        })
-      case '2':
+    switch (Number(this.data.para.selectType)) {
+      case 0:
         wx.navigateTo({
           url: 'survey',
         })
-      case '3':
+      case 1:
         wx.navigateTo({
           url: 'trade',
+        })
+      case 2:
+        wx.navigateTo({
+          url: 'package',
         })
     }
   }
