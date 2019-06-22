@@ -1,0 +1,17 @@
+<!--pages/SecondPage/newOrder/newOrderPage.wxml-->
+
+<view class='container'>
+
+    <view class='postId'>{{"发布者账号: " + mid}}</view>
+    <view class='postName'>{{"发布者名称: " + posterId}}</view>
+    <view class='status'>{{"任务状态: " + postName}}</view>
+
+    <view class='taskName'>{{"任务名称: " + taskStatus}}"</view>
+    <view class='taskInfo'>{{": " + mid}}</view>
+    <view class='taskMode'>{{"任务序号: " + mid}}</view> 
+    <view class='taskPay'>{{"任务序号: " + mid}}</view>
+    <view class='endTime'>{{"任务序号: " + mid}}</view>
+
+    <button class='next'>查看详细信息</button>
+
+</view>

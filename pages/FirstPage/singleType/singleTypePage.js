@@ -112,5 +112,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  toSingleTask: function () {
+    wx.navigateTo({
+      url: '../../details/singleTaskPage',
+    })
   }
 })

@@ -22,7 +22,8 @@
     "pages/SecondPage/request/package",
     "pages/SecondPage/request/trade",
     "pages/SecondPage/request/survey",
-    "pages/details/package"
+    "pages/details/package",
+    "pages/details/singleTaskPage"
   ],
   "window": {
     "backgroundTextStyle": "light",

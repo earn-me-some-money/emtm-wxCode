@@ -1,0 +1,58 @@
+
+
+
+.postId {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  margin-top: 20rpx;
+}
+
+.postName {
+  position: absolute;
+  margin-top: 20rpx;
+  top: 15%;
+  left: 5%;
+}
+
+.status {
+  position: absolute;
+  margin-top: 20rpx;
+  top: 25%;
+  left: 5%;
+}
+
+.taskName {
+  position: absolute;
+  margin-top: 20rpx;
+  top: 35%;
+  left: 5%;
+}
+
+.taskInfo {
+  position: absolute;
+  margin-top: 20rpx;
+  top: 45%;
+  left: 5%;
+}
+
+.taskMode {
+  position: absolute;
+  margin-top: 20rpx;
+  top: 55%;
+  left: 5%;
+}
+
+.taskPay {
+  position: absolute;
+  margin-top: 20rpx;
+  top: 65%;
+  left: 5%;
+}
+
+.endTime {
+  position: absolute;
+  margin-top: 20rpx;
+  top: 75%;
+  left: 5%;
+}

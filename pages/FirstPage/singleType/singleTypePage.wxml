@@ -7,7 +7,7 @@
 
   <view class="rcvInfo" hidden="{{false}}">
     <block wx:for="{{itemList}}" wx:for-item="single_order" wx:key='id'>
-      <view class="infoItem">
+      <view class="infoItem" catchtap='toSingleTask'>
 
         <image class='groupIcon' src="../../../images/{{single_order.type}}.png"></image>
         <view class='title'>{{single_order.task_name}}</view>

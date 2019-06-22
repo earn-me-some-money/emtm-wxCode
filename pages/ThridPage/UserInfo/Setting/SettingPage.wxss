@@ -1,1 +1,83 @@
-/* pages/ThridPage/UserInfo/Setting/SettingPage.wxss */
+
+.container {
+  display: block;
+  position: fixed;
+  width: 100%;
+  
+}
+
+.picture {
+
+  position: absolute;
+  height: 400rpx;
+  width: 400rpx;
+  top: 100rpx;
+  left: 200rpx;
+  
+  border: 1rpx #bbb solid;
+  margin-top: 10rpx;
+
+}
+
+.info {
+  top: 600rpx;
+  left: 5%;
+  width: 90%;
+
+  display: block;
+  position: fixed;
+
+}
+
+.mode {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+  flex-wrap: wrap;
+  font-size: 36rpx;
+}
+
+.radio2 {
+  margin-left: 50rpx;
+}
+
+.user {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+  flex-wrap: wrap;
+  font-size: 36rpx;
+}
+
+.organization {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+  flex-wrap: wrap;
+  font-size: 36rpx;
+}
+
+.modechoice {
+  margin-left: 60rpx;
+  vertical-align: middle;
+  border-radius: 10rpx; 
+}
+
+.input_user {
+  margin-left: 60rpx;
+}
+
+.input_organ {
+  margin-left: 60rpx;
+}
+
+.confirm {
+  top: 90%;
+  width: 20rpxrpx;
+}

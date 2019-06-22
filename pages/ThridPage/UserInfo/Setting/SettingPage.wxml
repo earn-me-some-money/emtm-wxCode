@@ -1,2 +1,36 @@
 <!--pages/ThridPage/UserInfo/Setting/SettingPage.wxml-->
-<text>pages/ThridPage/UserInfo/Setting/SettingPage.wxml</text>
+
+<view class='container'>
+
+  <image class='picture' src="{{url}}"></image>
+
+  <view class='info'>
+    <view class='mode'>
+      <view class='modeText'>认 证 模 式：</view>
+      <radio-group class="modechoice" bindchange="typeChange">
+        <radio class="radio1" value="student" checked='{{vertify_mode==1}}' disabled='{{isVertify}}'>学生</radio>
+        <radio class="radio2" value="milk" checked='{{vertify_mode==2}}' disabled='{{isVertify}}'>奶牛</radio>
+      </radio-group>
+    </view>
+
+    <view class='user'>
+      <view class='userText'>用 户 账 号：</view>
+      <input class='input_user' placeholder='{{notation1}}' disabled='{{isVertify}}'></input>
+    </view>
+
+    <view class='organization'>
+      <view class='organText'>组 织 名 称：</view>
+      <input class='input_organ' placeholder='{{notation2}}' disabled='{{isVertify}}'></input>    
+    </view>
+  </view>
+
+  <block wx:if="{{isVertify}}">
+    <button class='confirm' >已 认 证</button>
+  </block>
+
+  <block wx:if="{{!isVertify}}">
+    <button class='confirm' >认 证</button>
+  </block>
+
+</view>
+
