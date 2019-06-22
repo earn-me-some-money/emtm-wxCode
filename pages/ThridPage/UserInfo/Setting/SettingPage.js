@@ -6,7 +6,7 @@ Page({
      */
     data: {
 
-      isVertify: true,
+      isVertify: false,
 
       vertify_mode: 1,
 
