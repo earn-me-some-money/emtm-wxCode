@@ -5,13 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mid: "001",
-    posterId: 123456,
-    postName: "蔡大倓",
-    taskStatus: "unfinished",
-    taskMode: 1,
-    taskPay: 20.0,
-    endTime: 2019-1-1
+
+    hidden_rcv: true, // 是否隐藏弹出的接受任务窗口
+    can_rcv: true, // 是否可以接受任务
+    vertify_mode: 1,
+
+    taskId: "0001",
+    provider: "蔡倓",
+    providerId: "552378875",
+    status: "已截止",
+    finish: "已完成",
+    taskName: "去图书馆取快递",
+    taskInfo: "123456",
+    taskType: "1",
+    taskPay: "20.0",
+    ddl: "2018-9-10",
+    mingrade: "大一",
+    maxgrade: "大四",
+    major: "文史哲",
+    experience: 3,
+    credit: 95,
+    maxNum: 30
+
   },
 
   /**
@@ -68,5 +83,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  rcvTask: function() {
+    this.setData({
+      hidden_rcv: false
+    })
+  },
+
+  cancel_rcv: function() {
+    this.setData({
+      hidden_rcv: true
+    })
+  },
+
+  confirm_rcv: function() {
+    this.setData({
+      hidden_rcv: true
+    })
   }
 })

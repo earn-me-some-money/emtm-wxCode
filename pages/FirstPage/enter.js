@@ -70,5 +70,11 @@ Page({
           }
         }
       })
+    },
+
+    toSingleTask: function () {
+      wx.navigateTo({
+        url: '../details/singleTaskPage',
+      })
     }
 })  

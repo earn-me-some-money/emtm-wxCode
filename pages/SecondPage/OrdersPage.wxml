@@ -15,7 +15,7 @@
 
   <view class="orderList" hidden="{{select}}">
     <block wx:for="{{rev_task}}" wx:for-item="single_order" wx:key='id'>
-      <view class="orderItem">
+      <view class="orderItem" catchtap='toSingleTask'>
 
         <view class='info'>
           <image class='typeIcon' src="../../images/{{single_order.type}}.png"></image>
@@ -45,7 +45,7 @@
 
   <view class="launchList" hidden="{{!select}}">
     <block wx:for="{{launch_task}}" wx:for-item="single_order" wx:key='id'>
-      <view class="orderItem">
+      <view class="orderItem" catchtap='toSingleTask'>
 
         <view class='info'>
           <image class='typeIcon' src="../../images/{{single_order.type}}.png"></image>

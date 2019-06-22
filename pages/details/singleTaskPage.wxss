@@ -1,58 +1,113 @@
 
-
-
-.postId {
+.container {
   position: absolute;
-  top: 5%;
-  left: 5%;
-  margin-top: 20rpx;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
-.postName {
+.identifier {
+  display: block;
   position: absolute;
-  margin-top: 20rpx;
-  top: 15%;
+
+  top: 0%;
   left: 5%;
+  width: 90%;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
 }
 
-.status {
+.moreInfo {
+  display: block;
   position: absolute;
-  margin-top: 20rpx;
+
   top: 25%;
   left: 5%;
+  width: 90%;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
 }
 
-.taskName {
+.request {
+  display: block;
   position: absolute;
-  margin-top: 20rpx;
-  top: 35%;
+
+  top: 60%;
   left: 5%;
+  width: 90%;
+  margin-top: 15rpx;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
+}
+
+.buttonList {
+  display: flex;
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 90%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.provider {
+  margin-top: 15rpx;
+}
+.status {
+  margin-top: 15rpx;
+}
+.finish {
+  margin-top: 15rpx;
 }
 
 .taskInfo {
-  position: absolute;
-  margin-top: 20rpx;
-  top: 45%;
-  left: 5%;
+  margin-top: 15rpx;
 }
-
-.taskMode {
-  position: absolute;
-  margin-top: 20rpx;
-  top: 55%;
-  left: 5%;
+.taskType {
+  margin-top: 15rpx;
 }
-
 .taskPay {
-  position: absolute;
-  margin-top: 20rpx;
-  top: 65%;
-  left: 5%;
+  margin-top: 15rpx;
+}
+.ddl {
+  margin-top: 15rpx;
 }
 
-.endTime {
-  position: absolute;
-  margin-top: 20rpx;
-  top: 75%;
-  left: 5%;
+.grade {
+  margin-top: 15rpx;
+}
+.major {
+  margin-top: 15rpx;
+}
+.experience {
+  margin-top: 15rpx;
+}
+.credit {
+  margin-top: 15rpx;
+}
+.maxNum {
+  margin-top: 15rpx;
+}
+
+
+.next {
+ background-color: transparent;
+}
+
+.rcv {
+ background-color: transparent;
+}
+
+.radio2 {
+  margin-left: 30rpx;
+}
+
+.radio3 {
+  margin-top: 15rpx;
 }

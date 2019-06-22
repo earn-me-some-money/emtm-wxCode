@@ -2,16 +2,51 @@
 
 <view class='container'>
 
-    <view class='postId'>{{"发布者账号: " + mid}}</view>
-    <view class='postName'>{{"发布者名称: " + posterId}}</view>
-    <view class='status'>{{"任务状态: " + postName}}</view>
+  <view class='identifier'>
+    <view class='taskId'>{{'任务序号：' + "0001"}}</view>
+    <view class='provider'>{{'发布者：' + "蔡倓" + " (" + "552378875" + ")"}}</view>
+    <view class='status'>{{'任务状态：' + '已截止'}}</view>
+    <view class='finish'>{{'完成状态：' + '已完成'}}</view>
+  </view>
 
-    <view class='taskName'>{{"任务名称: " + taskStatus}}"</view>
-    <view class='taskInfo'>{{": " + mid}}</view>
-    <view class='taskMode'>{{"任务序号: " + mid}}</view> 
-    <view class='taskPay'>{{"任务序号: " + mid}}</view>
-    <view class='endTime'>{{"任务序号: " + mid}}</view>
 
-    <button class='next'>查看详细信息</button>
+  <view class='moreInfo'>
+    <view class='taskName'>{{'任务名称：' + taskName}}</view>
+    <view class='taskInfo'>{{'任务介绍：' + taskInfo}}</view>
+
+    <radio-group class="taskType" bindchange="typeChange">
+        <radio class="radio1" value="type1" checked='{{vertify_mode==1}}' disabled='true'>取件寄件类</radio>
+        <radio class="radio2" value="type2" checked='{{vertify_mode==2}}' disabled='true'>闲置交易类</radio>
+        <radio class="radio3" value="type3" checked='{{vertify_mode==3}}' disabled='true'>问卷调查类</radio>
+    </radio-group>
+    
+    <view class='taskPay'>{{'任务薪酬：' + taskPay}}</view>
+    <view class='ddl'>{{'截止日期：' + ddl}}</view>
+  </view>
+
+  <view class='request'>
+    <view class='grade'>{{'年级限制：' + mingrade + ' 到 ' + maxgrade}}</view>
+    <view class='major'>{{'专业限制：' + major}}</view>
+    <view class='experience'>{{'最少完成任务：' + experience}}</view>
+    <view class='credit'>{{'最低信誉积分：' + credit}}</view>
+    <view class='maxNum'>{{'最大参加人数：' + maxNum}}</view>
+  </view>
+
+  <view class='buttonList'>
+    <button class='next'>查看完成情况</button>
+
+    <block wx:if="{{!can_rcv}}">
+      <button class='rcv' color='gray' disabled='true'>已接受任务</button>
+    </block>
+
+    <block wx:if="{{can_rcv}}">
+      <button class='rcv' >接受任务</button>
+    </block>
+
+  </view>
+
+
+  <modal id="modal" hidden="{{hidden_rcv}}" title="是否接受该任务？" confirm-text="确认" cancel-text="取消" bindcancel="cancel_rcv" bindconfirm="confirm_rcv">  
+  </modal>
 
 </view>

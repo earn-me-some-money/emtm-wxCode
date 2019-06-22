@@ -189,5 +189,11 @@ Page({
       wx.navigateTo({
         url: 'newOrder/newOrderPage',
       })
+    },
+
+    toSingleTask: function () {
+      wx.navigateTo({
+        url: '../details/singleTaskPage',
+      })
     }
 })
