@@ -229,30 +229,30 @@ Page({
   },
 
   nextStep: function() {
-    // code阶段注释以下代码
-    /*
-    if (!this.data.username) {
-      wx.showToast({
-        title: '请输入发起人名称！',
-        icon: "none"
-      })
-      return
+    var test = false
+    if (test) {
+      if (!this.data.username) {
+        wx.showToast({
+          title: '请输入发起人名称！',
+          icon: "none"
+        })
+        return
+      }
+      if (!this.data.taskname) {
+        wx.showToast({
+          title: '请输入委派简介！',
+          icon: "none"
+        })
+        return
+      }
+      if (!this.data.payment) {
+        wx.showToast({
+          title: '请输入酬金！',
+          icon: "none"
+        })
+        return
+      }
     }
-    if (!this.data.taskname) {
-      wx.showToast({
-        title: '请输入委派简介！',
-        icon: "none"
-      })
-      return
-    }
-    if (!this.data.payment) {
-      wx.showToast({
-        title: '请输入酬金！',
-        icon: "none"
-      })
-      return
-    }
-     */
     var para = {
       username: this.data.username,
       selectType: this.data.selectType,
