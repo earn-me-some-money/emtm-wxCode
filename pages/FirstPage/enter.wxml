@@ -1,7 +1,7 @@
 <view class='container'>  
   <view class='header'>
     <icon class='searchIcon' src='../../images/默认头像.png' type='search'></icon>
-    <input class='searchText' placeholder='请输入关键字' ></input>
+    <input class='searchText' placeholder='请输入关键字' bindinput="searchInput"></input>
     <!--button class='searchButton' open-type="getUserInfo" bindgetuserinfo="getUserInfo">搜 索</button-->
     <button class='searchButton' bindtap='search'>搜 索</button>
   </view>

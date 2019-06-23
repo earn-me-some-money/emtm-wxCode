@@ -1,5 +1,6 @@
 var app = getApp();
 Page({
+  para: null,
   data: {
     phone: '',
     password: '',
@@ -8,8 +9,11 @@ Page({
     hidden_notation: true
   },
 
-  onLoad: function () {
-  
+  onLoad: function (e) {
+    this.setData({
+      para: JSON.parse(e.para)
+    })
+    console.log(this.data.para)
   },
 
   login: function() {

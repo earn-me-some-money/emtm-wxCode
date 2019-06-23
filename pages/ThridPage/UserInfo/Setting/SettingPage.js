@@ -1,4 +1,6 @@
 // pages/ThridPage/UserInfo/Setting/SettingPage.js
+var app = getApp();
+
 Page({
 
     /**
@@ -6,11 +8,13 @@ Page({
      */
     data: {
 
-      isVertify: false,
+      isVertify: true,
 
       vertify_mode: 1,
 
       url: "../../../../images/加号.png",
+
+      choose: false,
 
       /*notation1: ["输 入 学 号", "输 入 真 实 名 字"],
 
@@ -19,6 +23,9 @@ Page({
       notation1: "输 入 学 号",
 
       notation2: "学 校 名 称",
+
+      text1: null,
+      text2: null,
 
       buttonText: "认 证"
 
@@ -31,70 +38,33 @@ Page({
       wx.setNavigationBarTitle({
         title: '我 的 认 证',
       })
-
-      // 已认证
-      if (isVertify) {
+      
+      if (app.globalData.mode == 2) {
         this.setData({
-          buttonText: "已 认 证"
+          isVertify: false
         })
       }
-
-      // 未认证
       else {
         this.setData({
-          buttonText: "认 证"
+          isVertify: true
         })
       }
 
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    chooseImage: function() {
+      var _this = this
+      wx.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success(res) {
+          _this.setData({
+            url: res.tempFilePaths[0],
+            choose: true
+          })
+        }
+      })
     },
 
     typeChange: function(e) {
@@ -114,9 +84,93 @@ Page({
       }
     },
 
+    idInput: function(e) {
+      this.setData({
+        text1: e.detail.value
+      })
+    },
+
+    orgInput: function(e) {
+      this.setData({
+        text2: e.detail.value
+      })
+    },
+
     signIn: function() {
-      wx.navigateTo({
-        url: 'signInPage/signPage',
+      var test = app.globalData.test
+      if (test) {
+        if (!this.data.choose) {
+          wx.showToast({
+            title: '请选择证件照片！',
+            icon: "none"
+          })
+          return
+        }
+        if (!this.data.text1) {
+          wx.showToast({
+            title: '请输入用户账号！',
+            icon: "none"
+          })
+          return
+        }
+        if (!this.data.text2) {
+          wx.showToast({
+            title: '请输入组织名称！',
+            icon: "none"
+          })
+          return
+        }
+      }
+
+      wx.showLoading({ title: "认证中..." })
+      var FSM = wx.getFileSystemManager(); 
+      var _this = this
+      FSM.readFile({
+        filePath: _this.data.url,
+        encoding: "base64",
+        success: function (res) {
+          var vertify_mode
+          if (_this.data.vertify_mode == 1) {
+            vertify_mode = true
+          }
+          else {
+            vertify_mode = false
+          }
+          var para = {
+            "image_data": res.data,
+            "verify_mode": vertify_mode,
+            "user_id": _this.data.text1,
+            "organization": _this.data.text2
+          }
+          wx.request({
+            url: app.globalData.serpath + 'user/verify',
+            data: para,
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            method: 'POST',
+            success: function (res) {
+              if (res.data.code) {
+                wx.hideLoading()
+                var para = {
+                  "verify_mode": vertify_mode,
+                  "user_id": _this.data.text1,
+                  "organization": _this.data.text2
+                }
+                wx.navigateTo({
+                  url: 'signInPage/signPage?para=' + JSON.stringify(para),
+                })
+              }
+              else {
+                wx.hideLoading()
+                wx.showToast({
+                  title: res.data.err_message,
+                  icon: "none"
+                })
+              }
+            }
+          })
+        }
       })
     }
 })

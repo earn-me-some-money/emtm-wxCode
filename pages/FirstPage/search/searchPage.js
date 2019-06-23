@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    kw: null,
     rev_task: [
     ],
   },
@@ -16,8 +17,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      kw: options.kw
+    })
     this.load_search()
-
     wx.setNavigationBarTitle({
       title: '搜 索 列 表',
     }) 
@@ -27,9 +30,9 @@ Page({
   load_search: function () {
     var _this = this
     wx.request({
-      url: app.globalData.serpath + 'check_task_self_receive',
+      url: app.globalData.serpath + 'task/search',
       data: {
-        "userid": app.globalData.openid
+        "keyword": this.data.kw
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -51,52 +54,30 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  fullfill: function (res) {
+    for (var i = 0; i < res.data.tasks.length; i++) {
+      var x = res.data.tasks[i]
+      switch (x.task_mode) {
+        case 0:
+          x["type"] = "问卷调查类"
+          break;
+        case 1:
+          x["type"] = "闲置交易类"
+          break;
+        case 2:
+          x["type"] = "取件寄件类"
+          break;
+        default:
+          break
+      }
+      if (x.user_finish_state) {
+        x["state"] = "已完成"
+      }
+      else {
+        x["state"] = "未完成"
+      }
+      x.providerTime = x.task_time_limit.slice(0, 10) + " " +
+        x.task_time_limit.slice(11, 13) + ":" + x.task_time_limit.slice(14, 16)
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

@@ -93,6 +93,7 @@ App({
     openid: null,
     auth: false,
     mode: 2,
-    userInfo: null
+    userInfo: null,
+    test: false
   }
 })

@@ -4,7 +4,7 @@
 Page({
     data: {
       picList: ["http://img0.imgtn.bdimg.com/it/u=2246248540,3069947388&fm=26&gp=0.jpg", "http://img2.imgtn.bdimg.com/it/u=3427365405,3550792323&fm=26&gp=0.jpg", "http://img2.imgtn.bdimg.com/it/u=3757879143,3844841745&fm=26&gp=0.jpg"],
-
+        searchKeyWord: null,
         selectShow: false,//控制下拉列表的显示隐藏，false隐藏、true显示
         selectData: ['综合排序', '信誉最高', '距离最近', '报酬最高', '耗时最少'],//下拉列表的数据
         index: 0, //选择的下拉列表下标
@@ -77,10 +77,14 @@ Page({
         url: '../details/singleTaskPage',
       })
     },
-
+    searchInput: function(e) {
+      this.setData({
+        searchKeyWord: e.detail.value
+      })
+    },
     search: function() {
       wx.navigateTo({
-        url: 'search/searchPage',
+        url: 'search/searchPage?kw='+ this.data.searchKeyWord,
       })
     }
 })  

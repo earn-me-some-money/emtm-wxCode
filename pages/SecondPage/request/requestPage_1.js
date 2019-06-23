@@ -73,7 +73,7 @@ Page({
   },
 
   nextStep: function () {
-    var test = false
+    var test = app.globalData.test
     if (test) {
       if (!this.data.min_grade) {
         wx.showToast({
@@ -120,6 +120,13 @@ Page({
       if (!this.data.max_participants) {
         wx.showToast({
           title: '请输入最大参与人数！',
+          icon: "none"
+        })
+        return
+      }
+      if (this.data.min_grade > this.data.max_grade) {
+        wx.showToast({
+          title: '最低年级要求不得大于最高年级要求！',
           icon: "none"
         })
         return

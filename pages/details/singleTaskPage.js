@@ -7,7 +7,7 @@ Page({
   data: {
 
     hidden_rcv: true, // 是否隐藏弹出的接受任务窗口
-    can_rcv: true, // 是否可以接受任务
+    can_rcv: false, // 是否可以接受任务
     vertify_mode: 1,
 
     taskId: "0001",
