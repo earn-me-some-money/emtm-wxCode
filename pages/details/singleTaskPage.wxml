@@ -1,6 +1,7 @@
 <!--pages/SecondPage/newOrder/newOrderPage.wxml-->
 
 <view class='container'>
+  
 
   <view class='identifier'>
     <view class='taskId'>{{'任务序号：' + "0001"}}</view>
@@ -8,6 +9,7 @@
     <view class='status'>{{'任务状态：' + '已截止'}}</view>
     <view class='finish'>{{'完成状态：' + '已完成'}}</view>
   </view>
+
 
 
   <view class='moreInfo'>
@@ -33,14 +35,14 @@
   </view>
 
   <view class='buttonList'>
-    <button class='next'>查看完成情况</button>
+    <button class='next' bindtap='moreInfo'>查看完成情况</button>
 
     <block wx:if="{{!can_rcv}}">
-      <button class='rcv' color='gray' disabled='true'>已接受任务</button>
+      <button class='rcv' color='gray' bindtap='rcvTask' disabled='true'>已接受任务</button>
     </block>
 
     <block wx:if="{{can_rcv}}">
-      <button class='rcv' >接受任务</button>
+      <button class='rcv'  bindtap='rcvTask'>接受任务</button>
     </block>
 
   </view>

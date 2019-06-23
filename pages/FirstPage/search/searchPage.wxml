@@ -1,0 +1,33 @@
+<!--pages/OrdersPage/OrdersPage.wxml-->
+<view class='container'>
+
+  <view class="orderList">
+    <block wx:for="{{rev_task}}" wx:for-item="single_order" wx:key='id'>
+      <view class="orderItem" catchtap='toSingleTask'>
+
+        <view class='info'>
+          <image class='typeIcon' src="../../images/{{single_order.type}}.png"></image>
+          <text class='title'>{{single_order.type + ": " + single_order.task_name}}</text>
+        </view>
+
+        <view class='requires'>
+          <text class='requireInfo'>{{"介绍: " + single_order.task_intro}}</text>
+        </view>
+        
+        <view class='state'>
+          <text class='stateInfo'>{{"状态: " + single_order.state}}</text>
+          <text class='cost'>{{"报酬: " + single_order.task_pay + "元"}}</text>
+        </view>
+
+        <view class='choice'>
+          <text class='ddlTime'>{{"截止时间: " + single_order.providerTime}}</text>
+          <text class='fromId'>{{"来自: " + single_order.poster_name}}</text>
+        </view>
+
+        <view class='divLine2'></view>
+  
+      </view>
+    </block>
+  </view>
+
+</view>

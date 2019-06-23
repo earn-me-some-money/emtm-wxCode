@@ -1,0 +1,53 @@
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.identifier {
+  display: block;
+  position: absolute;
+
+  top: 8%;
+  left: 5%;
+  width: 90%;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
+}
+
+.moreInfo {
+  display: block;
+  position: absolute;
+
+  top: 30%;
+  left: 5%;
+  width: 90%;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
+}
+
+.providerName {
+  margin-top: 15rpx;
+}
+.providerTel {
+  margin-top: 15rpx;
+}
+.providerAddress {
+  margin-top: 15rpx;
+}
+
+.target_address {
+  margin-top: 15rpx;
+}
+.pick_number {
+  margin-top: 15rpx;
+}
+.other_info {
+  margin-top: 15rpx;
+}

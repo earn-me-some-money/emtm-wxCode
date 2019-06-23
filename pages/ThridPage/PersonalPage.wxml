@@ -6,7 +6,7 @@
       <image class="user-image" src='{{userInfo.avatarUrl}}' mode="cover"></image>
     </block>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    <text class="userinfo-mode">{{mode}}</text>
+    <text class="userinfo-mode">{{'身份：' + mode}}</text>
     <text class="userinfo-creditscore">{{userInfo.check_credit}}</text>
   </view>
 

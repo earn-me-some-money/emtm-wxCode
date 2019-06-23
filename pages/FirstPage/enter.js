@@ -76,5 +76,11 @@ Page({
       wx.navigateTo({
         url: '../details/singleTaskPage',
       })
+    },
+
+    search: function() {
+      wx.navigateTo({
+        url: 'search/searchPage',
+      })
     }
 })  

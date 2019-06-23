@@ -1,0 +1,13 @@
+
+<view class='container'>
+
+
+  <view class='identifier'>
+    <view class='type'>{{'商品类型：' + type}}</view>
+    <view class='info'>{{'详细信息：' + info}}</view>
+    <view class='loss'>{{'损坏情况：' + loss}}</view>
+    <view class='address'>{{'交易地址：' + address}}</view>
+  </view>
+
+
+</view>

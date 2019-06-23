@@ -23,7 +23,11 @@
     "pages/SecondPage/request/trade",
     "pages/SecondPage/request/survey",
     "pages/details/package",
-    "pages/details/singleTaskPage"
+    "pages/details/singleTaskPage",
+    "pages/FirstPage/search/searchPage",
+    "pages/details/moreInfo/tradePage",
+    "pages/details/moreInfo/packagePage",
+    "pages/details/moreInfo/surveyPage"
   ],
   "window": {
     "backgroundTextStyle": "light",

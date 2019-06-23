@@ -1,0 +1,18 @@
+
+<view class='container'>
+
+
+  <view class='identifier'>
+    <view class='providerName'>{{'发布人姓名：' + providerName}}</view>
+    <view class='providerTel'>{{'联系电话：' + providerTel}}</view>
+    <view class='providerAddress'>{{'发布人地址：' + providerAddress}}</view>
+  </view>
+
+
+  <view class='moreInfo'>
+    <view class='target_address'>{{'任务地址：' + target_address}}</view>
+    <view class='pick_number'>{{'快递单号：' + pick_number}}</view> 
+    <view class='other_info'>{{'其余信息：' + other_info}}</view>
+  </view>
+
+</view>

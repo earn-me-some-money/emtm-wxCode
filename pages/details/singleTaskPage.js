@@ -101,5 +101,26 @@ Page({
     this.setData({
       hidden_rcv: true
     })
+  },
+
+  moreInfo: function() {
+
+    if (this.data.vertify_mode == 1) {
+      wx.navigateTo({
+        url: 'moreInfo/packagePage',
+      })
+    }
+    else if (this.data.vertify_mode == 2) {
+      wx.navigateTo({
+        url: 'moreInfo/tradePage',
+      })
+    }
+    else if (this.data.vertify_mode == 3) {
+      wx.navigateTo({
+        url: 'moreInfo/surveyPage',
+      })
+    }
+
+    
   }
 })

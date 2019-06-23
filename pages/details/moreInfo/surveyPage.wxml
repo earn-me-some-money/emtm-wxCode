@@ -1,0 +1,46 @@
+
+<view class='container'>
+
+  <scroll-view class='showList' scroll-y="true" style="height: 400px">
+    <block wx:for="{{questions}}" wx:for-item="single_order" wx:key='id'>
+      <view class="orderItem" catchtap='toSingleTask'>
+
+        <block wx:if="{{single_order.type == 0}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          <input class='input_answer'></input>
+        </block>
+
+        <block wx:if="{{single_order.type == 1}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          <radio-group class="type-radio-group" bindchange="typeChange">
+            <radio class="radio1" value="choice1" checked>{{"A：" + single_order.chocie1}}</radio>
+            <radio class="radio2" value="choice2">{{"B：" + single_order.chocie2}}</radio>
+            <radio class="radio3" value="choice3">{{"C：" + single_order.chocie3}}</radio>
+            <radio class="radio4" value="choice4">{{"D：" + single_order.chocie4}}</radio>
+          </radio-group>
+        </block>
+
+        <block wx:if="{{single_order.type == 2}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          
+          <checkbox-group class="type-radio-group" bindchange="typeChange">
+            <checkbox class="radio1" value="choice1">{{"A：" + single_order.chocie1}}</checkbox>
+            <checkbox class="radio2" value="choice2">{{"B：" + single_order.chocie2}}</checkbox>
+            <checkbox class="radio3" value="choice3">{{"C：" + single_order.chocie3}}</checkbox>
+            <checkbox class="radio4" value="choice4">{{"D：" + single_order.chocie4}}</checkbox>
+          </checkbox-group>
+          
+        </block>
+
+
+
+        <view class='divLine'></view>
+  
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class='finish_status'>{{"完 成 情 况：" + finish_num + " / " + total_num}}</view>
+
+</view>
+

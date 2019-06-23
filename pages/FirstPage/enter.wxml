@@ -1,18 +1,10 @@
 <view class='container'>  
   <view class='header'>
     <icon class='searchIcon' src='../../images/默认头像.png' type='search'></icon>
-    <input class='searchText' disabled placeholder='请输入关键字' ></input>
-    <button class='searchButton' open-type="getUserInfo" bindgetuserinfo="getUserInfo">搜 索</button>
+    <input class='searchText' placeholder='请输入关键字' ></input>
+    <!--button class='searchButton' open-type="getUserInfo" bindgetuserinfo="getUserInfo">搜 索</button-->
+    <button class='searchButton' bindtap='search'>搜 索</button>
   </view>
-
-
-  <!--swiper class="turn-pictures" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-      <block wx:for="{{picList}}" wx:key="index">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" mode="scaleToFill" data-previewurl='{{picList}}' data-currenturl='{{item}}'/>
-        </swiper-item>   
-      </block>  
-  </swiper-->
 
 
   <view class='classification'>
