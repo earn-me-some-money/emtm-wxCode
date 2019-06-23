@@ -112,5 +112,11 @@ Page({
           notation2: "输 入 机 构 名 称"
         })
       }
+    },
+
+    signIn: function() {
+      wx.navigateTo({
+        url: 'signInPage/signPage',
+      })
     }
 })

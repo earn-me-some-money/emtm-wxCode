@@ -27,7 +27,8 @@
     "pages/FirstPage/search/searchPage",
     "pages/details/moreInfo/tradePage",
     "pages/details/moreInfo/packagePage",
-    "pages/details/moreInfo/surveyPage"
+    "pages/details/moreInfo/surveyPage",
+    "pages/ThridPage/UserInfo/Setting/signInPage/signPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
