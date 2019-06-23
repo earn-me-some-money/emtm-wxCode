@@ -22,7 +22,7 @@ Page({
       })
       var _this = this
       wx.request({
-        url: app.globalData.serpath + 'get_balance',
+        url: app.globalData.serpath + 'balance',
         data: {
           "userid": app.globalData.openid
         },
@@ -111,11 +111,12 @@ Page({
         wx.showLoading({ title: "提现中…" })
         var _this = this
         wx.request({
-          url: app.globalData.serpath + 'withdraw',
+          url: app.globalData.serpath + 'balance/withdraw',
           data: {
             "userid": app.globalData.openid,
             "withdraw_amount": Number(this.data.drawbacknum)
           },
+          method: 'POST',
           header: {
             'content-type': 'application/json' // 默认值
           },
@@ -163,11 +164,12 @@ Page({
         wx.showLoading({ title: "充值中…" })
         var _this = this
         wx.request({
-          url: app.globalData.serpath + 'recharge',
+          url: app.globalData.serpath + 'balance/recharge',
           data: {
             "userid": app.globalData.openid,
             "recharge_amount": Number(this.data.refillnum)
           },
+          method: 'POST',
           header: {
             'content-type': 'application/json' // 默认值
           },

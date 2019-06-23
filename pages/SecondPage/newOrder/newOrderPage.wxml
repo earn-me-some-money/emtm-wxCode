@@ -5,8 +5,8 @@
   <view class='baseInfo'>
 
     <view class='partName'>
-      <text class='username'>发起人名称: </text>
-      <input class='input_name' placeholder='请输入发起人名称...' bindinput='usernameInput'></input>
+      <text class='username'>任务名称: </text>
+      <input class='input_name' placeholder='请输入任务名称（15字内）' bindinput='usernameInput' maxlength='15'></input>
     </view>
 
     <view class='partType'>
@@ -20,8 +20,8 @@
     </view>
     
     <view class='partTaskName'>
-      <text class='taskname'>委派简介:</text>
-      <input class='input_task' placeholder='请输入任务简介(30个字以内)' bindinput='tasknameInput'></input>
+      <text class='taskname'>任务介绍:</text>
+      <input class='input_task' placeholder='请输入任务简介（30字内）' bindinput='tasknameInput' maxlength='30'></input>
     </view>
 
     <view class='partPay'>

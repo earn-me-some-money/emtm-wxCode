@@ -35,7 +35,7 @@ Page({
     load_rec: function() {
       var _this = this
       wx.request({
-        url: app.globalData.serpath + 'check_task_self_receive',
+        url: app.globalData.serpath + 'task/self-receive',
         data: {
           "userid": app.globalData.openid
         },
@@ -63,7 +63,7 @@ Page({
     load_lau: function() {
       var _this = this
       wx.request({
-        url: app.globalData.serpath + 'check_task_self_release',
+        url: app.globalData.serpath + 'task/self-release',
         data: {
           "userid": app.globalData.openid
         },

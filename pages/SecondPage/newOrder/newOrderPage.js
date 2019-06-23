@@ -254,10 +254,12 @@ Page({
       }
     }
     var para = {
-      username: this.data.username,
-      selectType: this.data.selectType,
-      taskname: this.data.taskname,
-      payment: this.data.payment
+      task_name: this.data.username,
+      task_mode: this.data.selectType,
+      task_intro: this.data.taskname,
+      task_pay: this.data.payment,
+      task_time_limit: this.data.year + '-' + this.data.month + '-' + this.data.day +
+        ':' + 23 + '-' + 59
     }
     wx.navigateTo({
       url: '../request/requestPage_1?para=' + JSON.stringify(para),

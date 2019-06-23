@@ -36,7 +36,7 @@ Page({
     }
     var _this = this
     wx.request({
-      url: app.globalData.serpath + 'get_tasks',
+      url: app.globalData.serpath + 'task/type',
       data: {
         "task_type": Number(query.type)
       },

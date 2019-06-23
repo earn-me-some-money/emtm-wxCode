@@ -6,7 +6,7 @@
 
     <view class='partId'>
       <text class='id'>问题序号: </text>
-      <input class='input_id' placeholder="{{' ' + id}}"></input>
+      <text class='input_id'>{{' ' + id+1}}</text>
     </view>
 
     <view class='partType'>

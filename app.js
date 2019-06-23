@@ -18,7 +18,7 @@ App({
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           // 获取用户openid
           wx.request({
-            url: this.globalData.serpath + 'get_wechatid',
+            url: this.globalData.serpath + 'wechatid',
             data: {
               "appid": this.globalData.appid,
               "secret": this.globalData.secretid,
@@ -68,6 +68,7 @@ App({
         "userid": this.globalData.openid,
         "wechat_ok": this.globalData.auth
       },
+      method: 'POST',
       header: {
         'content-type': 'application/json' // 默认值
       },
