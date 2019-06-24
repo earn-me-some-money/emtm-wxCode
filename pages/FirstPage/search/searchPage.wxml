@@ -3,7 +3,7 @@
 
   <view class="orderList">
     <block wx:for="{{rev_task}}" wx:for-item="single_order" wx:key='id'>
-      <view class="orderItem" catchtap='toSingleTask'>
+      <view class="orderItem" catchtap='toSingleTask' data-bean="{{single_order}}">
 
         <view class='info'>
           <image class='typeIcon' src="../../../images/{{single_order.type}}.png"></image>

@@ -131,7 +131,9 @@ Page({
 
   },
 
-  toSingleTask: function () {
+  toSingleTask: function (e) {
+    console.log(e.currentTarget.dataset)
+    
     wx.navigateTo({
       url: '../../details/singleTaskPage',
     })

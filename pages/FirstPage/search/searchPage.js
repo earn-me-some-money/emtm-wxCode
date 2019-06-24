@@ -80,4 +80,9 @@ Page({
         x.task_time_limit.slice(11, 13) + ":" + x.task_time_limit.slice(14, 16)
     }
   },
+
+
+  toSingleTask: function(e) {
+    console.log(e.currentTarget.dataset)
+  }
 })

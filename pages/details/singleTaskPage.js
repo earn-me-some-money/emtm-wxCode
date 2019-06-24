@@ -12,7 +12,7 @@ Page({
     can_do: true,  // 为true，代表是委派页面进入，为false，代表是从首页进入
     can_rcv: false, // 是否可以接受任务
     can_finish: true,// 是否可以点击完成任务
-    vertify_mode: 1,
+    vertify_mode: 2,
 
     taskId: "0001",
     provider: "蔡倓",
