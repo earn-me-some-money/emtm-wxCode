@@ -1,57 +1,89 @@
-.baseInfo {
-  position: absolute;
-  display: block;
+/* pages/ThridPage/UserEvent/Address/newAddress/newAddressPage.wxss */
 
+.text_address {
+  position: absolute;
   top: 5%;
   left: 5%;
-  right: 5%;
-  width: 90%;
+  height: 50rpx;
+  font-size: 32rpx;
 }
 
-.part_address {
-  display: flex;
+.text_deliver_address {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+
+  font-size: 32rpx;
 }
 
-.part_tel {
-  margin-top: 30rpx;
-  display: flex;
+.text_tel {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+
+  font-size: 32rpx;
 }
 
-.part_num {
-  margin-top: 30rpx;
-  display: flex;
+.text_num {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+
+  font-size: 32rpx;
 }
 
-.part_other {
-  margin-top: 30rpx;
-  display: flex;
-}
+.text_other {
+  position: absolute;
+  top: 50%;
+  left: 5%;
 
+  font-size: 32rpx;
+}
 
 .input_address {
-  margin-left: 20rpx;
+  position: absolute;
+  top: 5%;
+  left: 35%;
+  height: 50rpx;
+  font-size: 32rpx;
+}
+
+.input_deliver_address {
+  position: absolute;
+  top: 20%;
+  left: 35%;
+
   font-size: 32rpx;
 }
 
 .input_tel {
-  margin-left: 20rpx;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+
   font-size: 32rpx;
 }
 
 .input_num {
-  margin-left: 20rpx;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+
   font-size: 32rpx;
 }
 
 .input_other {
-  margin-left: 20rpx;
+  position: absolute;
+  top: 50%;
+  left: 35%;
+
   font-size: 32rpx;
 }
 
 .save{
 
   position: absolute;
-  bottom: 5%;
+  top:80%;
   margin-top: 20rpx; 
   height: 60rpx; 
   line-height: 60rpx; 
@@ -60,5 +92,4 @@
   border-radius: 98rpx;
   align-content: center;
   letter-spacing: 5rpx;
-  font-size: 32rpx;
 }

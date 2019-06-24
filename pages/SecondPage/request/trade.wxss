@@ -24,6 +24,14 @@
   font-size: 32rpx;
 }
 
+.text_address {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+
+  font-size: 32rpx;
+}
+
 .input_type {
   position: absolute;
   top: 5%;
@@ -43,6 +51,14 @@
 .input_loss {
   position: absolute;
   top: 30%;
+  left: 35%;
+
+  font-size: 32rpx;
+}
+
+.input_address {
+  position: absolute;
+  top: 40%;
   left: 35%;
 
   font-size: 32rpx;
