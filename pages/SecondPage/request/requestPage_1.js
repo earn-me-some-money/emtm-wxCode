@@ -30,6 +30,7 @@ Page({
       para: JSON.parse(query.para),
       type: app.globalData.mode
     })
+    console.log(this.data.para)
   },
 
   min_gradeInput: function (e) {
@@ -126,7 +127,7 @@ Page({
         })
         return
       }
-      if (this.data.type != 1 && this.data.min_grade > this.data.max_grade) {
+      if (this.data.type != 1 && Number(this.data.min_grade) > Number(this.data.max_grade)) {
         wx.showToast({
           title: '最低年级要求不得大于最高年级要求！',
           icon: "none"

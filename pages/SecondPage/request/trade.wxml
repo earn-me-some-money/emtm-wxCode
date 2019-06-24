@@ -3,13 +3,16 @@
 <view class='container'>
 
   <text class="text_type">交易商品类型:</text>
-  <input class="input_type" placeholder='请填写商品类型'></input>
+  <input class="input_type" placeholder='请填写商品类型' bindinput="t_typeInput"></input>
 
   <text class="text_info">商品描述信息:</text>
-  <input class="input_info" placeholder='请填写商品信息'></input>
+  <input class="input_info" placeholder='请填写商品信息' bindinput="infoInput"></input>
 
   <text class="text_loss">商品损耗情况:</text>
-  <input class="input_loss" placeholder='0-5为损耗范围，0为无损耗，5为损耗非常严重'></input>
+  <input class="input_loss" placeholder='0-5为损耗范围，0为无损耗，5为损耗非常严重' bindinput="lossInput" type="number" maxlength="1"></input>
+
+  <text class="text_address">商品交易地点:</text>
+  <input class="input_address" placeholder='请填写交易商品的地点' bindinput="addressInput"></input>
 
   <button class='save' bindtap='save' >发布任务</button>
 
