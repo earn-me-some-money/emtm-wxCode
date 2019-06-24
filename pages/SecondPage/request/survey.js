@@ -7,7 +7,10 @@ Page({
   data: {
     id: 0,
     mid: null,
-    questions: []
+    questions: [],
+    selectType : 0,
+    content: null,
+    choices: []
   },
 
   /**
@@ -32,7 +35,47 @@ Page({
     }
   },
 
-  next: function() {
+  typeChange: function (e) {
+    if (e.detail.value == 'type1') {
+      this.setData({
+        selectType: 0
+      })
+    }
+    else if (e.detail.value == 'type2') {
+      this.setData({
+        selectType: 1
+      })
+    }
+    else if (e.detail.value == 'type3') {
+      this.setData({
+        selectType: 2
+      })
+    }
+  },
+
+  contentInput: function(e) {
+    this.setData({
+      content: e.detail.value
+    })
+  },
+
+
+  next: function () {
+    if (this.data.selectType == 0) {
+      this.data.questions[this.data.id] = {
+        "order": this.data.id,
+        "q_type": this.data.selectType,
+        "content": this.data.content,
+      }
+    }
+    else {
+      this.data.questions[this.data.id] = {
+        "order": this.data.id,
+        "q_type": this.data.selectType,
+        "content": this.data.content,
+        "choices": this.data.choices
+      }
+    }
     var para = {
       id: this.data.id + 1,
       mid: this.data.mid,

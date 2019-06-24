@@ -72,7 +72,8 @@ Page({
       })
     },
 
-    toSingleTask: function () {
+    toSingleTask: function (e) {
+      console.log(e)
       wx.navigateTo({
         url: '../details/singleTaskPage',
       })
