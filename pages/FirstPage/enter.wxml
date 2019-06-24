@@ -43,7 +43,7 @@
 
 <scroll-view class='showList' scroll-y="true" style="height: 250px">
   <block wx:for="{{task}}" wx:for-item="single_order" wx:key='id'>
-      <view class="orderItem" bindtap='toSingleTask'>
+      <view class="orderItem" bindtap='toSingleTask' data-bean="{{single_order}}" >
 
         <view class='info'>
           <image class='typeIcon' src="../../images/{{single_order.type}}.png"></image>
