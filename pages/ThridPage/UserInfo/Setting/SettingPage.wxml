@@ -15,12 +15,12 @@
 
     <view class='user'>
       <view class='userText'>用 户 账 号：</view>
-      <input class='input_user' placeholder='{{notation1}}' disabled='{{isVertify}}' bindinput="idInput"></input>
+      <input class='input_user' placeholder='{{notation1}}' disabled='{{isVertify}}' bindinput="idInput" type='{{texttype}}' value="{{text1}}"></input>
     </view>
 
     <view class='organization'>
       <view class='organText'>组 织 名 称：</view>
-      <input class='input_organ' placeholder='{{notation2}}' disabled='{{isVertify}}' bindinput="orgInput"></input>    
+      <input class='input_organ' placeholder='{{notation2}}' disabled='{{isVertify}}' bindinput="orgInput" value="{{text2}}"></input>    
     </view>
   </view>
 

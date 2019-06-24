@@ -5,50 +5,39 @@
   </view-->
 
   <view class="login-from">
-
-    <view class="inputView">
-      <label class="loginLab">昵称</label>
-      <input class="inputText" placeholder="请输入昵称" bindinput="usernameInput" />
-    </view>
-    <view class="line"></view>
-
-    <view class="inputView">
-      <label class="loginLab">账号</label>
-      <input class="inputText" placeholder="请输入账号" bindinput="idInput" />
-    </view>
-    <view class="line"></view>
  
     <view class="inputView">
       <label class="loginLab">邮箱</label>
-      <input class="inputText" password="true" placeholder="请输入邮箱" bindinput="emailInput"/>
+      <input class="inputText" placeholder="请输入邮箱" bindinput="emailInput"/>
     </view>
 
     <view class="inputView">
       <label class="loginLab">电话号码</label>
-      <input class="inputText" password="true" placeholder="请输入手机号" bindinput="phoneInput"/>
+      <input class="inputText" placeholder="请输入手机号" bindinput="phoneInput" maxlength="11" type="number"/>
     </view>
 
-    <block wx:if="{{type == 0}}">
+    <block wx:if="{{type}}">
       <view class="inputView">
-        <label class="loginLab">专业</label>
-        <input class="inputText" password="true" placeholder="在校就读专业" bindinput="infoInput"/>
+        <label class="loginLab">姓名</label>
+        <input class="inputText" placeholder="真实姓名" bindinput="nameInput" maxlength="10"/>
+      </view>
+
+      <view class="inputView">
+        <label class="loginLab">自我介绍</label>
+        <input class="inputText" placeholder="兴趣爱好，自我介绍" bindinput="infoInput" maxlength="20"/>
       </view>
 
       <view class="inputView">
         <label class="loginLab">年级</label>
-        <input class="inputText" password="true" placeholder="在校就读年级" bindinput="gradeInput"/>
+        <input class="inputText" placeholder="在校就读年级" bindinput="gradeInput" maxlength="1" type="number"/>
       </view>
     </block>
 
-    <block wx:if="{{type == 1}}">
-      <view class="inputView">
-        <label class="loginLab">机构</label>
-        <input class="inputText" password="true" placeholder="机构名称" bindinput="groupInput"/>
-      </view>
+    <block wx:if="{{!type}}">
 
       <view class="inputView">
         <label class="loginLab">机构介绍</label>
-        <input class="inputText" password="true" placeholder="机构相关信息" bindinput="infoInput"/>
+        <input class="inputText" placeholder="机构相关信息" bindinput="infoInput"/>
       </view>
     </block>
     
@@ -62,7 +51,7 @@
 
   </view>
   
-  <modal id="modal" hidden="{{hidden_notation}}" title="注册成功" cancel-text="取消" bindcancel="cancel_rcv" bindconfirm="confirm_rcv" >  
+  <modal id="modal" hidden="{{hidden_notation}}" no-cancel="true" title="注册成功" bindconfirm="confirm_rcv" >  
   </modal>
 
 </view>
