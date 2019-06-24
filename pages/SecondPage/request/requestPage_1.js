@@ -15,7 +15,8 @@ Page({
     credit_score: null,
     max_participants: null,
     task_risk: null,
-    mid: 10
+    mid: 10,
+    type: null
   },
 
   /**
@@ -26,7 +27,8 @@ Page({
       title: '接 收 人 要 求',
     })
     this.setData({
-      para: JSON.parse(query.para)
+      para: JSON.parse(query.para),
+      type: app.globalData.mode
     })
   },
 
@@ -75,35 +77,35 @@ Page({
   nextStep: function () {
     var test = app.globalData.test
     if (test) {
-      if (!this.data.min_grade) {
+      if (!this.data.min_grade && this.data.type != 1) {
         wx.showToast({
           title: '请输入最低年级要求！',
           icon: "none"
         })
         return
       }
-      if (!this.data.max_grade) {
+      if (!this.data.max_grade && this.data.type != 1) {
         wx.showToast({
           title: '请输入最高年级要求！',
           icon: "none"
         })
         return
       }
-      if (!this.data.major) {
+      if (!this.data.major && this.data.type != 1) {
         wx.showToast({
           title: '请输入专业要求！',
           icon: "none"
         })
         return
       }
-      if (!this.data.task_expe) {
+      if (!this.data.task_expe && this.data.type != 1) {
         wx.showToast({
           title: '请输入任务经验下限！',
           icon: "none"
         })
         return
       }
-      if (!this.data.credit_score) {
+      if (!this.data.credit_score && this.data.type != 1) {
         wx.showToast({
           title: '请输入信誉积分下限！',
           icon: "none"
@@ -117,14 +119,14 @@ Page({
         })
         return
       }
-      if (!this.data.max_participants) {
+      if (!this.data.max_participants && this.data.type != 1) {
         wx.showToast({
           title: '请输入最大参与人数！',
           icon: "none"
         })
         return
       }
-      if (this.data.min_grade > this.data.max_grade) {
+      if (this.data.type != 1 && this.data.min_grade > this.data.max_grade) {
         wx.showToast({
           title: '最低年级要求不得大于最高年级要求！',
           icon: "none"

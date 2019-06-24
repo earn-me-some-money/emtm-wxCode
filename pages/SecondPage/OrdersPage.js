@@ -186,9 +186,17 @@ Page({
     },
 
     createOrder: function() {
-      wx.navigateTo({
-        url: 'newOrder/newOrderPage',
-      })
+      if (app.globalData.mode == 2) {
+        wx.showToast({
+          title: '请先注册！',
+          icon: "none"
+        })
+      }
+      else {
+        wx.navigateTo({
+          url: 'newOrder/newOrderPage',
+        })
+      }
     },
 
     toSingleTask: function () {

@@ -1,3 +1,4 @@
+var app = getApp()
 const date = new Date()
 const years = []
 const months = []

@@ -2,27 +2,27 @@
 <view class='baseInfo'>
 
   <view class='partName'>
-    <view class='part_min_grade'>
+    <view class='part_min_grade' hidden="{{type==1}}">
       <text class='min_grade'>最低年级要求: </text>
       <input class='input_min_grade' type="number" maxlength='1' bindinput='min_gradeInput'></input>
     </view>
 
-    <view class='part_max_grade'>
+    <view class='part_max_grade' hidden="{{type==1}}">
       <text class='max_grade'>最高年级要求: </text>
       <input class='input_max_grade' type="number" maxlength='1' bindinput="max_gradeInput"></input>
     </view>
 
-    <view class='part_major'>
+    <view class='part_major' hidden="{{type==1}}">
       <text class='major'>专业要求: </text>
       <input class='input_major' maxlength='30' bindinput="majorInput"></input>
     </view>
 
-    <view class='part_experience'>
+    <view class='part_experience' hidden="{{type==1}}">
       <text class='experience'>任务经验下限: </text>
       <input class='input_experience' placeholder='最少完成任务数' type="number" bindinput="task_expeInput"></input>
     </view>
 
-    <view class='part_credit'>
+    <view class='part_credit' hidden="{{type==1}}">
       <text class='credit'>信誉积分下限: </text>
       <input class='input_credit' type="number" bindinput="credit_scoreInput"></input>
     </view>
@@ -32,7 +32,7 @@
       <input class='input_unfinish' type="number" bindinput="task_riskInput"></input>
     </view>
 
-    <view class='part_maxNum'>
+    <view class='part_maxNum' hidden="{{type==1}}">
       <text class='maxNum'>最大参与人数: </text>
       <input class='input_maxNum' type="number" bindinput="max_participantsInput"></input>
     </view>
