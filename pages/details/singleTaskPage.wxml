@@ -4,10 +4,10 @@
   
 
   <view class='identifier'>
-    <view class='taskId'>{{'任务序号：' + "0001"}}</view>
-    <view class='provider'>{{'发布者：' + "蔡倓" + " (" + "552378875" + ")"}}</view>
-    <view class='status'>{{'任务状态：' + '已截止'}}</view>
-    <view class='finish'>{{'完成状态：' + '已完成'}}</view>
+    <view class='taskId'>{{'任务序号：' + taskId}}</view>
+    <view class='provider'>{{'发布者：' + provider + " (" + providerId + ")"}}</view>
+    <view class='status'>{{'任务状态：' + status}}</view>
+    <view class='finish'>{{'完成状态：' + finish}}</view>
   </view>
 
 
@@ -26,7 +26,7 @@
     <view class='ddl'>{{'截止日期：' + ddl}}</view>
   </view>
 
-  <view class='request'>
+  <view class='request' disabled="{{type}}">
     <view class='grade'>{{'年级限制：' + mingrade + ' 到 ' + maxgrade}}</view>
     <view class='major'>{{'专业限制：' + major}}</view>
     <view class='experience'>{{'最少完成任务：' + experience}}</view>
@@ -39,7 +39,7 @@
       <button class='next' bindtap='moreInfo'>查看详细介绍</button>
 
       <block wx:if="{{!can_rcv}}">
-        <button class='rcv' color='gray' bindtap='rcvTask' disabled='true'>已接受任务</button>
+        <button class='rcv' color='gray' bindtap='rcvTask' disabled='true'>接受任务</button>
       </block>
 
       <block wx:if="{{can_rcv}}">
