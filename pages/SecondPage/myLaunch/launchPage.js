@@ -8,11 +8,10 @@ Page({
 
     hidden_rcv: true, // 是否隐藏弹出的接受任务窗口
     hidden_finish: true, // 是否隐藏完成任务的窗口
-    
-    can_do: false,  // 为true，代表是委派页面进入，为false，代表是从首页进入
-    can_rcv: false, // 是否可以接受任务
+
+    can_do: true,  // 为true，代表是委派页面进入，为false，代表是从首页进入
     can_finish: true,// 是否可以点击完成任务
-    vertify_mode: 0,
+    vertify_mode: 1,
 
     taskId: "0001",
     provider: "蔡倓",
@@ -37,7 +36,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
 
   /**
@@ -89,46 +87,46 @@ Page({
 
   },
 
-  rcvTask: function() {
+  rcvTask: function () {
     this.setData({
       hidden_rcv: false
     })
   },
 
-  cancel_rcv: function() {
+  cancel_rcv: function () {
     this.setData({
       hidden_rcv: true
     })
   },
 
-  confirm_rcv: function() {
+  confirm_rcv: function () {
     this.setData({
       hidden_rcv: true
     })
   },
 
-  moreInfo: function() {
+  moreInfo: function () {
 
     if (this.data.vertify_mode == 0) {
       wx.navigateTo({
-        url: 'moreInfo/surveyPage',
+        url: 'receiver/receiverPage',
       })
     }
     else if (this.data.vertify_mode == 1) {
       wx.navigateTo({
-        url: 'moreInfo/tradePage',
+        url: 'receiver/receiverPage',
       })
     }
     else if (this.data.vertify_mode == 2) {
       wx.navigateTo({
-        url: 'moreInfo/packagePage',
+        url: 'receiver/receiverPage',
       })
     }
 
-    
+
   },
 
-  finishTask: function() {
+  finishTask: function () {
     this.setData({
       hidden_finish: false
     })

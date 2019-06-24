@@ -1,0 +1,77 @@
+
+<view class='container'>
+
+  <view class='tx1'>{{"填写者： " + username}}</view>
+
+  <scroll-view class='showList' scroll-y="true" style="height: 500px">
+    <block wx:for="{{questions}}" wx:for-item="single_order" wx:key='id' data-bean="{{single_order}}">
+      <view class="orderItem" catchtap='toSingleTask'>
+
+        <block wx:if="{{single_order.type == 0}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          <input class='input_answer' disabled='true' value='{{single_order.res}}'></input>
+        </block>
+
+        <block wx:if="{{single_order.type == 1}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          <radio-group class="type-radio-group" bindchange="typeChange">
+            <radio class="radio1" disabled='true' value="choice1" checked="{{single_order.res=='A'}}">{{"A：" + single_order.chocie1}}</radio>
+            <radio class="radio2" disabled='true' value="choice2" checked="{{single_order.res=='B'}}">{{"B：" + single_order.chocie2}}</radio>
+            <radio class="radio3" disabled='true' value="choice3" checked="{{single_order.res=='C'}}">{{"C：" + single_order.chocie3}}</radio>
+            <radio class="radio4" disabled='true' value="choice4" checked="{{single_order.res=='D'}}">{{"D：" + single_order.chocie4}}</radio>
+          </radio-group>
+        </block>
+
+        <block wx:if="{{single_order.type == 2}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          
+          <checkbox-group class="type-radio-group" bindchange="typeChange">
+
+            <block wx:if="{{single_order.hasA}}">
+              <checkbox class="radio1" disabled='true' value="choice1" checked='true'>{{"A：" + single_order.chocie1}}</checkbox>
+            </block>
+
+            <block wx:if="{{single_order.hasB}}">
+              <checkbox class="radio2" disabled='true' value="choice2" checked='true'>{{"B：" + single_order.chocie2}}</checkbox>
+            </block>
+
+            <block wx:if="{{single_order.hasC}}">
+              <checkbox class="radio3" disabled='true' value="choice3" checked='true'>{{"C：" + single_order.chocie3}}</checkbox>
+            </block>
+
+            <block wx:if="{{single_order.hasD}}">
+              <checkbox class="radio4" disabled='true' value="choice4" checked='true'>{{"D：" + single_order.chocie4}}</checkbox>
+            </block>
+
+            <block wx:if="{{!single_order.hasA}}">
+              <checkbox class="radio1" disabled='true' value="choice1">{{"A：" + single_order.chocie1}}</checkbox>
+            </block>
+
+            <block wx:if="{{!single_order.hasB}}">
+              <checkbox class="radio2" disabled='true' value="choice2">{{"B：" + single_order.chocie2}}</checkbox>
+            </block>
+
+            <block wx:if="{{!single_order.hasC}}">
+              <checkbox class="radio3" disabled='true' value="choice3">{{"C：" + single_order.chocie3}}</checkbox>
+            </block>
+
+            <block wx:if="{{!single_order.hasD}}">
+              <checkbox class="radio4" disabled='true' value="choice4">{{"D：" + single_order.chocie4}}</checkbox>
+            </block>
+
+            
+
+          </checkbox-group>
+          
+        </block>
+
+
+
+        <view class='divLine'></view>
+  
+      </view>
+    </block>
+  </scroll-view>
+
+</view>
+

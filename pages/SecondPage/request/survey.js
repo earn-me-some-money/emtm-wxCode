@@ -5,6 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+
+    have_choice: false,
+
     id: 0,
     mid: null,
     questions: [],
@@ -38,17 +41,20 @@ Page({
   typeChange: function (e) {
     if (e.detail.value == 'type1') {
       this.setData({
-        selectType: 0
+        selectType: 0,
+        have_choice: false
       })
     }
     else if (e.detail.value == 'type2') {
       this.setData({
-        selectType: 1
+        selectType: 1,
+        have_choice: true
       })
     }
     else if (e.detail.value == 'type3') {
       this.setData({
-        selectType: 2
+        selectType: 2,
+        have_choice: true
       })
     }
   },

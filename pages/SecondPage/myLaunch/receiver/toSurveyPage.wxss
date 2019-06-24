@@ -1,0 +1,84 @@
+
+.tx1 {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+
+  font-size: 40rpx;
+}
+
+
+.showList {
+  margin-top: 20rpx;
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+
+  padding: 10rpx;
+}
+
+.orderItem {
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  margin-top: 60rpx;
+}
+
+.input_answer {
+  margin-top: 30rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  border: 1rpx #bbb solid;
+  border-radius: 10rpx; 
+}
+
+.type-radio-group {
+  display: block;
+  margin-top: 10rpx;
+  column-count: 1;
+}
+
+.radio1 {
+  left: 5%;
+  width: 90%;
+  margin-top: 15rpx;
+}
+
+.radio2 {
+  left: 5%;
+  width: 90%;
+  margin-top: 10rpx;
+}
+
+.radio3 {
+  left: 5%;
+  width: 90%;
+  margin-top: 10rpx;
+}
+
+.radio4 {
+  left: 5%;
+  width: 90%;
+  margin-top: 10rpx;
+}
+
+
+.divLine {
+  position: absolute;
+  background: #E0E3DA;
+  width: 100%;
+  height: 2rpx;
+  margin-top: 20rpx;
+}
+
+.finish_status {
+  position: absolute;
+  top: 90%;
+  font-size: 40rpx;
+  font-style: normal;
+}

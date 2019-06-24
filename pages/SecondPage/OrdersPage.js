@@ -163,5 +163,12 @@ Page({
       wx.navigateTo({
         url: '../details/singleTaskPage',
       })
+    },
+
+    toSingleTaskOfLaunch: function(e) {
+      console.log(e.currentTarget.dataset)
+      wx.navigateTo({
+        url: 'myLaunch/launchPage',
+      })  
     }
 })

@@ -5,7 +5,7 @@
   <view class='baseInfo'>
 
     <view class='partId'>
-      <text class='id'>问题序号: </text>
+      <text class='id'>{{"问题序号:" + "   " }}</text>
       <text class='input_id'>{{id+1}}</text>
     </view>
 
@@ -18,16 +18,40 @@
       </radio-group>
     </view>
     
+
+
     <view class='partTaskName'>
-      <text class='taskname'>题目内容:</text>
-      <input class='input_task' placeholder='请输入题目内容(30个字以内)' maxlength="30" bindinput="contentInput"></input>
+        <text class='taskname'>题目内容:</text>
+        <input class='input_task' placeholder='请输入题目内容(30个字以内)' maxlength="30" bindinput="contentInput"></input>
     </view>
 
-    <view class='partChoice'>
-      <text class='content'>提供选项:</text>
-      <input class='input_content' placeholder='使用分号隔开不同选项，填空题只需提供一个选项'></input>
-    </view>
-  
+
+    <block wx:if="{{have_choice}}">
+      <view class='partChoice'>
+        <text class='content'>提供选项:</text>
+
+        <view class='choice'>
+          <view class='choice_text'>{{'A: '}}</view>
+          <input class='input_content' placeholder='输入A选项内容，若无此选项则不输入' bindinput="choice1"></input>
+        </view>
+
+        <view class='choice'>
+          <view class='choice_text'>{{'B: '}}</view>
+          <input class='input_content' placeholder='输入B选项内容，若无此选项则不输入' bindinput="choice2"></input>
+        </view>
+
+        <view class='choice'>
+          <view class='choice_text'>{{'C: '}}</view>
+          <input class='input_content' placeholder='输入C选项内容，若无此选项则不输入' bindinput="choice3"></input>
+        </view>
+
+        <view class='choice'>
+          <view class='choice_text'>{{'D: '}}</view>
+          <input class='input_content' placeholder='输入D选项内容，若无此选项则不输入' bindinput="choice4"></input>
+        </view>
+
+      </view>
+    </block>
 
   </view>
 

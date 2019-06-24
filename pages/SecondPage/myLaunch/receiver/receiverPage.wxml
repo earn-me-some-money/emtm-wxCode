@@ -1,0 +1,24 @@
+<!--pages/SecondPage/myLaunch/receiver/receiverPage.wxml-->
+<view class='container'>
+
+  <view class='recevier'>
+    <view class='tx1'>接受者信息：</view>
+
+    <scroll-view class='userList' scroll-y="true" style="height: 250px">
+      <block wx:for="{{users}}" wx:for-item="single_order" wx:key='id'>
+        <view class="orderItem" bindtap='toSurvey' data-bean="{{single_order}}" >                            <text class='title'>{{single_order.index + ". " + single_order.username}}</text>
+          <view class='divLine2'></view>
+    
+        </view>
+      </block>
+
+    </scroll-view>
+
+  </view>
+
+  <view class='finish_status'>
+    <view class='tx2'>完成情况：</view>
+    <view class='title2'>{{finish + " / " + total}}</view>
+  </view>
+
+</view>
