@@ -62,12 +62,6 @@ Page({
     })
   },
 
-  task_riskInput: function (e) {
-    this.setData({
-      task_risk: e.detail.value
-    })
-  },
-
   max_participantsInput: function (e) {
     this.setData({
       max_participants: e.detail.value

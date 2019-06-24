@@ -177,6 +177,12 @@ Page({
     })
   },
 
+  task_riskInput: function (e) {
+    this.setData({
+      task_risk: e.detail.value
+    })
+  },
+
   tasknameInput: function (e) {
     this.setData({
       taskname: e.detail.value

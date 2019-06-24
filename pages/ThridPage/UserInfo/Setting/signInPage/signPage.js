@@ -168,7 +168,7 @@ Page({
     this.setData({
       hidden_notation: true
     })
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../../../../Login/loginPage',
     })
   },

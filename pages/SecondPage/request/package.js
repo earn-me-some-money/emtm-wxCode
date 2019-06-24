@@ -1,4 +1,6 @@
 // pages/SecondPage/request/package.js
+var app = getApp();
+
 Page({
 
   /**
@@ -16,7 +18,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (query) {
     this.setData({
       mid: query.mid
     })
@@ -108,8 +110,8 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                wx.navigateTo({
-                  url: '../OrdersPage',
+                wx.navigateBack({
+                  delta: 2
                 })
               }
             }

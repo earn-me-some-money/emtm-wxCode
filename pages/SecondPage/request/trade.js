@@ -17,7 +17,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (query) {
     wx.setNavigationBarTitle({
       title: '闲 置 交 易 类 描 述',
     })
@@ -119,8 +119,8 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                wx.navigateTo({
-                  url: '../OrdersPage',
+                wx.navigateBack({
+                  delta: 2
                 })
               }
             }
