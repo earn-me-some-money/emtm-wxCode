@@ -128,16 +128,6 @@ Page({
         }
       }
 
-      var para = {
-        "verify_mode": true,
-        "user_id": this.data.text1,
-        "organization": this.data.text2
-      }
-      wx.navigateTo({
-        url: 'signInPage/signPage?para=' + JSON.stringify(para),
-      })
-
-      /*
       wx.showLoading({ title: "认证中..." })
       var FSM = wx.getFileSystemManager(); 
       var _this = this
@@ -188,6 +178,5 @@ Page({
           })
         }
       })
-      */
     }
 })
