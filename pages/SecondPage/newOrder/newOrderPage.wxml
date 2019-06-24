@@ -28,6 +28,11 @@
       <text class='payment'>酬金:</text>
       <input class='input_pay' type='number' placeholder='请输入具体金额' bindinput='paymentInput'></input>
     </view>
+
+    <view class='part_unfinish'>
+      <text class='unfinish'>任务失败扣分: </text>
+      <input class='input_unfinish' type="number" bindinput="task_riskInput"></input>
+    </view>
     
     <view class='partTime'>
       <view class='starttime'>

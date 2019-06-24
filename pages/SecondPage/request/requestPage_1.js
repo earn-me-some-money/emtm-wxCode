@@ -16,7 +16,6 @@ Page({
     max_participants: null,
     task_risk: null,
     mid: 10,
-    type: null
   },
 
   /**
@@ -78,56 +77,50 @@ Page({
   nextStep: function () {
     var test = app.globalData.test
     if (test) {
-      if (!this.data.min_grade && this.data.type != 1) {
+      if (!this.data.min_grade) {
         wx.showToast({
           title: '请输入最低年级要求！',
           icon: "none"
         })
         return
       }
-      if (!this.data.max_grade && this.data.type != 1) {
+      if (!this.data.max_grade) {
         wx.showToast({
           title: '请输入最高年级要求！',
           icon: "none"
         })
         return
       }
-      if (!this.data.major && this.data.type != 1) {
+      if (!this.data.major) {
         wx.showToast({
           title: '请输入专业要求！',
           icon: "none"
         })
         return
       }
-      if (!this.data.task_expe && this.data.type != 1) {
+      if (!this.data.task_expe) {
         wx.showToast({
           title: '请输入任务经验下限！',
           icon: "none"
         })
         return
       }
-      if (!this.data.credit_score && this.data.type != 1) {
+      if (!this.data.credit_score) {
         wx.showToast({
           title: '请输入信誉积分下限！',
           icon: "none"
         })
         return
       }
-      if (!this.data.task_risk) {
-        wx.showToast({
-          title: '请输入任务失败扣分！',
-          icon: "none"
-        })
-        return
-      }
-      if (!this.data.max_participants && this.data.type != 1) {
+      
+      if (!this.data.max_participants) {
         wx.showToast({
           title: '请输入最大参与人数！',
           icon: "none"
         })
         return
       }
-      if (this.data.type != 1 && Number(this.data.min_grade) > Number(this.data.max_grade)) {
+      if (Number(this.data.min_grade) > Number(this.data.max_grade)) {
         wx.showToast({
           title: '最低年级要求不得大于最高年级要求！',
           icon: "none"
@@ -149,7 +142,7 @@ Page({
         "credit_score": Number(this.data.credit_score),
         "max_participants": Number(this.data.max_participants)
       },
-      "task_risk": Number(this.data.task_risk),
+      "task_risk": Number(this.data.para.task_risk),
       "task_pay": Number(this.data.para.task_pay),
       "task_time_limit": this.data.para.task_time_limit,
     }

@@ -57,6 +57,8 @@ Page({
     username: null,
     taskname: null,
     payment: null,
+    task_risk: null,
+    type: null,
 
     flag: false,
     year: date.getFullYear(),
@@ -72,7 +74,6 @@ Page({
     months: months,
     days: days,
     value: [date.getFullYear(), thisMon - 1, thisDay - 1],
-
     isShowDates: false
   },
 
@@ -81,7 +82,9 @@ Page({
    */
   onLoad: function (options) {
     this.getTime();
-
+    this.setData({
+      type: app.globalData.mode
+    })
     wx.setNavigationBarTitle({
       title: '发 布 委 派',
     })
@@ -204,18 +207,84 @@ Page({
         })
         return
       }
+      if (!this.data.task_risk) {
+        wx.showToast({
+          title: '请输入失败扣分数！',
+          icon: "none"
+        })
+        return
+      }
     }
-    var para = {
-      task_name: this.data.username,
-      task_mode: this.data.selectType,
-      task_intro: this.data.taskname,
-      task_pay: this.data.payment,
-      task_time_limit: this.data.year + '-' + this.data.month + '-' + this.data.day +
-        ':' + 23 + '-' + 59
+    
+    if (this.data.type == 0) {
+      var para = {
+        task_name: this.data.username,
+        task_mode: this.data.selectType,
+        task_intro: this.data.taskname,
+        task_pay: this.data.payment,
+        task_time_limit: this.data.year + '-' + this.data.month + '-' + this.data.day +
+          ':' + 23 + '-' + 59,
+        task_risk: this.data.task_risk
+      }
+      wx.navigateTo({
+        url: '../request/requestPage_1?para=' + JSON.stringify(para),
+      })
     }
-    wx.navigateTo({
-      url: '../request/requestPage_1?para=' + JSON.stringify(para),
-    })
+
+    else {
+      var para = {
+        "userid": app.globalData.openid,
+        "task_name": this.data.username,
+        "task_intro": this.data.taskname,
+        "task_mode": Number(this.data.selectType),
+        "task_risk": Number(this.data.task_risk),
+        "task_pay": Number(this.data.payment),
+        "task_time_limit": this.data.year + '-' + this.data.month + '-' + this.data.day +
+          ':' + 23 + '-' + 59
+      }
+      wx.showLoading({ title: "新建任务中..." })
+      var _this = this
+      wx.request({
+        url: app.globalData.serpath + 'task/release',
+        data: para,
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        method: 'POST',
+        success: function (res) {
+          if (res.data.code) {
+            _this.setData({
+              mid: res.data.mid
+            })
+            wx.hideLoading()
+            switch (Number(_this.data.selectType)) {
+              case 0:
+                wx.navigateTo({
+                  url: '../request/survey?mid=' + res.data.mid,
+                })
+                break;
+              case 1:
+                wx.navigateTo({
+                  url: '../request/trade?mid=' + res.data.mid,
+                })
+                break;
+              case 2:
+                wx.navigateTo({
+                  url: '../request/package?mid=' + res.data.mid,
+                })
+                break;
+            }
+          }
+          else {
+            wx.hideLoading()
+            wx.showToast({
+              title: res.data.err_message,
+              icon: "none"
+            })
+          }
+        }
+      })
+    }
     
   }
 })
