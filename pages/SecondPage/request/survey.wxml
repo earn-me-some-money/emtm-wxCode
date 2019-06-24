@@ -12,9 +12,9 @@
     <view class='partType'>
       <view class='choice'>问题类型: </view>
       <radio-group class="type-radio-group" bindchange="typeChange">
-        <radio class="radio1" value="type1" checked>填空题</radio>
-        <radio class="radio2" value="type2">单选题</radio>
-        <radio class="radio3" value="type3">多选题</radio>
+        <radio class="radio1" value="type1" checked="{{selectType==0}}">填空题</radio>
+        <radio class="radio2" value="type2" checked="{{selectType==1}}">单选题</radio>
+        <radio class="radio3" value="type3" checked="{{selectType==2}}">多选题</radio>
       </radio-group>
     </view>
     
@@ -22,7 +22,7 @@
 
     <view class='partTaskName'>
         <text class='taskname'>题目内容:</text>
-        <input class='input_task' placeholder='请输入题目内容(30个字以内)' maxlength="30" bindinput="contentInput"></input>
+        <input class='input_task' placeholder='请输入题目内容(30个字以内)' maxlength="30" bindinput="contentInput" value="{{content}}"></input>
     </view>
 
 
@@ -32,22 +32,22 @@
 
         <view class='choice'>
           <view class='choice_text'>{{'A: '}}</view>
-          <input class='input_content' placeholder='输入A选项内容，若无此选项则不输入' bindinput="choice1"></input>
+          <input class='input_content' placeholder='输入A选项内容，若无此选项则不输入' bindinput="choice1" value="{{choice1}}"></input>
         </view>
 
         <view class='choice'>
           <view class='choice_text'>{{'B: '}}</view>
-          <input class='input_content' placeholder='输入B选项内容，若无此选项则不输入' bindinput="choice2"></input>
+          <input class='input_content' placeholder='输入B选项内容，若无此选项则不输入' bindinput="choice2" value="{{choice2}}"></input>
         </view>
 
         <view class='choice'>
           <view class='choice_text'>{{'C: '}}</view>
-          <input class='input_content' placeholder='输入C选项内容，若无此选项则不输入' bindinput="choice3"></input>
+          <input class='input_content' placeholder='输入C选项内容，若无此选项则不输入' bindinput="choice3" value="{{choice3}}"></input>
         </view>
 
         <view class='choice'>
           <view class='choice_text'>{{'D: '}}</view>
-          <input class='input_content' placeholder='输入D选项内容，若无此选项则不输入' bindinput="choice4"></input>
+          <input class='input_content' placeholder='输入D选项内容，若无此选项则不输入' bindinput="choice4" value="{{choice4}}"></input>
         </view>
 
       </view>
