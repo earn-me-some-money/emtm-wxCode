@@ -7,7 +7,11 @@ Page({
   data: {
 
     hidden_rcv: true, // 是否隐藏弹出的接受任务窗口
+    hidden_finish: true, // 是否隐藏完成任务的窗口
+    
+    can_do: true,  // 为true，代表是委派页面进入，为false，代表是从首页进入
     can_rcv: false, // 是否可以接受任务
+    can_finish: true,// 是否可以点击完成任务
     vertify_mode: 1,
 
     taskId: "0001",
@@ -105,22 +109,40 @@ Page({
 
   moreInfo: function() {
 
-    if (this.data.vertify_mode == 1) {
-      wx.navigateTo({
-        url: 'moreInfo/packagePage',
-      })
-    }
-    else if (this.data.vertify_mode == 2) {
-      wx.navigateTo({
-        url: 'moreInfo/tradePage',
-      })
-    }
-    else if (this.data.vertify_mode == 3) {
+    if (this.data.vertify_mode == 0) {
       wx.navigateTo({
         url: 'moreInfo/surveyPage',
       })
     }
+    else if (this.data.vertify_mode == 1) {
+      wx.navigateTo({
+        url: 'moreInfo/tradePage',
+      })
+    }
+    else if (this.data.vertify_mode == 2) {
+      wx.navigateTo({
+        url: 'moreInfo/packagePage',
+      })
+    }
 
     
+  },
+
+  finishTask: function() {
+    this.setData({
+      hidden_finish: false
+    })
+  },
+
+  cancel_finish: function () {
+    this.setData({
+      hidden_finish: true
+    })
+  },
+
+  confirm_finish: function () {
+    this.setData({
+      hidden_finish: true
+    })
   }
 })

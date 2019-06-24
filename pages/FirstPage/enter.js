@@ -9,10 +9,10 @@ Page({
         selectData: ['综合排序', '信誉最高', '距离最近', '报酬最高', '耗时最少'],//下拉列表的数据
         index: 0, //选择的下拉列表下标
       task: [
-        { type: "寄件", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123"}, 
-        { type: "寄件", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123" },
-        { type: "寄件", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123" },
-        { type: "寄件", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123" }]
+        { type: "取件寄件类", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123"}, 
+        { type: "取件寄件类", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123" },
+        { type: "取件寄件类", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123" },
+        { type: "取件寄件类", task_name: "帮忙", task_intro: "介绍", task_state: "未完成", task_pay: "cost", providerTime: "123", poster_name: "123" }]
     },
     selectTap() {
         this.setData({

@@ -1,26 +1,10 @@
 /* pages/OrdersPage/OrdersPage.wxss */
 
-
-/*
- orderList
-*/
-
 .orderList {
   display: block;
   position: fixed;
   height: 80%;
-  top: 18%;
-  left: 5%;
-  right: 5%;
-  width: 90%;
-  align-content: center;
-}
-
-.launchList {
-  display: block;
-  position: fixed;
-  height: 80%;
-  top: 18%;
+  top: 40rpx;
   left: 5%;
   right: 5%;
   width: 90%;

@@ -6,7 +6,7 @@
       <view class="orderItem" catchtap='toSingleTask'>
 
         <view class='info'>
-          <image class='typeIcon' src="../../images/{{single_order.type}}.png"></image>
+          <image class='typeIcon' src="../../../images/{{single_order.type}}.png"></image>
           <text class='title'>{{single_order.type + ": " + single_order.task_name}}</text>
         </view>
 
