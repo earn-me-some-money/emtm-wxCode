@@ -1,21 +1,56 @@
 // pages/details/moreInfo/tradePage.js
+var app = getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    type: "电子产品类",
-    info: "无",
-    loss: "外部完好，无损坏",
-    address: "内环东路至善园2号"
+    type: "?",
+    info: "?",
+    loss: "?",
+    address: "?"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var para = JSON.parse(options.para)
+    console.log(para)
+    var para = {
+      "task_mid": Number(para.task_mid),
+      "userid": app.globalData.openid,
+      "poster_id": Number(para.poster_id)
+    }
 
+    var _this = this
+    wx.request({
+      url: app.globalData.serpath + 'transaction',
+      data: para,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        if (res.data.code) {
+          _this.setData({
+            type: res.data.t_type,
+            info: res.data.info,
+            loss: res.data.loss,
+            address: res.data.address,
+          })
+          wx.hideLoading()
+        }
+        else {
+          wx.hideLoading()
+          wx.showToast({
+            title: res.data.err_message,
+            icon: "none"
+          })
+        }
+      }
+    })
   },
 
   /**

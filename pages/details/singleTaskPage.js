@@ -13,7 +13,7 @@ Page({
     
     can_do: false,  // 为true，代表是委派页面进入，为false，代表是从首页进入
     can_rcv: false, // 是否可以接受任务
-    can_finish: true,// 是否可以点击完成任务
+    can_finish: false,// 是否可以点击完成任务
     vertify_mode: 0,
 
     taskId: 1,
@@ -41,10 +41,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (query) {
+    
     var para = {
       "userid": app.globalData.openid,
-      "poster_id": query.para.poster_id,
-      "task_mid": query.para.mid
+      "poster_id": JSON.parse(query.para).poster_id,
+      "task_mid": JSON.parse(query.para).mid
     }
     console.log(para)
     var _this = this
@@ -95,27 +96,23 @@ Page({
           else {
             _this.setData({
               status: "已结束",
-              can_finish: false
             })
           }
           switch (_this.data.task_user_state) {
             case 0:
               _this.setData({
-                finish: "已发布"
+                finish: "已发布",
+                can_do: true
               })
               break;
             case 1:
               _this.setData({
                 finish: "已完成",
-                can_do: true,
-                can_finish: false
               })
               break;
             case 2:
               _this.setData({
                 finish: "未完成",
-                can_do: true,
-                can_finish: true
               })
               break;
             case 3:
@@ -152,8 +149,8 @@ Page({
   confirm_rcv: function() {
     var para = {
       "userid": app.globalData.openid,
-      "poster_id": query.para.poster_id,
-      "task_mid": query.para.mid
+      "poster_id": this.data.poster_id,
+      "task_mid": this.data.mid
     }
     var _this = this
     wx.request({
@@ -165,11 +162,11 @@ Page({
       method: 'POST',
       success: function (res) {
         if (res.data.code) {
-          this.setData({
+          _this.setData({
             hidden_rcv: true
           })
           wx.showModal({
-            title: '发布成功',
+            title: '接受成功',
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
@@ -190,20 +187,31 @@ Page({
   },
 
   moreInfo: function() {
-    
     if (this.data.vertify_mode == 0) {
+      var para = {
+        "task_mid": Number(this.data.taskId),
+      }
       wx.navigateTo({
-        url: 'moreInfo/surveyPage',
+        url: 'moreInfo/surveyPage?para=' + para
       })
     }
     else if (this.data.vertify_mode == 1) {
+      var para = {
+        "task_mid": Number(this.data.taskId),
+        "poster_id": Number(this.data.providerId)
+      }
       wx.navigateTo({
-        url: 'moreInfo/tradePage',
+        url: 'moreInfo/tradePage?para=' + JSON.stringify(para)
       })
     }
     else if (this.data.vertify_mode == 2) {
+      var para = {
+        "providerName": this.data.provider,
+        "task_mid": Number(this.data.taskId),
+        "poster_id": Number(this.data.providerId)
+      }
       wx.navigateTo({
-        url: 'moreInfo/packagePage',
+        url: 'moreInfo/packagePage?para=' + JSON.stringify(para)
       })
     }
   },

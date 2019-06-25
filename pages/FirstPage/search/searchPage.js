@@ -41,7 +41,7 @@ Page({
         if (res.data.code) {
           _this.fullfill(res)
           _this.setData({
-            rev_task: res.data.tasks
+            rev_task: res.data.search_result
           })
         }
         else {
@@ -55,8 +55,8 @@ Page({
   },
 
   fullfill: function (res) {
-    for (var i = 0; i < res.data.tasks.length; i++) {
-      var x = res.data.tasks[i]
+    for (var i = 0; i < res.data.search_result.length; i++) {
+      var x = res.data.search_result[i]
       switch (x.task_mode) {
         case 0:
           x["type"] = "问卷调查类"
@@ -70,19 +70,28 @@ Page({
         default:
           break
       }
-      if (x.user_finish_state) {
-        x["state"] = "已完成"
+      if (x.task_state) {
+        x["state"] = "进行中"
       }
       else {
-        x["state"] = "未完成"
+        x["state"] = "已截止"
       }
       x.providerTime = x.task_time_limit.slice(0, 10) + " " +
         x.task_time_limit.slice(11, 13) + ":" + x.task_time_limit.slice(14, 16)
     }
+    res.data.search_result.sort(function(a, b){
+      return b.score - a.score
+    })
   },
 
 
   toSingleTask: function(e) {
-    console.log(e.currentTarget.dataset)
+    var para = {
+      mid: e.currentTarget.dataset.bean.mid,
+      poster_id: e.currentTarget.dataset.bean.poster_id
+    }
+    wx.navigateTo({
+      url: '../../details/singleTaskPage?para=' + JSON.stringify(para)
+    })
   }
 })
