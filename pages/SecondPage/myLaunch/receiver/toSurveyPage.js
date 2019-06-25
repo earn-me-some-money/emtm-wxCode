@@ -7,17 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
     username: "?",
 
     answers: [],
     questions: [],
 
     show: [
-      { type: 0, id: 1, title: "今天吃了什么水果？", res: "啊哈哈哈哈" },
-      { type: 1, id: 2, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜", check: true }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }] },
-      { type: 0, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }] },
-      { type: 2, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜", check: true }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'E', title: "西瓜", check: true }] }
     ]
   },
 
@@ -71,14 +67,35 @@ Page({
                 _this.setData({
                   answers: res.data.answers
                 })
+                var t = []
                 var q = _this.data.questions
                 var a = _this.data.answers
-                for (var i = 0; i < a.length; i ++) {
+                for (var i = 0; i < a.length; i++) {
                   var o = {}
                   o.type = a[i].q_type
                   o.id = a[i].order + 1
                   o.title = a[i].content
+                  if (o.type == 0) {
+                    o.res = a[i].answer
+                  }
+                  else {
+                    o.choice = []
+                    for (var j = 0; j < q[i].choices.length; j++) {
+                      var c = {}
+                      c.index = j
+                      c.title = q[i].choices[j]
+                      o.choice.push(c)
+                    }
+                    for (var j = 0; j < a[i].choices.length; j++) {
+                      console.log(a[i].choices[j])
+                      o.choice[a[i].choices[j]].check = true
+                    }
+                  }
+                  t.push(o)
                 }
+                _this.setData({
+                  show: t
+                })
               }
               else {
                 wx.showToast({

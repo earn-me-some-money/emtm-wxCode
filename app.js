@@ -28,8 +28,32 @@ App({
               'content-type': 'application/json' // 默认值
             },
             success: function (res) {
-              // console.log(res.data.openid)
+              console.log(res.data.openid)
               _this.globalData.openid = res.data.openid
+              // 登录应用
+              wx.request({
+                url: _this.globalData.serpath + 'login',
+                data: {
+                  "userid": _this.globalData.openid,
+                  "wechat_ok": _this.globalData.auth
+                },
+                method: 'POST',
+                header: {
+                  'content-type': 'application/json' // 默认值
+                },
+                success: function (res) {
+                  if (res.data.code) {
+                    _this.globalData.mode = res.data.user_type
+                  }
+                  else {
+                    _this.globalData.mode = 2
+                    wx.showToast({
+                      title: res.data.err_message,
+                      icon: "none"
+                    })
+                  }
+                }
+              })
             }
           })
         } else {
@@ -61,29 +85,6 @@ App({
         }
       }
     })
-    // 登录应用
-    wx.request({
-      url: this.globalData.serpath + 'login',
-      data: {
-        "userid": this.globalData.openid,
-        "wechat_ok": this.globalData.auth
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        if (res.data.code) {
-          _this.globalData.mode = res.data.user_type
-        }
-        else {
-          wx.showToast({
-            title: res.data.err_message,
-            icon: "none"
-          })
-        }
-      }
-    })
   },
   
   globalData: {
@@ -94,6 +95,6 @@ App({
     auth: false,
     mode: 2,
     userInfo: null,
-    test: false
+    test: true
   }
 })
