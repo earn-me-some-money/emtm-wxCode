@@ -77,3 +77,10 @@
   font-size: 40rpx;
   font-style: normal;
 }
+
+.onloadSurvey {
+  position: absolute;
+  top: 90%;
+  font-size: 40rpx;
+  font-style: normal;
+}

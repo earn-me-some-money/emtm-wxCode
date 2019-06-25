@@ -56,7 +56,13 @@
     </block>
   </scroll-view>
 
-  <view class='finish_status'>{{"完 成 情 况：" + finish_num + " / " + total_num}}</view>
+  <block wx:if="{{!task_user_state}}">
+    <button class='onloadSurvey' bindtap='onloadSurvey' disabled='false'>已 提 交 问 卷</button>
+  </block>
+
+  <block wx:if="{{task_user_state}}">
+    <button class='onloadSurvey' bindtap='onloadSurvey'>提 交 问 卷</button>
+  </block>
 
 </view>
 

@@ -14,10 +14,10 @@ Page({
     questions: [],
 
     show: [
-      { type: 0, id: 1, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉",  res: "啊哈哈哈哈"},
-      { type: 1, id: 2, title: "今天吃了什么水果？", chocie1: "西瓜西瓜西西瓜", chocie2: "桃子西瓜西瓜", chocie3: "苹果", chocie4: "香蕉", res: 'B' },
-      { type: 1, id: 3, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉", res: 'C' },
-      { type: 2, id: 3, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉", hasA: true, hasB: true, hasC: false, hasD: false}
+      { type: 0, id: 1, title: "今天吃了什么水果？", res: "啊哈哈哈哈" },
+      { type: 1, id: 2, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜", check: true }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }] },
+      { type: 0, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }] },
+      { type: 2, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜", check: true }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'E', title: "西瓜", check: true }] }
     ]
   },
 

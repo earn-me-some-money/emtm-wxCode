@@ -16,7 +16,7 @@ Page({
       { type: 2, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'E', title: "西瓜" }] }
     ],
     // task_user_state为true则用户接受任务后未完成，其余为false
-    task_user_state: false,
+    task_user_state: true,
     id_clicked: 0,
     finish_num: 12,
     total_num: 44
