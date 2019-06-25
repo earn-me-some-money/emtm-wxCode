@@ -10,7 +10,7 @@
           <input class='input_answer'></input>
         </block>
 
-        <block wx:if="{{single_order.type == 1}}">
+        <!--block wx:if="{{single_order.type == 1}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
           <radio-group class="type-radio-group" bindchange="typeChange">
             <radio class="radio1" value="choice1" checked="{{single_order.res=='A'}}">{{"A：" + single_order.chocie1}}</radio>
@@ -30,9 +30,25 @@
             <checkbox class="radio4" value="choice4">{{"D：" + single_order.chocie4}}</checkbox>
           </checkbox-group>
           
+        </block-->
+
+        <block wx:if="{{single_order.type == 1}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          <radio-group class="type-radio-group" bindchange="typeChange">
+            <block wx:for="{{single_order.choice}}" wx:for-item="single_choice">
+              <radio class="radio1" value='{{single_choice.index}}' checked='{{single_choice.check}}'>{{single_choice.index + ": " + single_choice.title}}</radio>
+            </block>
+          </radio-group>
         </block>
 
-
+        <block wx:if="{{single_order.type == 2}}">
+          <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
+          <checkbox-group class="type-radio-group" bindchange="typeChange2">
+            <block wx:for="{{single_order.choice}}" wx:for-item="single_choice" wx:key='cid'>
+              <checkbox class="radio1" value='{{single_choice.index}}'>{{single_choice.index + ": " + single_choice.title}}</checkbox>
+            </block>
+          </checkbox-group>
+        </block>
 
         <view class='divLine'></view>
   

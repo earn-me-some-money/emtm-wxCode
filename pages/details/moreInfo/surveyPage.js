@@ -10,10 +10,10 @@ Page({
     questions: [],
     answers: [],
     show: [
-      { type: 0, id: 1, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" },
-      { type: 1, id: 2, title: "今天吃了什么水果？", chocie1: "西瓜西瓜西西瓜", chocie2: "桃子西瓜西瓜", chocie3: "苹果", chocie4: "香蕉" },
-      { type: 0, id: 3, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" },
-      { type: 2, id: 3, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" }
+      { type: 0, id: 1, title: "今天吃了什么水果？", res: ""},
+      { type: 1, id: 2, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜", check: true }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" } ] },
+      { type: 0, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }] },
+      { type: 2, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'E', title: "西瓜" }] }
     ],
     // task_user_state为true则用户接受任务后未完成，其余为false
     task_user_state: false,
@@ -72,6 +72,10 @@ Page({
   },
 
   typeChange: function (e) {
+    console.log(e)
+  },
+
+  typeChange2: function (e) {
     console.log(e)
   },
   
