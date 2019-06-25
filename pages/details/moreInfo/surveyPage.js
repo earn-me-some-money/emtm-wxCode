@@ -83,7 +83,6 @@ Page({
     this.setData({
       id_clicked: e.currentTarget.dataset.bean.id
     })
-
   }
 
 })

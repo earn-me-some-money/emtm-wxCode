@@ -53,7 +53,7 @@ Page({
    */
   data: {
 
-    selectType: 0,
+    selectType: null,
     username: null,
     taskname: null,
     payment: null,
@@ -202,6 +202,13 @@ Page({
       if (!this.data.taskname) {
         wx.showToast({
           title: '请输入委派简介！',
+          icon: "none"
+        })
+        return
+      }
+      if (!this.data.selectType) {
+        wx.showToast({
+          title: '请选择任务类型！',
           icon: "none"
         })
         return
