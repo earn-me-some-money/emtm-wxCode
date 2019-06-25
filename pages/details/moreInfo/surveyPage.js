@@ -1,11 +1,14 @@
 // pages/details/moreInfo/surveyPage.js
+var app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    questions: [
+    questions: [],
+    show: [
       { type: 0, id: 1, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" },
       { type: 1, id: 2, title: "今天吃了什么水果？", chocie1: "西瓜西瓜西西瓜", chocie2: "桃子西瓜西瓜", chocie3: "苹果", chocie4: "香蕉" },
       { type: 0, id: 3, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" },
@@ -19,58 +22,55 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (query) {
     wx.setNavigationBarTitle({
       title: '问卷详情',
     })
+
+    var para = {
+      "userid": app.globalData.openid,
+      "poster_id": JSON.parse(query.para).poster_id,
+      "task_mid": JSON.parse(query.para).task_mid
+    }
+
+    var _this = this
+    wx.request({
+      url: app.globalData.serpath + 'task/question-naire',
+      data: para,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.code) {
+          var q = res.data.questions
+          for (var i = 0; i < q.length; i ++) {
+            var obj = {}
+            obj.type = q[i].q_type
+            obj.id = q[i].order + 1
+            obj.title = q[i].content
+          }
+        }
+        else {
+          wx.showToast({
+            title: res.data.err_message,
+            icon: "none"
+          })
+        }
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  answerInput: function (e) {
+    console.log(e)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  typeChange: function (e) {
+    console.log(e)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  
+  selected: function(e) {
+    console.log(e)
   }
+
 })

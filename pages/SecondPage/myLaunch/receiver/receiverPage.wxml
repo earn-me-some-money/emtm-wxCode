@@ -5,8 +5,8 @@
     <view class='tx1'>接受者信息：</view>
 
     <scroll-view class='userList' scroll-y="true" style="height: 250px">
-      <block wx:for="{{users}}" wx:for-item="single_order" wx:key='id'>
-        <view class="orderItem" bindtap='toSurvey' data-bean="{{single_order}}" >                            <text class='title'>{{single_order.index + ". " + single_order.username}}</text>
+      <block wx:for="{{accept_users}}" wx:for-item="single_order" wx:key='id'>
+        <view class="orderItem" bindtap='toSurvey' data-bean="{{single_order}}" >                            <text class='title'>{{single_order.accept_user_id + ". " + single_order.accept_user_names}}</text>
           <view class='divLine2'></view>
     
         </view>

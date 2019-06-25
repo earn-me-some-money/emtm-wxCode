@@ -132,10 +132,12 @@ Page({
   },
 
   toSingleTask: function (e) {
-    console.log(e.currentTarget.dataset)
-    
+    var para = {
+      mid: e.currentTarget.dataset.bean.mid,
+      poster_id: e.currentTarget.dataset.bean.poster_id
+    }
     wx.navigateTo({
-      url: '../../details/singleTaskPage',
+      url: '../../details/singleTaskPage?para=' + JSON.stringify(para)
     })
   }
 })

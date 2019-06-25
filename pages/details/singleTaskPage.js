@@ -17,22 +17,22 @@ Page({
     vertify_mode: 0,
 
     taskId: 1,
-    provider: "蔡倓",
-    providerId: 552378875,
+    provider: "？",
+    providerId: 1,
     task_state: false,
-    status: "已截止",
+    status: "?",
     task_user_state: 1,
-    finish: "已完成",
-    taskName: "去图书馆取快递",
-    taskInfo: "123456",
-    taskPay: "20.0",
-    ddl: "2018-9-10",
-    mingrade: "大一",
-    maxgrade: "大四",
-    major: "文史哲",
-    experience: 3,
-    credit: 95,
-    maxNum: 30,
+    finish: "?",
+    taskName: "?",
+    taskInfo: "?",
+    taskPay: "?",
+    ddl: "?",
+    mingrade: "?",
+    maxgrade: "?",
+    major: "?",
+    experience: 999,
+    credit: 999,
+    maxNum: 999,
 
     type: false
   },
@@ -41,7 +41,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (query) {
-    
     var para = {
       "userid": app.globalData.openid,
       "poster_id": JSON.parse(query.para).poster_id,
@@ -124,7 +123,6 @@ Page({
           }
         }
         else {
-          wx.hideLoading()
           wx.showToast({
             title: res.data.err_message,
             icon: "none"
@@ -190,9 +188,10 @@ Page({
     if (this.data.vertify_mode == 0) {
       var para = {
         "task_mid": Number(this.data.taskId),
+        "poster_id": Number(this.data.providerId)
       }
       wx.navigateTo({
-        url: 'moreInfo/surveyPage?para=' + para
+        url: 'moreInfo/surveyPage?para=' + JSON.stringify(para)
       })
     }
     else if (this.data.vertify_mode == 1) {

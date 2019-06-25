@@ -2,8 +2,8 @@
 <view class='container'>
 
   <scroll-view class='showList' scroll-y="true" style="height: 400px">
-    <block wx:for="{{questions}}" wx:for-item="single_order" wx:key='id'>
-      <view class="orderItem" catchtap='toSingleTask'>
+    <block wx:for="{{show}}" wx:for-item="single_order" wx:key='id'>
+      <view class="orderItem" catchtap='selected'>
 
         <block wx:if="{{single_order.type == 0}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>

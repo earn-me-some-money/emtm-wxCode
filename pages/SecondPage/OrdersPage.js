@@ -169,9 +169,12 @@ Page({
     },
 
     toSingleTaskOfLaunch: function(e) {
-      console.log(e.currentTarget.dataset)
+      var para = {
+        mid: e.currentTarget.dataset.bean.mid,
+        poster_id: e.currentTarget.dataset.bean.poster_id
+      }
       wx.navigateTo({
-        url: 'myLaunch/launchPage',
-      })  
+        url: 'myLaunch/launchPage?para=' + JSON.stringify(para)
+      })
     }
 })

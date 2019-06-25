@@ -4,12 +4,12 @@
   <view class='tx1'>{{"填写者： " + username}}</view>
 
   <scroll-view class='showList' scroll-y="true" style="height: 500px">
-    <block wx:for="{{questions}}" wx:for-item="single_order" wx:key='id' data-bean="{{single_order}}">
-      <view class="orderItem" catchtap='toSingleTask'>
+    <block wx:for="{{show}}" wx:for-item="single_order" wx:key='id' data-bean="{{single_order}}">
+      <view class="orderItem">
 
         <block wx:if="{{single_order.type == 0}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
-          <input class='input_answer' disabled='true' value='{{single_order.res}}'></input>
+          <input class='input_answer' disabled='true' value='{{single_order.res}}' bindinput="answerInput"></input>
         </block>
 
         <block wx:if="{{single_order.type == 1}}">

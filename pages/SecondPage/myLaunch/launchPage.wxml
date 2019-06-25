@@ -35,7 +35,7 @@
   <block wx:if="{{!can_do}}">
     <view class='buttonList'>
       <button class='next' bindtap='moreInfo'>查看完成情况</button>
-      <button class='rcv' color='gray' bindtap='rcvTask' disabled='true'>已接收</button>
+      <button class='rcv' color='gray' bindtap='rcvTask' disabled='true'>已查收</button>
 
     </view>
   </block>
@@ -43,7 +43,7 @@
   <block wx:if="{{can_do}}">
     <view class='buttonList'>
       <button class='next' bindtap='moreInfo'>查看完成情况</button>
-      <button class='rcv' color='gray' bindtap='rcvTask' >接收任务</button>
+      <button class='rcv' color='gray' bindtap='rcvTask' >查收任务</button>
     </view>
   </block>
 
