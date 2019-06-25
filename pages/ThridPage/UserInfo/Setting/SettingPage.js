@@ -142,6 +142,7 @@ Page({
           else {
             vertify_mode = false
           }
+          console.log(res.data)
           var para = {
             "image_data": res.data,
             "verify_mode": vertify_mode,
@@ -168,6 +169,7 @@ Page({
                 })
               }
               else {
+                console.log(res.data)
                 wx.hideLoading()
                 wx.showToast({
                   title: res.data.err_message,

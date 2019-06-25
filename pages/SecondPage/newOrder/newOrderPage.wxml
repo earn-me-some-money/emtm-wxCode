@@ -12,10 +12,9 @@
     <view class='partType'>
       <view class='choice'>委派类型: </view>
       <radio-group class="type-radio-group" bindchange="typeChange">
-        <radio class="radio1" value="write" checked>问卷调查</radio>
-        <radio class="radio2" value="trade">闲置交易</radio>
-        <radio class="radio3" value="fetch">帮忙取件</radio>
-        <radio class="radio4" value="other">其他类型</radio>
+        <radio class="radio1" disabled="{{type == 1}}" value="write">问卷调查</radio>
+        <radio class="radio2" disabled="{{type == 0}}" value="trade">闲置交易</radio>
+        <radio class="radio3" disabled="{{type == 0}}" value="fetch">帮忙取件</radio>
       </radio-group>
     </view>
     

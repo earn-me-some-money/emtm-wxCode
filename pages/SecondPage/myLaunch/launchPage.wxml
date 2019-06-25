@@ -2,10 +2,10 @@
 <view class='container'>
   
   <view class='identifier'>
-    <view class='taskId'>{{'任务序号：' + "0001"}}</view>
-    <view class='provider'>{{'发布者：' + "蔡倓" + " (" + "552378875" + ")"}}</view>
-    <view class='status'>{{'任务状态：' + '已截止'}}</view>
-    <view class='finish'>{{'完成状态：' + '已完成'}}</view>
+    <view class='taskId'>{{'任务序号：' + taskId}}</view>
+    <view class='provider'>{{'发布者：' + provider + " (" + providerId + ")"}}</view>
+    <view class='status'>{{'任务状态：' + status}}</view>
+    <view class='finish'>{{'完成状态：' + finish}}</view>
   </view>
 
 
