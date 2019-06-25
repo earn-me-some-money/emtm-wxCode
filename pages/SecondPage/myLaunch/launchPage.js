@@ -32,7 +32,7 @@ Page({
     experience: 999,
     credit: 999,
     maxNum: 999,
-
+    student_id: null,
     type: false
 
   },
@@ -83,7 +83,8 @@ Page({
           }
           else {
             _this.setData({
-              type: true
+              type: true,
+              student_id: res.data.accept_users.accept_user_id[0]
             })
           }
           if (_this.data.task_state) {
@@ -133,9 +134,7 @@ Page({
   },
 
   rcvTask: function () {
-    this.setData({
-      hidden_rcv: false
-    })
+    this.finishTask()
   },
 
   cancel_rcv: function () {
@@ -173,8 +172,42 @@ Page({
   },
 
   confirm_finish: function () {
-    this.setData({
-      hidden_finish: true
+    var para = {
+      "userid": app.globalData.openid, //只有是当前任务发布者才可以确认完成
+      "student_id": Number(student_id),
+      "task_mid": Number(taskId)
+    }
+    var _this = this
+    wx.request({
+      url: app.globalData.serpath + 'task/submit',
+      data: para,
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "POST",
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.code) {
+          this.setData({
+            hidden_finish: true
+          })
+          wx.showModal({
+            title: '查收成功',
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                wx.navigateBack()
+              }
+            }
+          })
+        }
+        else {
+          wx.showToast({
+            title: res.data.err_message,
+            icon: "none"
+          })
+        }
+      }
     })
   }
 })

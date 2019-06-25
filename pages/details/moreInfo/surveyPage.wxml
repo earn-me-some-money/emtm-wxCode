@@ -3,7 +3,7 @@
 
   <scroll-view class='showList' scroll-y="true" style="height: 400px">
     <block wx:for="{{show}}" wx:for-item="single_order" wx:key='id'>
-      <view class="orderItem" catchtap='selected'>
+      <view class="orderItem" catchtap='selected' data-bean="{{single_order}}">
 
         <block wx:if="{{single_order.type == 0}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
@@ -13,10 +13,10 @@
         <block wx:if="{{single_order.type == 1}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
           <radio-group class="type-radio-group" bindchange="typeChange">
-            <radio class="radio1" value="choice1" checked>{{"A：" + single_order.chocie1}}</radio>
-            <radio class="radio2" value="choice2">{{"B：" + single_order.chocie2}}</radio>
-            <radio class="radio3" value="choice3">{{"C：" + single_order.chocie3}}</radio>
-            <radio class="radio4" value="choice4">{{"D：" + single_order.chocie4}}</radio>
+            <radio class="radio1" value="choice1" checked="{{single_order.res=='A'}}">{{"A：" + single_order.chocie1}}</radio>
+            <radio class="radio2" value="choice2" checked="{{single_order.res=='B'}}">{{"B：" + single_order.chocie2}}</radio>
+            <radio class="radio3" value="choice3" checked="{{single_order.res=='C'}}">{{"C：" + single_order.chocie3}}</radio>
+            <radio class="radio4" value="choice4" checked="{{single_order.res=='D'}}">{{"D：" + single_order.chocie4}}</radio>
           </radio-group>
         </block>
 

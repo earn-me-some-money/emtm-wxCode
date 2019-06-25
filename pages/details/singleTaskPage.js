@@ -188,7 +188,8 @@ Page({
     if (this.data.vertify_mode == 0) {
       var para = {
         "task_mid": Number(this.data.taskId),
-        "poster_id": Number(this.data.providerId)
+        "poster_id": Number(this.data.providerId),
+        "task_user_state": (this.data.task_user_state == 2)
       }
       wx.navigateTo({
         url: 'moreInfo/surveyPage?para=' + JSON.stringify(para)

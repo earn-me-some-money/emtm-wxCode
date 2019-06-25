@@ -8,13 +8,16 @@ Page({
    */
   data: {
     questions: [],
+    answers: [],
     show: [
       { type: 0, id: 1, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" },
       { type: 1, id: 2, title: "今天吃了什么水果？", chocie1: "西瓜西瓜西西瓜", chocie2: "桃子西瓜西瓜", chocie3: "苹果", chocie4: "香蕉" },
       { type: 0, id: 3, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" },
       { type: 2, id: 3, title: "今天吃了什么水果？", chocie1: "西瓜", chocie2: "桃子", chocie3: "苹果", chocie4: "香蕉" }
     ],
-
+    // task_user_state为true则用户接受任务后未完成，其余为false
+    task_user_state: false,
+    id_clicked: 0,
     finish_num: 12,
     total_num: 44
   },
@@ -33,6 +36,9 @@ Page({
       "task_mid": JSON.parse(query.para).task_mid
     }
 
+    this.setData({
+      task_user_state: JSON.parse(query.para).task_user_state
+    })
     var _this = this
     wx.request({
       url: app.globalData.serpath + 'task/question-naire',
@@ -70,7 +76,10 @@ Page({
   },
   
   selected: function(e) {
-    console.log(e)
+    this.setData({
+      id_clicked: e.currentTarget.dataset.bean.id
+    })
+
   }
 
 })
