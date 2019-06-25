@@ -101,17 +101,19 @@ Page({
             case 0:
               _this.setData({
                 finish: "已发布",
-                can_do: true
+                can_rcv: false
               })
               break;
             case 1:
               _this.setData({
                 finish: "已完成",
+                can_rcv: false
               })
               break;
             case 2:
               _this.setData({
                 finish: "未完成",
+                can_rcv: false
               })
               break;
             case 3:

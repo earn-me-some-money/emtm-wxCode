@@ -84,25 +84,24 @@ Page({
           else {
             _this.setData({
               type: true,
-              student_id: res.data.accept_users.accept_user_id[0]
             })
           }
           if (_this.data.task_state) {
             _this.setData({
               status: "进行中",
-              can_rcv: true
+              can_do: true
             })
           }
           else {
             _this.setData({
               status: "已结束",
+              can_do: false
             })
           }
           switch (_this.data.task_user_state) {
             case 0:
               _this.setData({
                 finish: "已发布",
-                can_do: true
               })
               break;
             case 1:
@@ -118,9 +117,13 @@ Page({
             case 3:
               _this.setData({
                 finish: "未接受",
-                can_rcv: true
               })
               break;
+          }
+          if (_this.data.vertify_mode != 0) {
+            _this.setData({
+              student_id: res.data.accept_users.accept_user_id
+            })
           }
         }
         else {
@@ -172,10 +175,25 @@ Page({
   },
 
   confirm_finish: function () {
+    if (this.data.vertify_mode == 0) {
+      wx.showToast({
+        title: "问卷人物无法查收!",
+        icon: "none"
+      })
+      return
+    }
+    console.log(this.data.student_id)
+    if (this.data.student_id.length == 0) {
+      wx.showToast({
+        title: "暂无接受任务者!",
+        icon: "none"
+      })
+      return
+    }
     var para = {
       "userid": app.globalData.openid, //只有是当前任务发布者才可以确认完成
-      "student_id": Number(student_id),
-      "task_mid": Number(taskId)
+      "student_id": Number(this.data.student_id[0]),
+      "task_mid": Number(this.data.taskId)
     }
     var _this = this
     wx.request({
@@ -188,7 +206,7 @@ Page({
       success: function (res) {
         console.log(res.data)
         if (res.data.code) {
-          this.setData({
+          _this.setData({
             hidden_finish: true
           })
           wx.showModal({
