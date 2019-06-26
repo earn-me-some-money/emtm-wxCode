@@ -202,7 +202,7 @@
 .btnImg {
   width: 70rpx;
   height: 70rpx;
-  align-content: center;
+  margin-top: 20rpx;
 } 
 
 .tx {
@@ -212,31 +212,61 @@
 
 .bt1 {
   display: flex;
+  background-color: transparent;
 }
 
 .bt2 {
-  margin-top: 50rpx;
+  margin-top: 60rpx;
   display: flex;
+  background-color: transparent;
 }
 
 .bt3 {
-  margin-top: 50rpx;
+  margin-top: 60rpx;
   display: flex;
+  background-color: transparent;
 }
 
 .bt4 {
-  margin-top: 50rpx;
+  margin-top: 60rpx;
   display: flex;
+  background-color: transparent;
 }
 
 .bt5 {
-  margin-top: 50rpx;
+  margin-top: 60rpx;
   display: flex;
+  background-color: transparent;
 }
 
 .bt6 {
-  margin-top: 50rpx;
+  margin-top: 60rpx;
   display: flex;
+  background-color: transparent;
+}
+
+.bt1::after{
+  border: 0
+}
+
+.bt2::after{
+  border: 0
+}
+
+.bt3::after{
+  border: 0
+}
+
+.bt4::after{
+  border: 0
+}
+
+.bt5::after{
+  border: 0
+}
+
+.bt6::after{
+  border: 0
 }
 
 .divLine2 {
