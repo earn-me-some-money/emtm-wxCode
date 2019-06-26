@@ -13,7 +13,7 @@ Page({
     info: '123',
 
     is_identifier: true,
-    userType: 2,  // 1代表学生， 2代表奶牛
+    userType: 1,  // 1代表学生， 2代表奶牛
 
     major: '123',
     grade: '123',
