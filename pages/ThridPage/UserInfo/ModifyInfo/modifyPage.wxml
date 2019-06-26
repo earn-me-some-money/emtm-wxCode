@@ -1,0 +1,126 @@
+<!--pages/SecondPage/newOrder/newOrderPage.wxml-->
+
+<view class='container'>
+  
+
+  <view class='baseInfo'>
+    <view class='username'>
+      <text class='tx'>{{'用户名：'}}</text>
+
+      <block wx:if="{{!is_modify}}">
+        <text>{{username}}</text>
+      </block>
+      <block wx:if="{{is_modify}}">
+        <input class='bt' value='{{username}}'></input>
+      </block>
+    </view>
+    
+    <view class='email'>
+      <text class='tx'>{{'电子邮箱：'}}</text>
+
+      <block wx:if="{{!is_modify}}">
+        <text>{{email}}</text>
+      </block>
+      <block wx:if="{{is_modify}}">
+        <input class='bt' value='{{email}}'></input>
+      </block>
+      
+    </view>
+
+    <view class='tel'>
+      <text class='tx'>{{'手机号：'}}</text>
+
+      <block wx:if="{{!is_modify}}">
+        <text>{{tel}}</text>
+      </block>
+      <block wx:if="{{is_modify}}">
+        <input class='bt' value='{{tel}}'></input>
+      </block>
+    </view>
+
+    <view class='info'>
+      <text class='tx'>{{'个人介绍：'}}</text>
+      
+      <block wx:if="{{!is_modify}}">
+        <text>{{info}}</text>
+      </block>
+      <block wx:if="{{is_modify}}">
+        <input class='bt' value='{{info}}'></input>
+      </block>
+
+    </view>
+
+  </view>
+
+
+
+  <view class='identifier'>
+  
+    <view class='is_identified'>{{'认证状态：' + is_identifier }}</view> 
+
+    <view class='userType'>{{'注册类型：' + ''}}</view> 
+    <radio-group class="radiogroup" bindchange="typeChange">
+        <radio class="radio1" value="type1" checked='{{userType==1}}' disabled='true'>学生</radio>
+        <radio class="radio2" value="type2" checked='{{userType==2}}' disabled='true'>奶牛</radio>
+    </radio-group>
+    
+  </view>
+
+
+  <view class='moreInfo'>
+
+    <block wx:if="{{userType==1}}">
+      <view class='major'>
+        <text class='tx'>{{'专业：'}}</text>
+      
+        <block wx:if="{{!is_modify}}">
+          <text>{{major}}</text>
+        </block>
+        <block wx:if="{{is_modify}}">
+          <input class='bt' value='{{major}}'></input>
+        </block>
+
+      </view>
+
+      <view class='grade'>
+        <text class='tx'>{{'年级：'}}</text>
+      
+        <block wx:if="{{!is_modify}}">
+          <text>{{grade}}</text>
+        </block>
+        <block wx:if="{{is_modify}}">
+          <input class='bt' value='{{grade}}'></input>
+        </block>
+      </view>
+
+      <view class='credit'>{{'信誉积分：' + credit }}</view>
+      <view class='finish_work'>{{'完成任务数：' + finish_task }}</view>
+      <view class='launch_work'>{{'发布任务数：' + launch_task }}</view>
+    </block>
+
+    <block wx:if="{{userType==2}}">
+      <view class='group'>{{'组织名称：' + '' }}</view>
+    </block>
+
+  </view>
+
+
+  <view class='buttonList'>
+    
+    <block wx:if="{{!is_modify}}">
+      <button class='modify' bindtap='modify'>编辑</button>
+    </block>
+    <block wx:if="{{is_modify}}">
+      <button class='modify' bindtap='cancel_modify'>取消编辑</button>
+
+      <button class='confirm' bindtap='confirm_modify'>保存</button>
+    </block>
+
+  </view>
+
+
+  <modal id="modal" hidden="{{true}}" title="是否接受该任务？" confirm-text="确认" cancel-text="取消" bindcancel="cancel_rcv" bindconfirm="confirm_rcv">  
+  </modal>
+
+
+</view>

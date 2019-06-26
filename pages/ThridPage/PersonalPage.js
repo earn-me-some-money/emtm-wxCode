@@ -266,8 +266,8 @@ Page({
     },
 
     RecordClick: function () {
-        wx.navigateTo({
-            url: 'UserEvent/Record/RecordPage',
-        })
+      wx.navigateTo({
+        url: 'UserInfo/ModifyInfo/modifyPage',
+      })
     }
 })
