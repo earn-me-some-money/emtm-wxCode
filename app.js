@@ -44,6 +44,10 @@ App({
                 success: function (res) {
                   if (res.data.code) {
                     _this.globalData.mode = res.data.user_type
+                    wx.hideLoading()
+                    wx.switchTab({
+                      url: '../FirstPage/enter',
+                    })
                   }
                   else {
                     _this.globalData.mode = 2
@@ -54,11 +58,25 @@ App({
                   }
                 }
               })
+            },
+            fail: function(res) {
+              console.log(res)
             }
           })
         } else {
+          wx.showToast({
+            title: '获取openid失败！',
+            icon: "none"
+          })
           console.log('获取openid失败！' + res.errMsg)
         }
+      },
+      fail: function(res) {
+        wx.showToast({
+          title: '登录失败！',
+          icon: "none"
+        })
+        console.log(res)
       }
     })
     // 获取用户信息
