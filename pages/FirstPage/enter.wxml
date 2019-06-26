@@ -23,25 +23,13 @@
       <view>帮忙取件</view>
     </button>
 
-    <button class='bt4' bindtap='btClick4'>
-      <image class='btnImg4' src='../../images/全部.png'></image>
-      <view>其他类型</view>
-    </button>
   </view>
 
 
-  <view class='label1'>附近任务</view>
-  <view class='select_box'>
-    <view class='select' catchtap='selectTap'>
-        <text class='select_text'>{{selectData[index]}}</text>
-        <image class='select_img {{selectShow&&"select_img_rotate"}}' src='../../images/三角形.png'  background-size="contain"></image> 
-    </view>
-    <view class='option_box' style='height:{{selectShow?(selectData.length>5?325:selectData.length*50):0}}rpx;'>
-        <text class='option' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
-    </view>
-  </view>
+<view class='label1'>推荐任务</view>
+  
 
-<scroll-view class='showList' scroll-y="true" style="height: 250px">
+<scroll-view class='showList' scroll-y="true" style="height: 300px">
   <block wx:for="{{task}}" wx:for-item="single_order" wx:key='id'>
       <view class="orderItem" bindtap='toSingleTask' data-bean="{{single_order}}" >
 

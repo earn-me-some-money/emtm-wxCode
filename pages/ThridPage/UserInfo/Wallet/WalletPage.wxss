@@ -11,6 +11,10 @@
   height:250rpx;
 }
 
+.buttonList {
+  display: flex;
+}
+
 .moneyValue {
   margin-top: 20rpx;
 }
@@ -22,7 +26,12 @@
   font-size: 40rpx;
 }
 
+.money {
+  margin-top: 40rpx;
+}
+
 .moneyValue {
+  margin-top: 40rpx;
   font-size: 36rpx;
 }
 
@@ -32,11 +41,14 @@
 
 
 .money_in {
-  margin-top: 100rpx;
+  margin-top: 150rpx;
+  font-size: 42rpx;
 }
 
 .money_out {
-  margin-top: 20rpx;
+  margin-top: 150rpx;
+  margin-left: 100rpx;
+  font-size: 42rpx;
 }
 
 .record {

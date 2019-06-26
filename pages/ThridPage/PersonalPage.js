@@ -241,13 +241,13 @@ Page({
 
     myLaunchClick: function () {
         wx.navigateTo({
-            url: 'UserEvent/Process/ProcessPage',
+          url: 'UserEvent/myEvent/EventPage',
         })
     },
 
     myRevClick: function () {
         wx.navigateTo({
-            url: 'UserEvent/Process/ProcessPage',
+          url: 'UserEvent/myEvent/EventPage',
         })
     },
 

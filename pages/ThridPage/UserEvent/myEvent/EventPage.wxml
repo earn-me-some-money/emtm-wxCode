@@ -7,8 +7,8 @@
   </view-->
 
   <view class='tabBar'>
-    <button class='bt1' bindtap='btclick1' style="color:{{bt1Color}};">进 行 中</button>
-    <button class='bt2' bindtap='btclick2' style="color:{{bt2Color}};">待 确 认</button>
+    <button class='bt1' bindtap='btclick1' style="color:{{bt1Color}};">我 的 发 布</button>
+    <button class='bt2' bindtap='btclick2' style="color:{{bt2Color}};">我 的 接 收</button>
   </view>
 
   <view class='divLine1'></view>

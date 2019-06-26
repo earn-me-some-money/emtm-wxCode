@@ -10,16 +10,7 @@
     <text class="userinfo-creditscore">{{userInfo.check_credit}}</text>
   </view>
 
-  <view class='relationship'>
-    <button class='bt1' bindtap="NotificationClick">
-      <image class='btnImg1' src='../../images/消息.png'></image>
-      <view>系统消息</view>
-    </button>
-
-    <button class='bt2' bindtap="RelationshipClick">
-      <image class='btnImg2' src='../../images/群组多人.png'></image>
-      <view>我的群组</view>
-    </button>
+  <!--view class='relationship'>
 
     <button class='bt3' bindtap="WalletClick">
       <image class='btnImg3' src='../../images/钱包.png'></image>
@@ -49,26 +40,61 @@
       <view>我的接收</view>
     </button>
 
-    <button class='bt8' bindtap="myHistoryClick">
-      <image class='btnImg8' src='../../images/足迹.png'></image>
-      <view>我的足迹</view>
-    </button>
-
-    <button class='bt9' bindtap="InProcessClick">
-      <image class='btnImg9' src='../../images/进行中.png'></image>
-      <view>进行中</view>
-    </button>
-
-    <button class='bt10' bindtap="beConfirmClick">
-      <image class='btnImg10' src='../../images/待确认.png'></image>
-      <view>待确认</view>
-    </button>
-
-    <button class='bt11' bindtap="RecordClick">
+    <button class='bt8' bindtap="RecordClick">
       <image class='btnImg11' src='../../images/历史记录.png'></image>
       <view>个人信息</view>
     </button>
   
+  </view-->
+
+  <view class='buttonList'>
+
+    <view class='bt1' bindtap="WalletClick">
+      <image class='btnImg' src='../../images/钱包.png'></image>
+      <view class='tx'>我的钱包</view>
+    </view>
+
+    <view class='divLine2'></view>
+
+    <view class='bt2' bindtap="SettingClick" open-type="getUserInfo">
+      <image class='btnImg' src='../../images/设置.png'></image>
+      <view class='tx'>{{vrf}}</view>
+    </view>
+
+    <view class='divLine2'></view>
+
+    <view class='bt3' bindtap="AddressClick">
+      <image class='btnImg' src='../../images/地址.png'></image>
+      <view class='tx'>我的地址</view>
+    </view>
+
+    <view class='divLine2'></view>
+
+    <!--view class='bt4'>
+      <image class='btnImg' src='../../images/发布.png'></image>
+      <view class='tx'>我的委派</view>
+    </view>
+
+    <view class='divLine2'></view>
+
+    <view class='bt5'>
+      <image class='btnImg' src='../../images/接收.png'></image>
+      <view class='tx'>我的接收</view>
+    </view-->
+
+    <view class='divLine2'></view>
+
+    <view class='bt6' bindtap="RecordClick">
+      <image class='btnImg' src='../../images/历史记录.png'></image>
+      <view class='tx'>个人信息</view>
+
+    </view>
+
+    <view class='divLine2'></view>
+
+
   </view>
+  
+  
 
 </view>

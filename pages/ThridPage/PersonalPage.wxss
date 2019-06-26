@@ -23,7 +23,7 @@
   display: block;
 
   position: fixed;
-  top: 30%;
+  top: 35%;
   left: 5%;
   right: 5%;
   width: 90%;
@@ -36,7 +36,7 @@
   display: block;
 
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 5%;
   right: 5%;
   width: 90%;
@@ -65,6 +65,9 @@
   left: 28%;
   top: 25rpx;
 
+  font-size: 45rpx;
+  letter-spacing: 3rpx;
+
   font-style: normal;
   font-weight: normal;
   color: black;
@@ -85,7 +88,6 @@
   text-align: left;
 
   font-style:normal;
-  font-size: 25rpx;
   font-weight: normal;
   color: gray;
 
@@ -94,6 +96,8 @@
   align-items: center;
   text-align-last: justify;
   justify-content: center;
+
+  font-size: 30rpx;
 }
 
 .userinfo-creditscore {
@@ -104,7 +108,6 @@
   text-align: left;
 
   font-style:normal;
-  font-size: 25rpx;
   font-weight: normal;
   color: gray;
 
@@ -114,208 +117,11 @@
   text-align-last: justify;
   justify-content: center;
 
+  font-size: 30rpx;
+
 }
 
-.bt1 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 0;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt2 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 25%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt3 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 50%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt4 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 75%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt5 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt6 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 25%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt7 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 50%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt8 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 75%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt9 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 0%;
-  top: 50%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt10 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 25%;
-  top: 50%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt11 {
-  position: absolute;
-  width: 25%;
-  height: 200rpx;
-  left: 50%;
-  top: 50%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 25rpx;
-  background-color: transparent;
-}
-
-.bt1::after{
-  border: 0;
-}
-
-.bt2::after{
-  border: 0;
-}
-
-.bt3::after{
-  border: 0;
-}
-
-.bt4::after{
-  border: 0;
-}
-
-.bt5::after{
-  border: 0;
-}
-
-.bt6::after{
-  border: 0;
-}
-
-.bt7::after{
-  border: 0;
-}
-
-.bt8::after{
-  border: 0;
-}
-
-.bt9::after{
-  border: 0;
-}
-
-.bt10::after{
-  border: 0;
-}
-
-.bt11::after{
-  border: 0;
-}
 
 .btnImg1 {
   width: 50rpx;
@@ -381,4 +187,62 @@
   width: 50rpx;
   height: 50rpx;
   align-content: center;
+}
+
+
+.buttonList {
+  position: absolute;
+  top: 35%;
+  display: block;
+
+  left: 7%;
+  width: 90%;
+}
+
+.btnImg {
+  width: 70rpx;
+  height: 70rpx;
+  align-content: center;
+} 
+
+.tx {
+  margin-left: 50rpx;
+  margin-top: 10rpx;
+}
+
+.bt1 {
+  display: flex;
+}
+
+.bt2 {
+  margin-top: 50rpx;
+  display: flex;
+}
+
+.bt3 {
+  margin-top: 50rpx;
+  display: flex;
+}
+
+.bt4 {
+  margin-top: 50rpx;
+  display: flex;
+}
+
+.bt5 {
+  margin-top: 50rpx;
+  display: flex;
+}
+
+.bt6 {
+  margin-top: 50rpx;
+  display: flex;
+}
+
+.divLine2 {
+  position: absolute;
+  background: #E0E3DA;
+  width: 100%;
+  height: 2rpx;
+  margin-top: 10rpx;
 }

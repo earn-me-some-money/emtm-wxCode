@@ -45,20 +45,14 @@
 .user {
   margin-top: 30rpx;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  
-  flex-wrap: wrap;
+ 
   font-size: 36rpx;
 }
 
 .organization {
   margin-top: 30rpx;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   
-  flex-wrap: wrap;
   font-size: 36rpx;
 }
 
@@ -77,6 +71,8 @@
 }
 
 .confirm {
+  position: absolute;
   top: 90%;
-  width: 20rpxrpx;
+  width: 30%;
+  left: 35%;
 }
