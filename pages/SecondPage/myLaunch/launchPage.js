@@ -124,6 +124,11 @@ Page({
             _this.setData({
               student_id: res.data.accept_users.accept_user_id
             })
+            if (res.data.accept_users.accept_user_num == res.data.finish_users.finish_user_num) {
+              _this.setData({
+                can_do: false
+              })
+            }
           }
         }
         else {

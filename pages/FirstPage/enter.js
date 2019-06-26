@@ -30,7 +30,7 @@ Page({
       wx.request({
         url: app.globalData.serpath + 'task/top',
         data: {
-          "number": 2
+          "number": 20
         },
         header: {
           'content-type': 'application/json' // 默认值

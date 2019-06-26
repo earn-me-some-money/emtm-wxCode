@@ -33,6 +33,7 @@ Page({
       })
       this.load_rec()
       this.load_lau()
+      this.btclick1()
     },
 
     // 加载我的接受

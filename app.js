@@ -92,7 +92,7 @@ App({
   },
   
   globalData: {
-    serpath: "https://easy-mock.com/mock/5cea62cd9688d23824616193/example/",
+    serpath: "https://emtm.miguch.com:789/",
     appid: "wx9d86195b9f2c0137",
     secretid: "6260719c0a702f13c1698ca47beb60bc",
     openid: null,
