@@ -253,8 +253,12 @@ Page({
         "task_risk": Number(this.data.task_risk),
         "task_pay": Number(this.data.payment),
         "task_time_limit": this.data.year + '-' + this.data.month + '-' + this.data.day +
-          ':' + 23 + '-' + 59
+          ':' + 23 + '-' + 59,
+        "task_request": {
+          "max_participants": 1
+        }
       }
+      console.log(para)
       wx.showLoading({ title: "新建任务中..." })
       var _this = this
       wx.request({

@@ -117,7 +117,7 @@ Page({
             }
           })
           wx.request({
-            url: app.globalData.serpath + 'check_credit',
+            url: app.globalData.serpath + 'credit',
             data: {
               "userid": app.globalData.openid
             },

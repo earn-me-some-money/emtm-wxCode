@@ -24,9 +24,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-     this.setData({
-       select: false
-     })
+     
+    },
+
+    onShow: function (options) {
+      this.setData({
+        select: false
+      })
       this.load_rec()
       this.load_lau()
     },

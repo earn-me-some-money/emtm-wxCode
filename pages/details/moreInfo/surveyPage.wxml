@@ -7,23 +7,23 @@
 
         <block wx:if="{{single_order.type == 0}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
-          <input class='input_answer' bindinput="answerInput"></input>
+          <input class='input_answer' bindinput='textChange' id="{{single_order.id}}"></input>
         </block>
 
         <block wx:if="{{single_order.type == 1}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
-          <radio-group class="type-radio-group" bindchange="typeChange">
+          <radio-group class="type-radio-group" bindchange="typeChange" id="{{single_order.id}}">
             <block wx:for="{{single_order.choice}}" wx:for-item="single_choice">
-              <radio class="radio1" value='{{single_order.id + " " + single_choice.index}}' checked='{{single_choice.check}}'>{{single_choice.index + ": " + single_choice.title}}</radio>
+              <radio class="radio1" value='{{single_choice.index}}' checked='{{single_choice.check}}'>{{single_choice.index + ": " + single_choice.title}}</radio>
             </block>
           </radio-group>
         </block>
 
         <block wx:if="{{single_order.type == 2}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
-          <checkbox-group class="type-radio-group" bindchange="typeChange2">
+          <checkbox-group class="type-radio-group" bindchange="typeChange2" id="{{single_order.id}}">
             <block wx:for="{{single_order.choice}}" wx:for-item="single_choice" wx:key='cid'>
-              <checkbox class="radio1" value='{{single_order.id + " " + single_choice.index}}'>{{single_choice.index + ": " + single_choice.title}}</checkbox>
+              <checkbox class="radio1" value='{{single_choice.index}}'>{{single_choice.index + ": " + single_choice.title}}</checkbox>
             </block>
           </checkbox-group>
         </block>

@@ -149,9 +149,10 @@ Page({
   confirm_rcv: function() {
     var para = {
       "userid": app.globalData.openid,
-      "poster_id": this.data.poster_id,
-      "task_mid": this.data.mid
+      "poster_id": this.data.providerId,
+      "task_mid": this.data.taskId
     }
+    console.log(para)
     var _this = this
     wx.request({
       url: app.globalData.serpath + 'task/receive',
@@ -187,6 +188,13 @@ Page({
   },
 
   moreInfo: function() {
+    if (this.data.task_user_state == 1) {
+      wx.showToast({
+        title: "已完成任务",
+        icon: "none"
+      })
+      return
+    }
     if (this.data.vertify_mode == 0) {
       var para = {
         "task_mid": Number(this.data.taskId),
@@ -199,7 +207,7 @@ Page({
     }
     else if (this.data.vertify_mode == 1) {
       var para = {
-        "task_mid": Number(this.data.taskId),
+        "task_mid": Number(this.data.task_mid),
         "poster_id": Number(this.data.providerId)
       }
       wx.navigateTo({
