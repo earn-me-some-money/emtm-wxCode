@@ -148,6 +148,10 @@ Page({
         }
     },
 
+    onShow: function(options) {
+      this.onLoad()
+    },
+
     NotificationClick: function () {
         wx.navigateTo({
             url: 'UserInfo/Notation/NotationPage',

@@ -160,8 +160,8 @@ Page({
             success: function (res) {
               if (res.data.code) {
                 wx.hideLoading()
-                wx.navigateBack({
-                  delta: 1
+                wx.redirectTo({
+                  url: '../../../Login/loginPage',
                 })
               }
               else {

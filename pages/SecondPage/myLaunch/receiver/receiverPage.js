@@ -51,8 +51,8 @@ Page({
           }
           for (var i = 0; i < res.data.finish_users.finish_user_num; i++) {
             var o = {}
-            o.accept_user_id = res.data.finish_users.finish_user_id[i]
-            o.accept_user_names = res.data.finish_users.finish_user_names[i]
+            o.finish_user_id = res.data.finish_users.finish_user_id[i]
+            o.finish_user_names = res.data.finish_users.finish_user_names[i]
             ri.push(o)
           }
           console.log(ac)
@@ -76,6 +76,20 @@ Page({
 
   toSurvey: function(e) {
     if (this.data.isSurvey) {
+      var flag = false
+      for (var i = 0; i < this.data.finish_users.length; i ++) {
+        if (Number(e.currentTarget.dataset.bean.accept_user_id) == Number(this.data.finish_users[i].finish_user_id)) {
+          flag = true
+          break
+        }
+      }
+      if (!flag) {
+        wx.showToast({
+          title: "该用户未完成",
+          icon: "none"
+        })
+        return
+      }
       var para = {
         student_id: e.currentTarget.dataset.bean.accept_user_id,
         user_names: e.currentTarget.dataset.bean.accept_user_names,
