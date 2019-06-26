@@ -37,6 +37,7 @@ Page({
         },
         success: function (res) {
           if (res.data.code) {
+            console.log(res)
             _this.fullfill(res)
             _this.setData({
               task: res.data.tasks

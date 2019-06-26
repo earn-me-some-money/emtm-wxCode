@@ -42,12 +42,16 @@ Page({
       
       if (app.globalData.mode == 1) {
         this.setData({
-          vertify_mode: 1
+          vertify_mode: 1,
+          notation1: "输 入 学 号",
+          notation2: "学 校 名 称",
         })
       }
       else {
         this.setData({
-          vertify_mode: 2
+          vertify_mode: 2,
+          notation1: "输 入 真 实 姓 名",
+          notation2: "输 入 机 构 名 称",
         })
       }
 

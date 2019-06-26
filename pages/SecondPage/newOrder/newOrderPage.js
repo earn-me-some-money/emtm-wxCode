@@ -163,6 +163,7 @@ Page({
         selectType: 2
       })
     }
+    console.log(this.data.selectType)
   },
 
   usernameInput:function(e) {
@@ -206,7 +207,7 @@ Page({
         })
         return
       }
-      if (!this.data.selectType) {
+      if (this.data.selectType == null) {
         wx.showToast({
           title: '请选择任务类型！',
           icon: "none"
