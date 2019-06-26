@@ -5,7 +5,14 @@
   </view-->
 
   <view class="login-from">
- 
+    <view class='mode'>
+      <view class='modeText'></view>
+      <radio-group class="modechoice" bindchange="typeChange">
+        <radio class="radio1" value="student" checked>学生</radio>
+        <radio class="radio2" value="milk">奶牛</radio>
+      </radio-group>
+    </view>
+
     <view class="inputView">
       <label class="loginLab">邮箱</label>
       <input class="inputText" placeholder="请输入邮箱" bindinput="emailInput"/>
@@ -16,7 +23,7 @@
       <input class="inputText" placeholder="请输入手机号" bindinput="phoneInput" maxlength="11" type="number"/>
     </view>
 
-    <block wx:if="{{type}}">
+    <block wx:if="{{!type}}">
       <view class="inputView">
         <label class="loginLab">姓名</label>
         <input class="inputText" placeholder="真实姓名" bindinput="nameInput" maxlength="10"/>
@@ -33,7 +40,7 @@
       </view>
     </block>
 
-    <block wx:if="{{!type}}">
+    <block wx:if="{{type}}">
 
       <view class="inputView">
         <label class="loginLab">机构介绍</label>

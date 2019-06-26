@@ -7,7 +7,7 @@
 
         <block wx:if="{{single_order.type == 0}}">
           <view class='title'>{{single_order.id + "：" + single_order.title}}</view>
-          <input class='input_answer'></input>
+          <input class='input_answer' bindinput="answerInput"></input>
         </block>
 
         <block wx:if="{{single_order.type == 1}}">

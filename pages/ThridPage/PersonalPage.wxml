@@ -28,7 +28,7 @@
 
     <button class='bt4' bindtap="SettingClick">
       <image class='btnImg4' src='../../images/设置.png'></image>
-      <view>认证</view>
+      <view>{{vrf}}</view>
     </button>
 
   </view>

@@ -8,8 +8,8 @@
     <view class='mode'>
       <view class='modeText'>认 证 模 式：</view>
       <radio-group class="modechoice" bindchange="typeChange">
-        <radio class="radio1" value="student" checked='{{vertify_mode==1}}' disabled='{{isVertify}}'>学生</radio>
-        <radio class="radio2" value="milk" checked='{{vertify_mode==2}}' disabled='{{isVertify}}'>奶牛</radio>
+        <radio class="radio1" value="student" checked='{{vertify_mode==1}}' disabled>学生</radio>
+        <radio class="radio2" value="milk" checked='{{vertify_mode==2}}' disabled>奶牛</radio>
       </radio-group>
     </view>
 

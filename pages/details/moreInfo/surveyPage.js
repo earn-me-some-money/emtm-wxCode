@@ -9,12 +9,7 @@ Page({
   data: {
     questions: [],
     answers: [],
-    show: [
-      { type: 0, id: 1, title: "今天吃了什么水果？", res: ""},
-      { type: 1, id: 2, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜", check: true }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'D', title: "西瓜" } ] },
-      { type: 0, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }] },
-      { type: 2, id: 3, title: "今天吃了什么水果？", choice: [{ index: 'A', title: "西瓜" }, { index: 'B', title: "西瓜" }, { index: 'C', title: "西瓜" }, { index: 'D', title: "西瓜" }, { index: 'E', title: "西瓜" }] }
-    ],
+    show: [],
     // task_user_state为true则用户接受任务后未完成，其余为false
     task_user_state: true,
     id_clicked: 0,
@@ -50,12 +45,29 @@ Page({
         console.log(res.data)
         if (res.data.code) {
           var q = res.data.questions
-          for (var i = 0; i < q.length; i ++) {
-            var obj = {}
-            obj.type = q[i].q_type
-            obj.id = q[i].order + 1
-            obj.title = q[i].content
+          var t = []
+          for (var i = 0; i < q.length; i++) {
+            var o = {}
+            o.type = q[i].q_type
+            o.id = q[i].order + 1
+            o.title = q[i].content
+            if (o.type == 0) {
+              o.res = ''
+            }
+            else {
+              o.choice = []
+              for (var j = 0; j < q[i].choices.length; j++) {
+                var c = {}
+                c.index = j
+                c.title = q[i].choices[j]
+                o.choice.push(c)
+              }
+            }
+            t.push(o)
           }
+          _this.setData({
+            show: t
+          })
         }
         else {
           wx.showToast({
@@ -72,11 +84,13 @@ Page({
   },
 
   typeChange: function (e) {
-    console.log(e)
+    var s = e.detail.value
+    s = s.split(' ')
+    console.log(e.detail.value)
   },
 
   typeChange2: function (e) {
-    console.log(e)
+    console.log(e.detail.value)
   },
   
   selected: function(e) {

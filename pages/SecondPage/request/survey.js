@@ -175,8 +175,8 @@ Page({
             showCancel: false,
             success: function (res) {
               if (res.confirm) {
-                wx.navigateBack({
-                  delta: 2
+                wx.redirectTo({
+                  url: '../../Login/loginPage',
                 })
               }
             }

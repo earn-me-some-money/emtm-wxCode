@@ -34,6 +34,7 @@ Page({
             _this.setData({
               balance: res.data.balance
             })
+            console.log(_this.data.balance)
           }
           else {
             wx.showToast({

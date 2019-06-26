@@ -1,10 +1,8 @@
 var app = getApp();
 Page({
-  para: null,
   data: {
-    type: true,  // 0代表学生，1代表奶牛
+    type: false,  // false代表学生，true代表奶牛
     hidden_notation: true,
-
     email: null,
     phone: null,
     info: null,
@@ -13,13 +11,6 @@ Page({
   },
 
   onLoad: function (e) {
-    this.setData({
-      para: JSON.parse(e.para),
-    })
-    console.log(this.data.para)
-    this.setData({
-      type: this.data.para.verify_mode
-    })
 
   },
 
@@ -50,7 +41,7 @@ Page({
         return
       }
 
-      if (this.data.type) {
+      if (!this.data.type) {
         if (!this.data.name) {
           wx.showToast({
             title: '请输入真实姓名！',
@@ -89,20 +80,21 @@ Page({
     wx.showLoading({ title: "注册中..." })
     var _this = this
     var para
-    if (this.data.type) {
+    if (!this.data.type) {
       para = {
         "username": app.globalData.userInfo.nickName,
         "userid": app.globalData.openid,
-        "wechat_ok": this.data.para.verify_mode,
+        "wechat_ok": true,
         "email": this.data.email,
         "phone": this.data.phone,
         "infos": this.data.info,
         // 下面是大学生身份认证所需信息
-        "school_name": this.data.para.organization,
-        "student_id": Number(this.data.para.user_id),
+        // "school_name": this.data.para.organization,
+        // "student_id": Number(this.data.para.user_id),
         "major": this.data.name,
         "year": Number(this.data.grade)
       }
+      console.log(para)
       wx.request({
         url: app.globalData.serpath + 'logup/stu',
         data: para,
@@ -131,12 +123,13 @@ Page({
       para = {
         "username": app.globalData.userInfo.nickName,
         "userid": app.globalData.openid,
-        "wechat_ok": this.data.para.verify_mode,
+        "wechat_ok": true,
         "email": this.data.email,
         "phone": this.data.phone,
         "infos": this.data.info,
-        "organization": this.data.para.organization,
+        // "organization": this.data.para.organization,
       }
+      console.log(para)
       wx.request({
         url: app.globalData.serpath + 'logup/cow',
         data: para,
@@ -201,6 +194,18 @@ Page({
     this.setData({
       grade: e.detail.value
     })
-  }
+  },
 
+  typeChange: function (e) {
+    if (e.detail.value == 'student') {
+      this.setData({
+        type: false,
+      })
+    }
+    else if (e.detail.value == 'milk') {
+      this.setData({
+        type: true,
+      })
+    }
+  }
 })

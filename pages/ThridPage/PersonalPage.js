@@ -12,7 +12,9 @@ Page({
         },
         hasUserInfo: false,
         mode: "登录失败",
-        canIUse: true
+        canIUse: true,
+        verified: false,
+        vrf: "注册"
     },
 
     /**
@@ -49,14 +51,71 @@ Page({
         }
         if (app.globalData.mode == 0) {
           this.setData({
-            mode: "奶牛"
+            mode: "奶牛",
+            vrf: "认证"
+          })
+          var _this = this
+          wx.request({
+            url: app.globalData.serpath + 'info/cow',
+            data: {
+              "userid": app.globalData.openid
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+              if (res.data.code) {
+                _this.setData({
+                  verified: res.data.verified,
+                })
+                if (_this.data.verified) {
+                  _this.setData({
+                    vrf: "已认证"
+                  })
+                }
+              }
+              else {
+                wx.showToast({
+                  title: res.data.err_message,
+                  icon: "none"
+                })
+              }
+            }
           })
         }
         else if (app.globalData.mode == 1) {
           this.setData({
-            mode: "学生"
+            mode: "学生",
+            vrf: "认证"
           })
           var _this = this
+          wx.request({
+            url: app.globalData.serpath + 'info/stu',
+            data: {
+              "userid": app.globalData.openid
+            },
+            header: {
+              'content-type': 'application/json' // 默认值
+            },
+            success: function (res) {
+              if (res.data.code) {
+                _this.setData({
+                  verified: res.data.verified,
+                })
+                if (_this.data.verified) {
+                  _this.setData({
+                    vrf: "已认证"
+                  })
+                }
+              }
+              else {
+                wx.showToast({
+                  title: res.data.err_message,
+                  icon: "none"
+                })
+              }
+            }
+          })
           wx.request({
             url: app.globalData.serpath + 'check_credit',
             data: {
@@ -71,63 +130,22 @@ Page({
                   'userInfo.check_credit': "信誉积分：" + res.data.credit_score
                 })
               }
+              else {
+                wx.showToast({
+                  title: res.data.err_message,
+                  icon: "none"
+                })
+              }
             }
           })
+
         }
         else {
           this.setData({
-            mode: "未认证"
+            mode: "未注册",
+            vrf: "注册"
           })
         }
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
     },
 
     NotificationClick: function () {
@@ -149,9 +167,23 @@ Page({
     },
 
     SettingClick: function () {
-        wx.navigateTo({
+        if (this.data.verified) {
+          wx.showToast({
+            title: "已认证",
+            icon: "none"
+          })
+          return
+        }
+        if (app.globalData.mode == 2) {
+          wx.navigateTo({
+            url: 'UserInfo/Setting/signInPage/signPage',
+          })
+        }
+        else {
+          wx.navigateTo({
             url: 'UserInfo/Setting/SettingPage',
-        })
+          })
+        }
     },
 
     AddressClick: function () {

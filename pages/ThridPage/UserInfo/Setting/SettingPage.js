@@ -8,7 +8,7 @@ Page({
      */
     data: {
 
-      isVertify: true,
+      isVertify: false,
 
       vertify_mode: 1,
 
@@ -40,14 +40,14 @@ Page({
         title: '我 的 认 证',
       })
       
-      if (app.globalData.mode == 2) {
+      if (app.globalData.mode == 1) {
         this.setData({
-          isVertify: false
+          vertify_mode: 1
         })
       }
       else {
         this.setData({
-          isVertify: true
+          vertify_mode: 2
         })
       }
 
@@ -147,7 +147,8 @@ Page({
             "image_data": res.data,
             "verify_mode": vertify_mode,
             "user_id": _this.data.text1,
-            "organization": _this.data.text2
+            "organization": _this.data.text2,
+            "wechat_id": app.globalData.openid
           }
           wx.request({
             url: app.globalData.serpath + 'user/verify',
@@ -159,13 +160,8 @@ Page({
             success: function (res) {
               if (res.data.code) {
                 wx.hideLoading()
-                var para = {
-                  "verify_mode": vertify_mode,
-                  "user_id": _this.data.text1,
-                  "organization": _this.data.text2
-                }
-                wx.navigateTo({
-                  url: 'signInPage/signPage?para=' + JSON.stringify(para),
+                wx.navigateBack({
+                  delta: 1
                 })
               }
               else {
