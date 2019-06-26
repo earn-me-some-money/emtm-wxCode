@@ -270,8 +270,16 @@ Page({
     },
 
     RecordClick: function () {
+      if (app.globalData.mode != 2) {
         wx.navigateTo({
-            url: 'UserEvent/Record/RecordPage',
+          url: 'UserInfo/ModifyInfo/modifyPage',
         })
+      }
+      else {
+        wx.showToast({
+          title: "未注册",
+          icon: "none"
+        })
+      }
     }
 })

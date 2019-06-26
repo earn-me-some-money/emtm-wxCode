@@ -66,7 +66,7 @@
 
     <button class='bt11' bindtap="RecordClick">
       <image class='btnImg11' src='../../images/历史记录.png'></image>
-      <view>服务记录</view>
+      <view>个人信息</view>
     </button>
   
   </view>

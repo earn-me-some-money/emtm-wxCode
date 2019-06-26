@@ -1,0 +1,121 @@
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.baseInfo {
+  display: block;
+  position: absolute;
+
+  top: 0%;
+  left: 5%;
+  width: 90%;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
+}
+
+.identifier {
+  display: block;
+  position: absolute;
+
+  top: 25%;
+  left: 5%;
+  width: 90%;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
+}
+
+.moreInfo {
+  display: block;
+  position: absolute;
+
+  top: 48%;
+  left: 5%;
+  width: 90%;
+
+  background-color: whitesmoke;
+  border-radius: 20rpx;
+  padding: 10rpx;
+}
+
+
+.buttonList {
+  display: flex;
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 90%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.username {
+  margin-top: 15rpx;
+  display: flex;
+}
+.email {
+  margin-top: 15rpx;
+  display: flex;
+}
+.tel {
+  margin-top: 15rpx;
+  display: flex;
+}
+.info {
+  margin-top: 15rpx;
+  display: flex;
+}
+
+.is_identified {
+  margin-top: 15rpx;
+}
+.userType {
+  margin-top: 30rpx;
+}
+.radiogroup {
+  margin-top: 15rpx;
+}
+
+.major {
+  margin-top: 15rpx;
+  display: flex;
+}
+.grade {
+  margin-top: 15rpx;
+  display: flex;
+}
+.credit {
+  margin-top: 15rpx;
+}
+.finish_work {
+  margin-top: 15rpx;
+}
+.launch_work {
+  margin-top: 15rpx;
+}
+.group {
+  margin-top: 15rpx;
+}
+
+.modify {
+  background-color: transparent;
+}
+.confirm {
+  background-color: transparent;
+}
+
+
+.radio2 {
+  margin-left: 60rpx;
+}
+
+.bt {
+  color: gray;
+}

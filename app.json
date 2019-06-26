@@ -31,7 +31,8 @@
     "pages/ThridPage/UserInfo/Setting/signInPage/signPage",
     "pages/SecondPage/myLaunch/launchPage",
     "pages/SecondPage/myLaunch/receiver/receiverPage",
-    "pages/SecondPage/myLaunch/receiver/toSurveyPage"
+    "pages/SecondPage/myLaunch/receiver/toSurveyPage",
+    "pages/ThridPage/UserInfo/ModifyInfo/modifyPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
