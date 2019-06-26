@@ -14,7 +14,8 @@ Page({
     task_user_state: true,
     id_clicked: 0,
     poster_id: null,
-    task_mid: null
+    task_mid: null,
+    task_user_state: 0
   },
 
   /**
@@ -34,7 +35,8 @@ Page({
     this.setData({
       task_user_state: JSON.parse(query.para).task_user_state,
       poster_id: JSON.parse(query.para).poster_id,
-      task_mid: JSON.parse(query.para).task_mid
+      task_mid: JSON.parse(query.para).task_mid,
+      task_user_state: JSON.parse(query.para).task_user_state
     })
     var _this = this
     wx.request({

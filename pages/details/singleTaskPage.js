@@ -195,11 +195,18 @@ Page({
       })
       return
     }
+    if (this.data.task_user_state == 3) {
+      wx.showToast({
+        title: "未接受任务",
+        icon: "none"
+      })
+      return
+    }
     if (this.data.vertify_mode == 0) {
       var para = {
         "task_mid": Number(this.data.taskId),
         "poster_id": Number(this.data.providerId),
-        "task_user_state": (this.data.task_user_state == 2)
+        "task_user_state": this.data.task_user_state
       }
       wx.navigateTo({
         url: 'moreInfo/surveyPage?para=' + JSON.stringify(para)

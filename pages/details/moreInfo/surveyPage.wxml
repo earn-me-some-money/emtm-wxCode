@@ -34,11 +34,11 @@
     </block>
   </scroll-view>
 
-  <block wx:if="{{!task_user_state}}">
-    <button class='onloadSurvey' bindtap='onloadSurvey' disabled='false'>已 提 交 问 卷</button>
+  <block wx:if="{{task_user_state == 0}}">
+    <button class='onloadSurvey' bindtap='onloadSurvey' disabled='false'>发布者无法提交</button>
   </block>
 
-  <block wx:if="{{task_user_state}}">
+  <block wx:if="{{!task_user_state == 0}}">
     <button class='onloadSurvey' bindtap='onloadSurvey'>提 交 问 卷</button>
   </block>
 
