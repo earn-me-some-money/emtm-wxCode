@@ -55,6 +55,10 @@ App({
                       title: res.data.err_message,
                       icon: "none"
                     })
+                    wx.hideLoading()
+                    wx.switchTab({
+                      url: '../FirstPage/enter',
+                    })
                   }
                 }
               })
