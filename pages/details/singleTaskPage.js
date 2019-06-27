@@ -70,7 +70,7 @@ Page({
             ddl: res.data.task_time_limit.slice(0, 10) + " " +
               res.data.task_time_limit.slice(11, 13) + ":" + res.data.task_time_limit.slice(14, 16),
           })
-          if (res.data.task_request) {
+          if (res.data.task_mode == 0) {
             _this.setData({
               type: false,
               mingrade: res.data.task_request.min_grade,
@@ -214,7 +214,7 @@ Page({
     }
     else if (this.data.vertify_mode == 1) {
       var para = {
-        "task_mid": Number(this.data.task_mid),
+        "task_mid": Number(this.data.taskId),
         "poster_id": Number(this.data.providerId)
       }
       wx.navigateTo({

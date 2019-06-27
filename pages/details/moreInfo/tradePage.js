@@ -24,10 +24,10 @@ Page({
       "userid": app.globalData.openid,
       "poster_id": Number(para.poster_id)
     }
-
+    console.log(para)
     var _this = this
     wx.request({
-      url: app.globalData.serpath + 'transaction',
+      url: app.globalData.serpath + 'task/transaction',
       data: para,
       header: {
         'content-type': 'application/json' // 默认值

@@ -33,7 +33,7 @@ Page({
 
     var _this = this
     wx.request({
-      url: app.globalData.serpath + 'errand',
+      url: app.globalData.serpath + 'task/errand',
       data: para,
       header: {
         'content-type': 'application/json' // 默认值

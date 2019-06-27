@@ -70,7 +70,7 @@ Page({
             ddl: res.data.task_time_limit.slice(0, 10) + " " +
               res.data.task_time_limit.slice(11, 13) + ":" + res.data.task_time_limit.slice(14, 16),
           })
-          if (res.data.task_request) {
+          if (res.data.task_mode == 0) {
             _this.setData({
               type: false,
               mingrade: res.data.task_request.min_grade,
@@ -124,7 +124,12 @@ Page({
             _this.setData({
               student_id: res.data.accept_users.accept_user_id
             })
-            if (res.data.accept_users.accept_user_num == res.data.finish_users.finish_user_num) {
+            if (res.data.accept_users.accept_user_num == 0) {
+              _this.setData({
+                can_do: true
+              })
+            }
+            else if (res.data.accept_users.accept_user_num == res.data.finish_users.finish_user_num) {
               _this.setData({
                 can_do: false
               })

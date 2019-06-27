@@ -26,7 +26,7 @@
     <view class='ddl'>{{'截止日期：' + ddl}}</view>
   </view>
 
-  <view class='request' disabled="{{type}}">
+  <view class='request' hidden="{{type}}">
     <view class='grade'>{{'年级限制：' + mingrade + ' 到 ' + maxgrade}}</view>
     <view class='major'>{{'专业限制：' + major}}</view>
     <view class='experience'>{{'最少完成任务：' + experience}}</view>
